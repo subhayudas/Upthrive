@@ -24,7 +24,7 @@ const HeroContent = () => {
      className="flex flex-col items-center justify-center text-center px-4 py-10 sm:py-16 lg:py-24 bg-tresprent min-h-screen">
       <motion.div variants={slideInFromTop} className=" text-sm mb-3 sm:mb-5 mt-20 sm:mt-20 Welcome-box py-[8px] px-[7px] border border-[#7042f88b] opacity-[0.9] text-center mx-auto ">
               <SparklesIcon className="text-[#b49bff] mr-[10px] h-5 w-5" />
-              <h1 className="Welcome-text text-[13px]">Fullstack Marketing Agency</h1>
+              <h1 className="Welcome-text text-[13px]">Fullstack Digital Agency</h1>
             </motion.div>
       <motion.h1 variants={slideInFromLeft(0.6)} className="mx-auto max-w-4xl font-display text-5xl font-medium tracking-tight text-white sm:text-7xl">
         <span className="inline-block animate-shiny-text-slow bg-gradient-to-r from-gray-300 via-gray-600 via-50% to-gray-300 bg-clip-text text-transparent bg-[length:400%_100%]">We&apos;re digital force behind</span>

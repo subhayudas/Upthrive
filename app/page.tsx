@@ -27,7 +27,6 @@ export default function Home() {
         <TestimonialSlider />
         <Statistics />
         <ProcessTimeline />
-        
         <CallToAction />
       </div>
     </main>
