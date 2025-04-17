@@ -1,6 +1,7 @@
 "use client";
 import React, { useState } from "react";
 import PropTypes from "prop-types";
+import AnimatedHeading from "../ui/animated-heading";
 
 interface FAQItemProps {
   question: string;
@@ -21,7 +22,7 @@ const FAQItem: React.FC<FAQItemProps> = ({ question, answer }) => {
         className="flex cursor-pointer items-center justify-between gap-1.5 rounded-lg bg-orange-400 p-4 text-gray-900 focus:outline-none"
         onClick={toggleOpen}
       >
-        <h3 className="font-medium text-lg">{question}</h3>
+        <AnimatedHeading as="h3" className="font-medium text-lg">{question}</AnimatedHeading>
 
         <svg
           className={`h-5 w-5 shrink-0 transition duration-300 ${isOpen && "-rotate-180"}`}
@@ -78,9 +79,9 @@ const FAQSection = () => {
   return (
     <section id="FAQSection" className=" py-8">
       <div className="mx-auto max-w-lg text-center">
-        <h2 className="text-[40px] font-semibold text-transparent bg-clip-text bg-gradient-to-r from-amber-500 to-pink-500 py-10">
+        <AnimatedHeading as="h2" className="text-[40px] font-semibold py-10">
           Frequently Asked Questions
-        </h2>
+        </AnimatedHeading>
       </div>
 
       <div className="max-w-2xl mx-auto p-4">

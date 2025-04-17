@@ -3,6 +3,7 @@
 import React, { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
+import AnimatedHeading from "../ui/animated-heading";
 
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -25,9 +26,9 @@ const Navbar = () => {
             />
           </a>
 
-          <span className="self-center text-xl font-bold text-white">
+          <AnimatedHeading as="h1" className="self-center text-xl font-bold">
             Upthrive
-          </span>
+          </AnimatedHeading>
         </div>
 
         <div className="md:hidden">

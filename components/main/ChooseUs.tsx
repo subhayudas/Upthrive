@@ -3,6 +3,7 @@ import React, { useEffect, useRef, useState } from "react";
 import { CardHoverEffectDemo } from "./snippets/card-hover-effect-snippet2";
 import Image from "next/image";
 import Marquee from "react-fast-marquee";
+import AnimatedHeading from "../ui/animated-heading";
 
 const ChooseUs = () => {
   return (
@@ -14,9 +15,9 @@ const ChooseUs = () => {
           {/* Companys who worked with us */}
 
           <div className="max-w-7xl mx-auto flex flex-wrap justify-around gap-2 py-12">
-            <h2 className="w-full mb-4 mt-4 text-center text-5xl  font-semibold bg-clip-text text-transparent bg-gradient-to-r from-amber-500 to-pink-500 tracking-wider">
+            <AnimatedHeading as="h2" className="w-full mb-4 mt-4 text-center text-5xl font-semibold tracking-wider">
               Trusted by the best
-            </h2>
+            </AnimatedHeading>
             <p className="text-center text-white ">
               From small businesses to large corporations,
               <br /> we have helped many brands elevate their business.

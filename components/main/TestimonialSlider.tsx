@@ -2,6 +2,7 @@
 import React from "react";
 import { SparklesIcon } from "@heroicons/react/24/solid";
 import Image from "next/image";
+import AnimatedHeading from "../ui/animated-heading";
 
 const TestimonialSlider = () => {
   return (
@@ -11,11 +12,11 @@ const TestimonialSlider = () => {
           <div className="mb-12 md:mb-16 md:text-center">
             <div className="Welcome-box py-[8px] px-[7px] border border-[#7042f88b] opacity-[0.9] text-center mx-auto ">
               <SparklesIcon className="text-[#b49bff] mr-[10px] h-5 w-5" />
-              <h1 className="Welcome-text text-[13px] ">Words from Others</h1>
+              <AnimatedHeading as="h1" className="Welcome-text text-[13px]">Words from Others</AnimatedHeading>
             </div>
-            <h1 className="mb-5 text-5xl font-semibold bg-gradient-to-r from-amber-500 to-pink-500 bg-clip-text text-transparent  text-center md:text-center md:text-5xl">
+            <AnimatedHeading as="h1" className="mb-5 text-5xl font-semibold text-center md:text-center md:text-5xl">
               It&apos;s not just us.
-            </h1>
+            </AnimatedHeading>
             <p className="text-xl text-gray-100 text-center md:text-center md:text-2xl">
               Heres what others have to say about us.
             </p>
@@ -40,9 +41,9 @@ const TestimonialSlider = () => {
                         alt="rean"
                       />
                       <div>
-                        <h3 className="text-lg font-semibold text-white">
+                        <AnimatedHeading as="h3" className="text-lg font-semibold">
                         Dr Rean Ahmed 
-                        </h3>
+                        </AnimatedHeading>
                         <p className="text-gray-500 text-md">
                           Doctor
                         </p>
@@ -70,9 +71,9 @@ const TestimonialSlider = () => {
                         alt="Shakil Khan"
                       />
                       <div>
-                        <h3 className="text-lg font-semibold text-white">
+                        <AnimatedHeading as="h3" className="text-lg font-semibold">
                         Shakil Khan
-                        </h3>
+                        </AnimatedHeading>
                         <p className="text-gray-500 text-md">CEO of Rekto</p>
                       </div>
                     </div>
@@ -98,9 +99,9 @@ const TestimonialSlider = () => {
                         alt="Kanye West"
                       />
                       <div>
-                        <h3 className="text-lg font-semibold text-white">
+                        <AnimatedHeading as="h3" className="text-lg font-semibold">
                         Asibur Rahman
-                        </h3>
+                        </AnimatedHeading>
                         <p className="text-gray-500 text-md">
                           Run a local business
                         </p>
@@ -128,9 +129,9 @@ const TestimonialSlider = () => {
                         alt="Mr Ryan"
                       />
                       <div>
-                        <h3 className="text-lg font-semibold text-white">
+                        <AnimatedHeading as="h3" className="text-lg font-semibold">
                         Mr Ryan
-                        </h3>
+                        </AnimatedHeading>
                         <p className="text-gray-500 text-md">CEO of bento</p>
                       </div>
                     </div>
@@ -156,9 +157,9 @@ const TestimonialSlider = () => {
                         alt="Parag Agrawal"
                       />
                       <div>
-                        <h3 className="text-lg font-semibold text-white">
+                        <AnimatedHeading as="h3" className="text-lg font-semibold">
                           Agrawal
-                        </h3>
+                        </AnimatedHeading>
                         <p className="text-gray-500 text-md">Restaurant Owner</p>
                       </div>
                     </div>
@@ -184,9 +185,9 @@ const TestimonialSlider = () => {
                         alt="Timothy D. Cook"
                       />
                       <div>
-                        <h3 className="text-lg font-semibold text-white">
+                        <AnimatedHeading as="h3" className="text-lg font-semibold">
                           Timothy D. Cook
-                        </h3>
+                        </AnimatedHeading>
                         <p className="text-gray-500 text-md">Run Vendor Business</p>
                       </div>
                     </div>
@@ -209,9 +210,9 @@ const TestimonialSlider = () => {
                         alt="Nazmul Hossen"
                       />
                       <div>
-                        <h3 className="text-lg font-semibold text-white">
+                        <AnimatedHeading as="h3" className="text-lg font-semibold">
                           Nazmul Hossen
-                        </h3>
+                        </AnimatedHeading>
                         <p className="text-gray-500 text-md">Owner of Buying House </p>
                       </div>
                     </div>
@@ -237,9 +238,9 @@ const TestimonialSlider = () => {
                         alt="Mr Hassan"
                       />
                       <div>
-                        <h3 className="text-lg font-semibold text-white">
+                        <AnimatedHeading as="h3" className="text-lg font-semibold">
                           Mr Hassan
-                        </h3>
+                        </AnimatedHeading>
                         <p className="text-gray-500 text-md">Real Estate Agent</p>
                       </div>
                     </div>
@@ -268,9 +269,9 @@ const TestimonialSlider = () => {
                         alt="Satya Nadella"
                       />
                       <div>
-                        <h3 className="text-lg font-semibold text-white">
+                        <AnimatedHeading as="h3" className="text-lg font-semibold">
                           Zahid Khan
-                        </h3>
+                        </AnimatedHeading>
                         <p className="text-gray-500 text-md">
                           Run a Exchange Business
                         </p>
@@ -298,9 +299,9 @@ const TestimonialSlider = () => {
                         alt="Adam Neumann"
                       />
                       <div>
-                        <h3 className="text-lg font-semibold text-white">
+                        <AnimatedHeading as="h3" className="text-lg font-semibold">
                         Adam Neumann
-                        </h3>
+                        </AnimatedHeading>
                         <p className="text-gray-500 text-md">Agency Owner</p>
                       </div>
                     </div>
@@ -326,9 +327,9 @@ const TestimonialSlider = () => {
                         alt="Sarah Joyce Franklin"
                       />
                       <div>
-                        <h3 className="text-lg font-semibold text-white">
+                        <AnimatedHeading as="h3" className="text-lg font-semibold">
                         Sarah Joyce Franklin
-                        </h3>
+                        </AnimatedHeading>
                         <p className="text-gray-500 text-md">
                         CEO of latticeHQ
                         </p>
@@ -356,9 +357,9 @@ const TestimonialSlider = () => {
                         alt="Vala Afshar"
                       />
                       <div>
-                        <h3 className="text-lg font-semibold text-white">
+                        <AnimatedHeading as="h3" className="text-lg font-semibold">
                         Vala Afshar
-                        </h3>
+                        </AnimatedHeading>
                         <p className="text-gray-500 text-md">Chief Digital Evangelist</p>
                       </div>
                     </div>

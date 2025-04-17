@@ -1,14 +1,15 @@
 import React from "react";
 import Marquee from "react-fast-marquee";
+import AnimatedHeading from "../ui/animated-heading";
 const ContactForm: React.FC = () => {
   return (
     <div id="ContactForm" className="flex items-center min-h-screen bg-transparent">
       <div className="container mx-auto">
         <div className="max-w-2xl mx-auto my-10 bg-transparent p-5 rounded-md shadow-sm">
           <div className="text-center">
-            <p className="text-[40px] font-semibold text-transparent bg-clip-text bg-gradient-to-r from-amber-500 to-pink-500 py-10 ">
+            <AnimatedHeading as="h2" className="text-[40px] font-semibold py-10">
               Fill up the form below to send us a message.
-            </p>
+            </AnimatedHeading>
           </div>
           <div className="m-7">
             <form

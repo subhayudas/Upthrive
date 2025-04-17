@@ -4,18 +4,21 @@ import { AnimatePresence, motion } from "framer-motion";
 import { SparklesIcon } from "@heroicons/react/24/solid";
 import { CanvasRevealEffect } from "./ui/CanvasRevealEffect";
 import { Svg } from "@react-three/drei";
+import AnimatedHeading from "../ui/animated-heading";
 
 const Approach = () => {
   return (
     <section className="max-w-6xl mx-auto mt-8 px-2">
-     <div className="font-bold text-4xl pb-5 md:text-5xl text-center bg-clip-text text-transparent bg-gradient-to-r from-amber-500 to-pink-500 bg-opacity-50 mt-20">
+     <div className="font-bold text-4xl pb-5 md:text-5xl text-center mt-20">
         <div className="Welcome-box py-[8px] px-[7px] sm:py-2 sm:px2 border border-[#7042f88b] opacity-[0.9] text-center mx-auto ">
           <SparklesIcon className="text-[#b49bff] mr-[10px] sm:mr-1 h-5 w-5" />
-          <h1 className="Welcome-text text-[13px] text-xs">
+          <AnimatedHeading as="h1" className="Welcome-text text-[13px] text-xs">
             Hover To Unreveal
-          </h1>
+          </AnimatedHeading>
         </div>
-        Our Approach
+        <AnimatedHeading as="h1" className="text-4xl md:text-5xl">
+          Our Approach
+        </AnimatedHeading>
         <p
         className="mt-4 text-lg font-normal
           text-neutral-300 max-w-lg 
@@ -125,9 +128,9 @@ const Card = ({
         <div className="text-center group-hover/canvas-card:-translate-y-4 absolute top-[50%] left-[50%] translate-x-[-50%] translate-y-[-50%] group-hover/canvas-card:opacity-0 transition duration-200 min-w-40 mx-auto flex items-center justify-center">
           {icon}
         </div>
-        <h2 className="dark:text-white text-center text-3xl opacity-0 group-hover/canvas-card:opacity-100 relative z-10 text-black mt-4 font-bold group-hover/canvas-card:text-white group-hover/canvas-card:-translate-y-2 transition duration-200">
+        <AnimatedHeading as="h2" className="text-center text-3xl opacity-0 group-hover/canvas-card:opacity-100 relative z-10 mt-4 font-bold group-hover/canvas-card:-translate-y-2 transition duration-200">
           {title}
-        </h2>
+        </AnimatedHeading>
         <p className="text-sm opacity-0 group-hover/canvas-card:opacity-100 relative z-10 mt-4 group-hover/canvas-card:text-white text-center group-hover/canvas-card:-translate-y-2 transition duration-200" style={{ color: "#E4ECFF" }}>
           {des}
         </p>

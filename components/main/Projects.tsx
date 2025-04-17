@@ -2,6 +2,7 @@
 "use client";
 import React, { useState } from "react";
 import ProjectCard from "../sub/ProjectCard";
+import AnimatedHeading from "../ui/animated-heading";
 
 const Projects = () => {
   const [selectedCategory, setSelectedCategory] = useState("ALL");
@@ -95,9 +96,9 @@ const Projects = () => {
 
   return (
     <div className="flex flex-col items-center justify-center py-20" id="projects">
-      <h1 className="text-5xl font-semibold text-center text-transparent bg-clip-text bg-gradient-to-r from-amber-500 to-pink-500 py-20">
+      <AnimatedHeading as="h1" className="text-5xl font-semibold text-center py-20">
         Our Recent Works
-      </h1>
+      </AnimatedHeading>
       <div className="filter-buttons flex flex-wrap justify-center gap-2">
         {["ALL", "Web Development", "SMM", "Graphics Design", "Video Editing"].map((category, index) => (
           <button

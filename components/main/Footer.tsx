@@ -1,13 +1,14 @@
 import React from "react";
+import AnimatedHeading from "../ui/animated-heading";
 
 const Footer = () => {
   return (
     <footer className="bg-transparent">
       <div className="bg-transparent mx-auto max-w-screen-xl px-4 pb-8 pt-16 sm:px-6 lg:px-8">
         <div className="mx-auto max-w-md">
-          <strong className="block text-center text-[30px] font-semibold text-transparent bg-clip-text bg-gradient-to-r from-amber-500 to-pink-500 py-10">
+          <AnimatedHeading as="h2" className="block text-center text-[30px] font-semibold py-10">
             Want us to email you with the latest news?
-          </strong>
+          </AnimatedHeading>
 
           <form className="mt-6">
             <div className="relative max-w-lg">
@@ -129,10 +130,10 @@ const Footer = () => {
 
           <div className="grid grid-cols-1 gap-8 text-center lg:grid-cols-3 lg:text-left">
             <div>
-              <strong className="font-medium text-white underline underline-offset-8">
+              <AnimatedHeading as="h3" className="font-medium underline underline-offset-8">
                 {" "}
                 Services{" "}
-              </strong>
+              </AnimatedHeading>
 
               <ul className="mt-6 space-y-1">
                 <li>
@@ -175,10 +176,10 @@ const Footer = () => {
             </div>
 
             <div>
-              <strong className="font-medium text-white underline underline-offset-8">
+              <AnimatedHeading as="h3" className="font-medium underline underline-offset-8">
                 {" "}
                 About{" "}
-              </strong>
+              </AnimatedHeading>
 
               <ul className="mt-6 space-y-1">
                 <li>
@@ -224,10 +225,10 @@ const Footer = () => {
             </div>
 
             <div>
-              <strong className="font-medium text-white underline underline-offset-8">
+              <AnimatedHeading as="h3" className="font-medium underline underline-offset-8">
                 {" "}
                 Support{" "}
-              </strong>
+              </AnimatedHeading>
 
               <ul className="mt-6 space-y-1">
                 <li>

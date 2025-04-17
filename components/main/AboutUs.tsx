@@ -1,4 +1,5 @@
 import React from "react";
+import AnimatedHeading from "../ui/animated-heading";
 
 const AboutUs = () => {
   return (
@@ -8,9 +9,9 @@ const AboutUs = () => {
     >
       <div className="container mx-auto flex flex-wrap items-center justify-between">
         <div className="w-full lg:w-1/2 flex flex-col justify-center">
-          <h1 className="text-4xl font-bold leading-tight mb-6">
+          <AnimatedHeading as="h1" className="text-4xl font-bold leading-tight mb-6">
             We Are Fullstack Marketing Agency From South Asia
-          </h1>
+          </AnimatedHeading>
           <div>
             <video
               width="95%"
@@ -26,9 +27,9 @@ const AboutUs = () => {
           </div>
         </div>
         <div className="w-full lg:w-1/2 flex flex-col justify-center">
-          <h2 className="text-3xl font-bold mb-4 bg-gradient-to-r from-amber-500 to-pink-500 bg-clip-text text-transparent">
+          <AnimatedHeading as="h2" className="text-3xl font-bold mb-4">
             Professional Fullstack Marketing Agency to provide solutions
-          </h2>
+          </AnimatedHeading>
           <p className="mb-4">
             Welcome to Upthrive Agency, where innovation meets impact in the
             digital realm. As a Full-stack Marketing Agency, we transcend
