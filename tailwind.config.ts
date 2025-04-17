@@ -60,7 +60,9 @@ const config: Config = {
   			'gradient-conic': 'conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))'
   		},
   		animation: {
-  			'infinite-scroll': 'infinite-scroll 25s linear infinite'
+  			'infinite-scroll': 'infinite-scroll 25s linear infinite',
+			'shiny-text': 'shiny-text 4s linear infinite',
+			'shiny-text-slow': 'shiny-text 8s linear infinite'
   		},
   		keyframes: {
   			'infinite-scroll': {
@@ -70,7 +72,15 @@ const config: Config = {
   				to: {
   					transform: 'translateX(-100%)'
   				}
-  			}
+  			},
+			'shiny-text': {
+				'0%': {
+					'background-position': '-200% 0'
+				},
+				'100%': {
+					'background-position': '200% 0'
+				}
+			}
   		},
   		borderRadius: {
   			lg: 'var(--radius)',
