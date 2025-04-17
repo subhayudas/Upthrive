@@ -9,6 +9,11 @@ import Approach from "@/components/main/Approach";
 import ChooseUs from "@/components/main/ChooseUs";
 import TerminalDemo from "@/components/main/TerminalDemo";
 import MacbookDemo from "@/components/main/MacbookDemo";
+import FeatureShowcase from "@/components/main/FeatureShowcase";
+import Statistics from "@/components/main/Statistics";
+import ProcessTimeline from "@/components/main/ProcessTimeline";
+import ClientLogos from "@/components/main/ClientLogos";
+import CallToAction from "@/components/main/CallToAction";
 
 export default function Home() {
   return (
@@ -16,13 +21,14 @@ export default function Home() {
       <div className="flex flex-col">
         <Hero />
         <Services />
-        <ChooseUs/>
-
         <MacbookDemo />
-        <Approach/>
-
+        <Approach />
         <TerminalDemo />
         <TestimonialSlider />
+        <Statistics />
+        <ProcessTimeline />
+        
+        <CallToAction />
       </div>
     </main>
   );
