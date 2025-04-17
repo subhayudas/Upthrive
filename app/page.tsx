@@ -8,6 +8,7 @@ import AboutUs from "@/components/main/AboutUs";
 import Approach from "@/components/main/Approach";
 import ChooseUs from "@/components/main/ChooseUs";
 import TerminalDemo from "@/components/main/TerminalDemo";
+import MacbookDemo from "@/components/main/MacbookDemo";
 
 export default function Home() {
   return (
@@ -17,6 +18,7 @@ export default function Home() {
         <Services />
         <ChooseUs/>
         <Approach/>
+        <MacbookDemo />
         <TerminalDemo />
         <TestimonialSlider />
       </div>
