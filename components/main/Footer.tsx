@@ -376,17 +376,7 @@ const Footer = () => {
             <p className="text-xs sm:text-sm text-gray-400">
               &copy; Upthrive Agency {new Date().getFullYear()}. All rights reserved.
             </p>
-            <div className="mt-3 md:mt-0 flex items-center">
-              <span className="text-xs sm:text-sm text-gray-400 mr-2">Created by</span>
-              <motion.a
-                href=""
-                className="text-orange-500 font-medium hover:text-orange-400 transition-colors text-xs sm:text-sm"
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
-              >
-                SubhayuDas
-              </motion.a>
-            </div>
+            
           </div>
         </motion.div>
       </div>
