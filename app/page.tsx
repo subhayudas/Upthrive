@@ -7,9 +7,7 @@ import ContactForm from "@/components/main/ContactForm";
 import AboutUs from "@/components/main/AboutUs";
 import Approach from "@/components/main/Approach";
 import ChooseUs from "@/components/main/ChooseUs";
-
-
-
+import TerminalDemo from "@/components/main/TerminalDemo";
 
 export default function Home() {
   return (
@@ -17,12 +15,10 @@ export default function Home() {
       <div className="flex flex-col">
         <Hero />
         <Services />
-        
         <ChooseUs/>
         <Approach/>
+        <TerminalDemo />
         <TestimonialSlider />
-       
-        
       </div>
     </main>
   );

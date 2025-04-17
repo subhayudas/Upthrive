@@ -8,9 +8,9 @@ import Footer from "@/components/main/Footer";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  metadataBase: new URL('https://www.UPthrift.xyz/'),
+  metadataBase: new URL('https://www.Upthrive.xyz/'),
   title: {
-    default: "Welcome to UPthrift",
+    default: "Welcome to Upthrive",
     template: "We're your secret weapon in the digital arena",
   },
   description: "We're your secret weapon in the digital arena",

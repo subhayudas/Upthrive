@@ -33,8 +33,8 @@ const Footer = () => {
         <div className="mt-16 grid grid-cols-1 gap-8 lg:grid-cols-2 lg:gap-32">
           <div className="mx-auto max-w-sm lg:max-w-none">
             <p className="mt-4 text-center text-white lg:text-left lg:text-lg">
-              UPthrift: Solutions Oriented Digital Agency Leveraging Innovative
-              Technology. UPthrift is a forward-thinking digital
+              Upthrive: Solutions Oriented Digital Agency Leveraging Innovative
+              Technology. Upthrive is a forward-thinking digital
               agency that specializes in providing innovative solutions for
               businesses. Leveraging cutting-edge technology, our team develops
               customized web solutions and marketing strategies to help clients
@@ -66,7 +66,7 @@ const Footer = () => {
 
               <a
                 className="text-white transition hover:text-orange-600"
-                href="https://www.instagram.com/UPthrift_labs/"
+                href="https://www.instagram.com/upthrive.in/"
                 target="_blank"
                 rel="noreferrer"
               >
@@ -88,7 +88,7 @@ const Footer = () => {
 
               <a
                 className="text-white transition hover:text-orange-600"
-                href="https://twitter.com/UPthrift_Labs"
+                href="https://twitter.com/Upthrive"
                 target="_blank"
                 rel="noreferrer"
               >
@@ -105,7 +105,7 @@ const Footer = () => {
               </a>
               <a
                 className="text-white transition hover:text-orange-600"
-                href="https://www.linkedin.com/company/UPthrift-labs"
+                href="https://www.linkedin.com/company/Upthrive"
                 target="_blank"
                 rel="noreferrer"
               >
@@ -267,14 +267,14 @@ const Footer = () => {
 
         <div className="mt-16 border-t border-gray-100 pt-8">
           <p className="text-center text-xs/relaxed text-gray-500">
-            © UPthrift Agency 2024. All rights reserved.
+            © Upthrive Agency 2025. All rights reserved.
             <br />
             Created By
             <a
               href=""
               className="text-white underline transition hover:text-orange-600"
             >
-              MrAlaminH
+                SubhayuDas
             </a>
           </p>
         </div>

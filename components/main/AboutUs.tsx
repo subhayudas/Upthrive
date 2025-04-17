@@ -30,7 +30,7 @@ const AboutUs = () => {
             Professional Fullstack Marketing Agency to provide solutions
           </h2>
           <p className="mb-4">
-            Welcome to UPthrift Agency, where innovation meets impact in the
+            Welcome to Upthrive Agency, where innovation meets impact in the
             digital realm. As a Full-stack Marketing Agency, we transcend
             conventional boundaries, sculpting unique narratives that captivate
             audiences
@@ -38,7 +38,7 @@ const AboutUs = () => {
           <p className="mb-4">
             Our fusion of strategic prowess and technological finesse ensures
             your brand not only stands out but excels in the ever-evolving
-            digital landscape. At UPthrift Agency, we are not just
+            digital landscape. At Upthrive Agency, we are not just
             trend-followers; we are trendsetters, reshaping the marketing
             landscape with a commitment to unparalleled creativity and
             measurable results.
@@ -46,7 +46,7 @@ const AboutUs = () => {
           <p className="mb-6">
             Join us on a journey where your brands story becomes an immersive
             experience, leaving an indelible mark on the digital canvas. Welcome
-            to UPthrift Agency, where your success is not just a goal but our
+            to Upthrive Agency, where your success is not just a goal but our
             driving force.
           </p>
           <div className="flex items-center mb-6">

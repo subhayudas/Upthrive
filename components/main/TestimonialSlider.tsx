@@ -49,7 +49,7 @@ const TestimonialSlider = () => {
                       </div>
                     </div>
                     <p className="leading-normal text-gray-300 text-md">
-                    UPthrift has transformed our online presence with their exceptional Content Marketing services. Our brand now speaks volumes, thanks to their strategic approach and creative content!
+                    Upthrive has transformed our online presence with their exceptional Content Marketing services. Our brand now speaks volumes, thanks to their strategic approach and creative content!
                     </p>
                   </div>
                 </a>
@@ -77,7 +77,7 @@ const TestimonialSlider = () => {
                       </div>
                     </div>
                     <p className="leading-normal text-gray-300 text-md">
-                    Web Development excellence at its best! UPthrift delivered a website that not only looks stunning but also functions flawlessly. Their expertise in creating user-friendly interfaces is truly commendable.
+                    Web Development excellence at its best! Upthrive delivered a website that not only looks stunning but also functions flawlessly. Their expertise in creating user-friendly interfaces is truly commendable.
                     </p>
                   </div>
                 </a>
@@ -107,7 +107,7 @@ const TestimonialSlider = () => {
                       </div>
                     </div>
                     <p className="leading-normal text-gray-300 text-md">
-                    UPthrift&apos;s Graphic Design team turned our ideas into visually stunning realities. The creativity and professionalism they brought to our marketing collateral were beyond our expectations.
+                    Upthrive&apos;s Graphic Design team turned our ideas into visually stunning realities. The creativity and professionalism they brought to our marketing collateral were beyond our expectations.
                     </p>
                   </div>
                 </a>
@@ -135,7 +135,7 @@ const TestimonialSlider = () => {
                       </div>
                     </div>
                     <p className="leading-normal text-gray-300 text-md">
-                    UPthrift&apos;s Web Development expertise is unparalleled. They not only built a website that reflects our brand identity but also ensured it is responsive and user-friendly. A top-notch service!
+                    Upthrive&apos;s Web Development expertise is unparalleled. They not only built a website that reflects our brand identity but also ensured it is responsive and user-friendly. A top-notch service!
                     </p>
                   </div>
                 </a>
@@ -163,7 +163,7 @@ const TestimonialSlider = () => {
                       </div>
                     </div>
                     <p className="leading-normal text-gray-300 text-md">
-                    Choosing UPthrift for Content Marketing was a game-changer for our business. Their strategic approach and engaging content helped us build a strong online presence and connect with our target audience effectively
+                    Choosing Upthrive for Content Marketing was a game-changer for our business. Their strategic approach and engaging content helped us build a strong online presence and connect with our target audience effectively
                     </p>
                   </div>
                 </a>
@@ -191,7 +191,7 @@ const TestimonialSlider = () => {
                       </div>
                     </div>
                     <p className="leading-normal text-gray-300 text-md">
-                    UPthrifts Graphic Design team has the Midas touch! Our marketing materials now have a modern and polished look, thanks to their creativity and attention to detail. Highly recommended!
+                    Upthrives Graphic Design team has the Midas touch! Our marketing materials now have a modern and polished look, thanks to their creativity and attention to detail. Highly recommended!
                     </p>
                   </div>
                 </a>
@@ -216,7 +216,7 @@ const TestimonialSlider = () => {
                       </div>
                     </div>
                     <p className="leading-normal text-gray-300 text-md">
-                    UPthrift&apos;s Video Editing added dynamism to our campaigns, creating compelling stories that resonated with our audience.
+                    Upthrive&apos;s Video Editing added dynamism to our campaigns, creating compelling stories that resonated with our audience.
                     </p>
                   </div>
                 </a>
@@ -244,7 +244,7 @@ const TestimonialSlider = () => {
                       </div>
                     </div>
                     <p className="leading-normal text-gray-300 text-md">
-                    UPthrift&apos;s Web Development team built us a top-notch website - modern, responsive, and user-friendly.
+                    Upthrive&apos;s Web Development team built us a top-notch website - modern, responsive, and user-friendly.
                     </p>
                   </div>
                 </a>
@@ -305,7 +305,7 @@ const TestimonialSlider = () => {
                       </div>
                     </div>
                     <p className="leading-normal text-gray-300 text-md">
-                    UPthrift&apos;s Graphic Design team turned our ideas into visually stunning realities. The creativity and professionalism they brought to our marketing collateral were beyond our expectations.
+                    Upthrive&apos;s Graphic Design team turned our ideas into visually stunning realities. The creativity and professionalism they brought to our marketing collateral were beyond our expectations.
                     </p>
                   </div>
                 </a>
@@ -335,7 +335,7 @@ const TestimonialSlider = () => {
                       </div>
                     </div>
                     <p className="leading-normal text-gray-300 text-md">
-                    UPthrift&apos;s Content Marketing services - strategic, engaging, and effective. Our online presence has never been stronger.
+                    Upthrive&apos;s Content Marketing services - strategic, engaging, and effective. Our online presence has never been stronger.
                     </p>
                   </div>
                 </a>
