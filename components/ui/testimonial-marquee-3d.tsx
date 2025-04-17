@@ -17,7 +17,7 @@ const TestimonialCard = ({ name, role, content, image }: TestimonialProps) => {
       className={cn(
         "relative h-full w-fit sm:w-80 cursor-pointer overflow-hidden rounded-xl border p-4 mb-4",
         // dark styles for Upthrive's dark theme
-        "border-gray-50/[.1] bg-black ring-1 ring-gray-900/5 hover:bg-gray-950/[.2]",
+        "border-gray-50/[.1]  ring-1 ring-gray-900/5 hover:bg-gray-950/[.2]",
       )}
     >
       <div className="flex flex-row items-center gap-2">
@@ -77,10 +77,7 @@ export function TestimonialMarquee3D({
       </div>
 
       {/* Gradient overlays for fading effect */}
-      <div className="pointer-events-none absolute inset-x-0 top-0 h-1/4 bg-gradient-to-b from-black"></div>
-      <div className="pointer-events-none absolute inset-x-0 bottom-0 h-1/4 bg-gradient-to-t from-black"></div>
-      <div className="pointer-events-none absolute inset-y-0 left-0 w-1/4 bg-gradient-to-r from-black"></div>
-      <div className="pointer-events-none absolute inset-y-0 right-0 w-1/4 bg-gradient-to-l from-black"></div>
+      
     </div>
   );
 }
