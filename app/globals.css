@@ -211,3 +211,56 @@ html {
     box-shadow: 0 0 20px 0 rgba(255, 165, 0, 0.8);
   }
 }
+
+/* Marquee animations */
+@keyframes scroll {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(calc(-100% / 4));
+  }
+}
+
+@keyframes scroll-reverse {
+  from {
+    transform: translateX(calc(-100% / 4));
+  }
+  to {
+    transform: translateX(0);
+  }
+}
+
+@keyframes scroll-vertical {
+  from {
+    transform: translateY(0);
+  }
+  to {
+    transform: translateY(calc(-100% / 4));
+  }
+}
+
+@keyframes scroll-vertical-reverse {
+  from {
+    transform: translateY(calc(-100% / 4));
+  }
+  to {
+    transform: translateY(0);
+  }
+}
+
+.animate-scroll {
+  animation: scroll var(--duration, 40s) linear infinite;
+}
+
+.animate-scroll-reverse {
+  animation: scroll-reverse var(--duration, 40s) linear infinite;
+}
+
+.flex-col .animate-scroll {
+  animation: scroll-vertical var(--duration, 40s) linear infinite;
+}
+
+.flex-col .animate-scroll-reverse {
+  animation: scroll-vertical-reverse var(--duration, 40s) linear infinite;
+}

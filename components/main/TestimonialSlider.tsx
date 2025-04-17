@@ -1,378 +1,107 @@
 "use client";
 import React from "react";
 import { SparklesIcon } from "@heroicons/react/24/solid";
-import Image from "next/image";
 import AnimatedHeading from "../ui/animated-heading";
+import { TestimonialMarquee3D } from "../ui/testimonial-marquee-3d";
 
 const TestimonialSlider = () => {
+  // Testimonial data extracted from the previous implementation
+  const testimonials = [
+    {
+      name: "Dr Rean Ahmed",
+      role: "Doctor",
+      content: "Upthrive has transformed our online presence with their exceptional Content Marketing services. Our brand now speaks volumes, thanks to their strategic approach and creative content!",
+      image: "https://pbs.twimg.com/profile_images/1608505649662681088/Zj3txNWo_400x400.jpg"
+    },
+    {
+      name: "Shakil Khan",
+      role: "CEO of Rekto",
+      content: "Web Development excellence at its best! Upthrive delivered a website that not only looks stunning but also functions flawlessly. Their expertise in creating user-friendly interfaces is truly commendable.",
+      image: "https://pbs.twimg.com/profile_images/1721809225423454208/A8u6cEtT_400x400.jpg"
+    },
+    {
+      name: "Asibur Rahman",
+      role: "Run a local business",
+      content: "Upthrive's Graphic Design team turned our ideas into visually stunning realities. The creativity and professionalism they brought to our marketing collateral were beyond our expectations.",
+      image: "https://pbs.twimg.com/profile_images/1754745467387232256/MsY_M5wL_400x400.jpg"
+    },
+    {
+      name: "Mr Ryan",
+      role: "CEO of bento",
+      content: "Upthrive's Web Development expertise is unparalleled. They not only built a website that reflects our brand identity but also ensured it is responsive and user-friendly. A top-notch service!",
+      image: "https://pbs.twimg.com/profile_images/1670905743619268609/pYItlWat_400x400.jpg"
+    },
+    {
+      name: "Agrawal",
+      role: "Restaurant Owner",
+      content: "Choosing Upthrive for Content Marketing was a game-changer for our business. Their strategic approach and engaging content helped us build a strong online presence and connect with our target audience effectively",
+      image: "https://pbs.twimg.com/profile_images/1669663135417110528/p8fRLHNR_400x400.jpg"
+    },
+    {
+      name: "Timothy D. Cook",
+      role: "Run Vendor Business",
+      content: "Upthrives Graphic Design team has the Midas touch! Our marketing materials now have a modern and polished look, thanks to their creativity and attention to detail. Highly recommended!",
+      image: "https://pbs.twimg.com/profile_images/1733406256105177088/VboDuWfl_400x400.jpg"
+    },
+    {
+      name: "Nazmul Hossen",
+      role: "Owner of Buying House ",
+      content: "Upthrive's Video Editing added dynamism to our campaigns, creating compelling stories that resonated with our audience.",
+      image: "https://pbs.twimg.com/profile_images/1375285353146327052/y6jeByyD_400x400.jpg"
+    },
+    {
+      name: "Mr Hassan",
+      role: "Real Estate Agent",
+      content: "Upthrive's Web Development team built us a top-notch website - modern, responsive, and user-friendly.",
+      image: "https://pbs.twimg.com/profile_images/1724687865471455232/-rc2ShfE_400x400.jpg"
+    },
+    {
+      name: "Zahid Khan",
+      role: "Run a Exchange Business",
+      content: "Awsome works",
+      image: "https://pbs.twimg.com/profile_images/1689012008472195072/lSKb0P7X_400x400.jpg"
+    },
+    {
+      name: "Adam Neumann",
+      role: "Agency Owner",
+      content: "Upthrive's Graphic Design team turned our ideas into visually stunning realities. The creativity and professionalism they brought to our marketing collateral were beyond our expectations.",
+      image: "https://pbs.twimg.com/profile_images/516916920482672641/3jCeLgFb_400x400.jpeg"
+    },
+    {
+      name: "Sarah Joyce Franklin",
+      role: "CEO of latticeHQ",
+      content: "Upthrive's Content Marketing services - strategic, engaging, and effective. Our online presence has never been stronger.",
+      image: "https://pbs.twimg.com/profile_images/1250275834444701704/9L7QwQCq_400x400.jpg"
+    },
+    {
+      name: "Vala Afshar",
+      role: "Chief Digital Evangelist",
+      content: "super work I'm satisfied with their work",
+      image: "https://pbs.twimg.com/profile_images/1259558245/vala_300dpi_400x400.jpg"
+    }
+  ];
+
   return (
-    <section id="testimonial" className="bg-tranasprent">
-      <div className="max-w-6xl mx-8 md:mx-10 lg:mx-20 xl:mx-auto py-20">
+    <section id="testimonial" className="bg-transparent">
+      <div className="max-w-6xl mx-auto py-10">
         <div className="transition duration-500 ease-in-out transform scale-100 translate-x-0 translate-y-0 opacity-100">
-          <div className="mb-12 md:mb-16 md:text-center">
-            <div className="Welcome-box py-[8px] px-[7px] border border-[#7042f88b] opacity-[0.9] text-center mx-auto ">
+          <div className="mb-12 md:mb-16 text-center">
+            <div className="Welcome-box py-[8px] px-[7px] border border-[#7042f88b] opacity-[0.9] text-center mx-auto inline-flex items-center">
               <SparklesIcon className="text-[#b49bff] mr-[10px] h-5 w-5" />
               <AnimatedHeading as="h1" className="Welcome-text text-[13px]">Words from Others</AnimatedHeading>
             </div>
-            <AnimatedHeading as="h1" className="mb-5 text-5xl font-semibold text-center md:text-center md:text-5xl">
+            <AnimatedHeading as="h1" className="mb-5 text-5xl font-semibold text-center md:text-5xl">
               It&apos;s not just us.
             </AnimatedHeading>
-            <p className="text-xl text-gray-100 text-center md:text-center md:text-2xl">
-              Heres what others have to say about us.
+            <p className="text-xl text-gray-100 text-center md:text-2xl max-w-3xl mx-auto">
+              Here&apos;s what others have to say about us.
             </p>
           </div>
         </div>
-
-        <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3 lg:gap-8">
-          <ul className="space-y-8">
-            <li className="text-sm leading-6">
-              <div className="relative group">
-                <div className="absolute transition rounded-lg opacity-25 -inset-1 bg-gradient-to-r from-amber-500 to-pink-500 blur duration-400 group-hover:opacity-100 group-hover:duration-200"></div>
-                <a
-                  href="https://twitter.com/MdReanAhmed1"
-                  className="cursor-pointer"
-                >
-                  <div className="relative p-6 space-y-6 leading-none rounded-lg bg-black ring-1 ring-gray-900/5">
-                    <div className="flex items-center space-x-4">
-                      {" "}
-                      <img
-                        src="https://pbs.twimg.com/profile_images/1608505649662681088/Zj3txNWo_400x400.jpg"
-                        className="w-12 h-12 bg-center bg-cover border rounded-full"
-                        alt="rean"
-                      />
-                      <div>
-                        <AnimatedHeading as="h3" className="text-lg font-semibold">
-                        Dr Rean Ahmed 
-                        </AnimatedHeading>
-                        <p className="text-gray-500 text-md">
-                          Doctor
-                        </p>
-                      </div>
-                    </div>
-                    <p className="leading-normal text-gray-300 text-md">
-                    Upthrive has transformed our online presence with their exceptional Content Marketing services. Our brand now speaks volumes, thanks to their strategic approach and creative content!
-                    </p>
-                  </div>
-                </a>
-              </div>
-            </li>
-            <li className="text-sm leading-6">
-              <div className="relative group">
-                <div className="absolute transition rounded-lg opacity-25 -inset-1 bg-gradient-to-r from-amber-500 to-pink-500 blur duration-400 group-hover:opacity-100 group-hover:duration-200"></div>
-                <a
-                  href="https://twitter.com/Bullback2025"
-                  className="cursor-pointer"
-                >
-                  <div className="relative p-6 space-y-6 leading-none rounded-lg bg-black ring-1 ring-gray-900/5">
-                    <div className="flex items-center space-x-4">
-                      <img
-                        src="https://pbs.twimg.com/profile_images/1721809225423454208/A8u6cEtT_400x400.jpg"
-                        className="w-12 h-12 bg-center bg-cover border rounded-full"
-                        alt="Shakil Khan"
-                      />
-                      <div>
-                        <AnimatedHeading as="h3" className="text-lg font-semibold">
-                        Shakil Khan
-                        </AnimatedHeading>
-                        <p className="text-gray-500 text-md">CEO of Rekto</p>
-                      </div>
-                    </div>
-                    <p className="leading-normal text-gray-300 text-md">
-                    Web Development excellence at its best! Upthrive delivered a website that not only looks stunning but also functions flawlessly. Their expertise in creating user-friendly interfaces is truly commendable.
-                    </p>
-                  </div>
-                </a>
-              </div>
-            </li>
-            <li className="text-sm leading-6">
-              <div className="relative group">
-                <div className="absolute transition rounded-lg opacity-25 -inset-1 bg-gradient-to-r from-amber-500 to-pink-500 blur duration-400 group-hover:opacity-100 group-hover:duration-200"></div>
-                <a
-                  href=""
-                  className="cursor-pointer"
-                >
-                  <div className="relative p-6 space-y-6 leading-none rounded-lg bg-black ring-1 ring-gray-900/5">
-                    <div className="flex items-center space-x-4">
-                      <img
-                        src="https://pbs.twimg.com/profile_images/1754745467387232256/MsY_M5wL_400x400.jpg"
-                        className="w-12 h-12 bg-center bg-cover border rounded-full"
-                        alt="Kanye West"
-                      />
-                      <div>
-                        <AnimatedHeading as="h3" className="text-lg font-semibold">
-                        Asibur Rahman
-                        </AnimatedHeading>
-                        <p className="text-gray-500 text-md">
-                          Run a local business
-                        </p>
-                      </div>
-                    </div>
-                    <p className="leading-normal text-gray-300 text-md">
-                    Upthrive&apos;s Graphic Design team turned our ideas into visually stunning realities. The creativity and professionalism they brought to our marketing collateral were beyond our expectations.
-                    </p>
-                  </div>
-                </a>
-              </div>
-            </li>
-            <li className="text-sm leading-6">
-              <div className="relative group">
-                <div className="absolute transition rounded-lg opacity-25 -inset-1 bg-gradient-to-r from-amber-500 to-pink-500 blur duration-400 group-hover:opacity-100 group-hover:duration-200"></div>
-                <a
-                  href=""
-                  className="cursor-pointer"
-                >
-                  <div className="relative p-6 space-y-6 leading-none rounded-lg bg-black ring-1 ring-gray-900/5">
-                    <div className="flex items-center space-x-4">
-                      <img
-                        src="https://pbs.twimg.com/profile_images/1670905743619268609/pYItlWat_400x400.jpg"
-                        className="w-12 h-12 bg-center bg-cover border rounded-full"
-                        alt="Mr Ryan"
-                      />
-                      <div>
-                        <AnimatedHeading as="h3" className="text-lg font-semibold">
-                        Mr Ryan
-                        </AnimatedHeading>
-                        <p className="text-gray-500 text-md">CEO of bento</p>
-                      </div>
-                    </div>
-                    <p className="leading-normal text-gray-300 text-md">
-                    Upthrive&apos;s Web Development expertise is unparalleled. They not only built a website that reflects our brand identity but also ensured it is responsive and user-friendly. A top-notch service!
-                    </p>
-                  </div>
-                </a>
-              </div>
-            </li>
-          </ul>
-
-          <ul className="hidden space-y-8 sm:block">
-            <li className="text-sm leading-6">
-              <div className="relative group">
-                <div className="absolute transition rounded-lg opacity-25 -inset-1 bg-gradient-to-r from-amber-500 to-pink-500 blur duration-400 group-hover:opacity-100 group-hover:duration-200"></div>
-                <a href="" className="cursor-pointer">
-                  <div className="relative p-6 space-y-6 leading-none rounded-lg bg-black ring-1 ring-gray-900/5">
-                    <div className="flex items-center space-x-4">
-                      <img
-                        src="https://pbs.twimg.com/profile_images/1669663135417110528/p8fRLHNR_400x400.jpg"
-                        className="w-12 h-12 bg-center bg-cover border rounded-full"
-                        alt="Parag Agrawal"
-                      />
-                      <div>
-                        <AnimatedHeading as="h3" className="text-lg font-semibold">
-                          Agrawal
-                        </AnimatedHeading>
-                        <p className="text-gray-500 text-md">Restaurant Owner</p>
-                      </div>
-                    </div>
-                    <p className="leading-normal text-gray-300 text-md">
-                    Choosing Upthrive for Content Marketing was a game-changer for our business. Their strategic approach and engaging content helped us build a strong online presence and connect with our target audience effectively
-                    </p>
-                  </div>
-                </a>
-              </div>
-            </li>
-            <li className="text-sm leading-6">
-              <div className="relative group">
-                <div className="absolute transition rounded-lg opacity-25 -inset-1 bg-gradient-to-r from-amber-500 to-pink-500 blur duration-400 group-hover:opacity-100 group-hover:duration-200"></div>
-                <a
-                  href=""
-                  className="cursor-pointer"
-                >
-                  <div className="relative p-6 space-y-6 leading-none rounded-lg bg-black ring-1 ring-gray-900/5">
-                    <div className="flex items-center space-x-4">
-                      <img
-                        src="https://pbs.twimg.com/profile_images/1733406256105177088/VboDuWfl_400x400.jpg"
-                        className="w-12 h-12 bg-center bg-cover border rounded-full"
-                        alt="Timothy D. Cook"
-                      />
-                      <div>
-                        <AnimatedHeading as="h3" className="text-lg font-semibold">
-                          Timothy D. Cook
-                        </AnimatedHeading>
-                        <p className="text-gray-500 text-md">Run Vendor Business</p>
-                      </div>
-                    </div>
-                    <p className="leading-normal text-gray-300 text-md">
-                    Upthrives Graphic Design team has the Midas touch! Our marketing materials now have a modern and polished look, thanks to their creativity and attention to detail. Highly recommended!
-                    </p>
-                  </div>
-                </a>
-              </div>
-            </li>
-            <li className="text-sm leading-6">
-              <div className="relative group">
-                <div className="absolute transition rounded-lg opacity-25 -inset-1 bg-gradient-to-r from-amber-500 to-pink-500 blur duration-400 group-hover:opacity-100 group-hover:duration-200"></div>
-                <a href="" className="cursor-pointer">
-                  <div className="relative p-6 space-y-6 leading-none rounded-lg bg-black ring-1 ring-gray-900/5">
-                    <div className="flex items-center space-x-4">
-                      <img
-                        src="https://pbs.twimg.com/profile_images/1375285353146327052/y6jeByyD_400x400.jpg"
-                        className="w-12 h-12 bg-center bg-cover border rounded-full"
-                        alt="Nazmul Hossen"
-                      />
-                      <div>
-                        <AnimatedHeading as="h3" className="text-lg font-semibold">
-                          Nazmul Hossen
-                        </AnimatedHeading>
-                        <p className="text-gray-500 text-md">Owner of Buying House </p>
-                      </div>
-                    </div>
-                    <p className="leading-normal text-gray-300 text-md">
-                    Upthrive&apos;s Video Editing added dynamism to our campaigns, creating compelling stories that resonated with our audience.
-                    </p>
-                  </div>
-                </a>
-              </div>
-            </li>
-            <li className="text-sm leading-6">
-              <div className="relative group">
-                <div className="absolute transition rounded-lg opacity-25 -inset-1 bg-gradient-to-r from-amber-500 to-pink-500 blur duration-400 group-hover:opacity-100 group-hover:duration-200"></div>
-                <a
-                  href=""
-                  className="cursor-pointer"
-                >
-                  <div className="relative p-6 space-y-6 leading-none rounded-lg bg-black ring-1 ring-gray-900/5">
-                    <div className="flex items-center space-x-4">
-                      <img
-                        src="https://pbs.twimg.com/profile_images/1724687865471455232/-rc2ShfE_400x400.jpg"
-                        className="w-12 h-12 bg-center bg-cover border rounded-full"
-                        alt="Mr Hassan"
-                      />
-                      <div>
-                        <AnimatedHeading as="h3" className="text-lg font-semibold">
-                          Mr Hassan
-                        </AnimatedHeading>
-                        <p className="text-gray-500 text-md">Real Estate Agent</p>
-                      </div>
-                    </div>
-                    <p className="leading-normal text-gray-300 text-md">
-                    Upthrive&apos;s Web Development team built us a top-notch website - modern, responsive, and user-friendly.
-                    </p>
-                  </div>
-                </a>
-              </div>
-            </li>
-          </ul>
-
-          <ul className="hidden space-y-8 lg:block">
-            <li className="text-sm leading-6">
-              <div className="relative group">
-                <div className="absolute transition rounded-lg opacity-25 -inset-1 bg-gradient-to-r from-amber-500 to-pink-500 blur duration-400 group-hover:opacity-100 group-hover:duration-200"></div>
-                <a
-                  href=""
-                  className="cursor-pointer"
-                >
-                  <div className="relative p-6 space-y-6 leading-none rounded-lg bg-black ring-1 ring-gray-900/5">
-                    <div className="flex items-center space-x-4">
-                      <img
-                        src="https://pbs.twimg.com/profile_images/1689012008472195072/lSKb0P7X_400x400.jpg"
-                        className="w-12 h-12 bg-center bg-cover border rounded-full"
-                        alt="Satya Nadella"
-                      />
-                      <div>
-                        <AnimatedHeading as="h3" className="text-lg font-semibold">
-                          Zahid Khan
-                        </AnimatedHeading>
-                        <p className="text-gray-500 text-md">
-                          Run a Exchange Business
-                        </p>
-                      </div>
-                    </div>
-                    <p className="leading-normal text-gray-300 text-md">
-                     Awsome works
-                    </p>
-                  </div>
-                </a>
-              </div>
-            </li>
-            <li className="text-sm leading-6">
-              <div className="relative group">
-                <div className="absolute transition rounded-lg opacity-25 -inset-1 bg-gradient-to-r from-amber-500 to-pink-500 blur duration-400 group-hover:opacity-100 group-hover:duration-200"></div>
-                <a
-                  href=""
-                  className="cursor-pointer"
-                >
-                  <div className="relative p-6 space-y-6 leading-none rounded-lg bg-black ring-1 ring-gray-900/5">
-                    <div className="flex items-center space-x-4">
-                      <img
-                        src="https://pbs.twimg.com/profile_images/516916920482672641/3jCeLgFb_400x400.jpeg"
-                        className="w-12 h-12 bg-center bg-cover border rounded-full"
-                        alt="Adam Neumann"
-                      />
-                      <div>
-                        <AnimatedHeading as="h3" className="text-lg font-semibold">
-                        Adam Neumann
-                        </AnimatedHeading>
-                        <p className="text-gray-500 text-md">Agency Owner</p>
-                      </div>
-                    </div>
-                    <p className="leading-normal text-gray-300 text-md">
-                    Upthrive&apos;s Graphic Design team turned our ideas into visually stunning realities. The creativity and professionalism they brought to our marketing collateral were beyond our expectations.
-                    </p>
-                  </div>
-                </a>
-              </div>
-            </li>
-            <li className="text-sm leading-6">
-              <div className="relative group">
-                <div className="absolute transition rounded-lg opacity-25 -inset-1 bg-gradient-to-r from-amber-500 to-pink-500 blur duration-400 group-hover:opacity-100 group-hover:duration-200"></div>
-                <a
-                  href=""
-                  className="cursor-pointer"
-                >
-                  <div className="relative p-6 space-y-6 leading-none rounded-lg bg-black ring-1 ring-gray-900/5">
-                    <div className="flex items-center space-x-4">
-                      <img
-                        src="https://pbs.twimg.com/profile_images/1250275834444701704/9L7QwQCq_400x400.jpg"
-                        className="w-12 h-12 bg-center bg-cover border rounded-full"
-                        alt="Sarah Joyce Franklin"
-                      />
-                      <div>
-                        <AnimatedHeading as="h3" className="text-lg font-semibold">
-                        Sarah Joyce Franklin
-                        </AnimatedHeading>
-                        <p className="text-gray-500 text-md">
-                        CEO of latticeHQ
-                        </p>
-                      </div>
-                    </div>
-                    <p className="leading-normal text-gray-300 text-md">
-                    Upthrive&apos;s Content Marketing services - strategic, engaging, and effective. Our online presence has never been stronger.
-                    </p>
-                  </div>
-                </a>
-              </div>
-            </li>
-            <li className="text-sm leading-6">
-              <div className="relative group">
-                <div className="absolute transition rounded-lg opacity-25 -inset-1 bg-gradient-to-r from-amber-500 to-pink-500 blur duration-400 group-hover:opacity-100 group-hover:duration-200"></div>
-                <a
-                  href=""
-                  className="cursor-pointer"
-                >
-                  <div className="relative p-6 space-y-6 leading-none rounded-lg bg-black ring-1 ring-gray-900/5">
-                    <div className="flex items-center space-x-4">
-                      <img
-                        src="https://pbs.twimg.com/profile_images/1259558245/vala_300dpi_400x400.jpg"
-                        className="w-12 h-12 bg-center bg-cover border rounded-full"
-                        alt="Vala Afshar"
-                      />
-                      <div>
-                        <AnimatedHeading as="h3" className="text-lg font-semibold">
-                        Vala Afshar
-                        </AnimatedHeading>
-                        <p className="text-gray-500 text-md">Chief Digital Evangelist</p>
-                      </div>
-                    </div>
-                    <p className="leading-normal text-gray-300 text-md">
-                    super work I&apos;m satisfied with their work
-                    </p>
-                  </div>
-                </a>
-              </div>
-            </li>
-          </ul>
-        </div>
       </div>
+      
+      {/* 3D Testimonial Marquee */}
+      <TestimonialMarquee3D testimonials={testimonials} />
     </section>
   );
 };

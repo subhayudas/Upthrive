@@ -17,8 +17,10 @@ export default function Home() {
         <Hero />
         <Services />
         <ChooseUs/>
-        <Approach/>
+
         <MacbookDemo />
+        <Approach/>
+
         <TerminalDemo />
         <TestimonialSlider />
       </div>
