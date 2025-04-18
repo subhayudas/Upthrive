@@ -1,36 +1,76 @@
-import React from "react";
+"use client";
+import React, { useRef } from "react";
 import { MacbookScroll } from "@/components/ui/macbook-scroll";
 import { SparklesIcon } from "@heroicons/react/24/solid";
+import { motion } from "framer-motion";
+import { slideInFromLeft, slideInFromRight, slideInFromTop, slideInFromBottom } from "@/utils/motion";
 
 export default function MacbookDemo() {
+  const containerRef = useRef<HTMLDivElement>(null);
+  
   return (
-    <div className="overflow-hidden w-full mt-16 mb-32"> 
-      <div className="text-center">
-        <div className="Welcome-box py-[8px] px-[7px] sm:py-2 sm:px2 border border-[#7042f88b] opacity-[0.9] text-center mx-auto mb-3">
-          <SparklesIcon className="text-[#b49bff] mr-[10px] sm:mr-1 h-5 w-5" />
-          <h1 className="Welcome-text text-[13px] text-xs">
+    <motion.div 
+      initial="hidden"
+      animate="visible"
+      className="overflow-hidden w-full py-24 relative" 
+      ref={containerRef}
+    > 
+      {/* Background glow effect */}
+      <div className="absolute inset-0 bg-gradient-to-b from-transparent via-purple-500/5 to-transparent opacity-50 pointer-events-none"></div>
+      
+      <motion.div 
+        variants={slideInFromTop}
+        className="text-center mb-12 px-4"
+      >
+        <motion.div 
+          variants={slideInFromTop}
+          className="Welcome-box py-2 px-4 border border-[#7042f88b] bg-[#7042f80d] rounded-full opacity-90 text-center inline-flex items-center mx-auto mb-4 backdrop-blur-sm shadow-[0_0_15px_rgba(112,66,248,0.15)]"
+        >
+          <SparklesIcon className="text-[#b49bff] mr-2 h-5 w-5 animate-pulse" />
+          <h1 className="Welcome-text text-sm font-medium tracking-wide animated-gradient-text">
             Crafting Digital Excellence
           </h1>
-        </div>
-        <h2 className="font-bold text-4xl md:text-5xl bg-clip-text text-transparent bg-gradient-to-r from-amber-500 to-pink-500 mb-1">
+        </motion.div>
+        
+        <motion.h2 
+          variants={slideInFromBottom(0.2)}
+          className="font-bold text-4xl md:text-6xl animated-gradient-text mb-3 tracking-tight"
+        >
           See Our Work In Action
-        </h2>
-      </div>
+        </motion.h2>
+        
+        <motion.p
+          variants={slideInFromBottom(0.3)}
+          className="max-w-2xl mx-auto text-gray-400 text-lg mb-8 animated-gradient-text"
+        >
+          Explore our portfolio of stunning digital experiences that combine beautiful design with powerful functionality
+        </motion.p>
+      </motion.div>
       
-      <MacbookScroll
-        title={
-          <div className="flex flex-col items-center gap-1">
-            <span className="text-center text-3xl font-bold bg-gradient-to-r from-orange-400 to-pink-500 bg-clip-text text-transparent">
-              Stunning websites that drive results
-            </span>
-            <span className="text-center text-xl text-gray-300">
-              Built with modern technologies for exceptional user experience
-            </span>
-          </div>
-        }
-        src="/macss.png"
-        showGradient={true}
-      />
-    </div>
+      <motion.div
+        variants={slideInFromBottom(0.4)}
+        className="relative z-10"
+      >
+        <MacbookScroll
+          title={
+            <motion.div 
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.5, duration: 0.5 }}
+              className="flex flex-col items-center gap-3"
+            >
+              <span className="text-center text-3xl font-bold animated-gradient-text">
+                Stunning websites that drive results
+              </span>
+              <span className="text-center text-xl animated-gradient-text max-w-2xl">
+                Built with modern technologies for exceptional user experience
+              </span>
+            </motion.div>
+          }
+          src="/macssdark.png"
+          showGradient={true}
+        />
+      </motion.div>
+    </motion.div>
   );
 }
