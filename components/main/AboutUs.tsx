@@ -10,7 +10,7 @@ const AboutUs = () => {
       <div className="container mx-auto flex flex-wrap items-center justify-between">
         <div className="w-full lg:w-1/2 flex flex-col justify-center">
           <AnimatedHeading as="h1" className="text-4xl font-bold leading-tight mb-6">
-            We Are Fullstack Digital Agency From South Asia
+            We Are Fullstack Marketing Agency From South Asia
           </AnimatedHeading>
           <div>
             <video
@@ -28,7 +28,7 @@ const AboutUs = () => {
         </div>
         <div className="w-full lg:w-1/2 flex flex-col justify-center">
           <AnimatedHeading as="h2" className="text-3xl font-bold mb-4">
-            Professional Fullstack Digital Agency to provide solutions
+            Professional Fullstack Marketing Agency to provide solutions
           </AnimatedHeading>
           <p className="mb-4">
             Welcome to Upthrive Agency, where innovation meets impact in the

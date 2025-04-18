@@ -62,7 +62,9 @@ const config: Config = {
   		animation: {
   			'infinite-scroll': 'infinite-scroll 25s linear infinite',
 			'shiny-text': 'shiny-text 4s linear infinite',
-			'shiny-text-slow': 'shiny-text 8s linear infinite'
+			'shiny-text-slow': 'shiny-text 8s linear infinite',
+			'line-shadow': 'line-shadow 15s linear infinite',
+			'spotlight': 'spotlight 2s ease .75s 1 forwards'
   		},
   		keyframes: {
   			'infinite-scroll': {
@@ -79,6 +81,24 @@ const config: Config = {
 				},
 				'100%': {
 					'background-position': '200% 0'
+				}
+			},
+			'line-shadow': {
+				'0%': {
+					'background-position': '0 0'
+				},
+				'100%': {
+					'background-position': '100% -100%'
+				}
+			},
+			'spotlight': {
+				'0%': {
+					opacity: '0',
+					transform: 'scale(0.8) translateY(6rem) translateX(-16rem)'
+				},
+				'100%': {
+					opacity: '1',
+					transform: 'scale(1) translateY(0) translateX(0)'
 				}
 			}
   		},
