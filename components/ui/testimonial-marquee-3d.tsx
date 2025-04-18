@@ -46,12 +46,15 @@ export function TestimonialMarquee3D({
   const fourthColumn = testimonials.slice(Math.ceil(testimonials.length * 3 / 4));
 
   return (
-    <div className="relative flex h-[80vh] w-full flex-row items-center justify-center gap-4 overflow-hidden [perspective:300px]">
+    <div className="relative flex h-[80vh] w-full flex-row items-center justify-center gap-1 overflow-hidden [perspective:200px]">
+      {/* Main 3D container with fade mask */}
       <div
-        className="flex flex-row items-center gap-4"
+        className="flex flex-row items-center gap-4 relative w-full h-full"
         style={{
           transform:
-            "translateX(-100px) translateY(0px) translateZ(-100px) rotateX(20deg) rotateY(-10deg) rotateZ(20deg)",
+            "translateX(-50px) translateY(0px) translateZ(-50px) rotateX(20deg) rotateY(-10deg) rotateZ(20deg)",
+          maskImage: "linear-gradient(to bottom, transparent, black 10%, black 55%, transparent)",
+          WebkitMaskImage: "linear-gradient(to bottom, transparent, black 10%, black 55%, transparent)"
         }}
       >
         <Marquee pauseOnHover vertical className="[--duration:30s]">
@@ -75,9 +78,6 @@ export function TestimonialMarquee3D({
           ))}
         </Marquee>
       </div>
-
-      {/* Gradient overlays for fading effect */}
-      
     </div>
   );
 }
