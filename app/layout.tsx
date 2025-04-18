@@ -5,6 +5,7 @@ import "./gradient-animation.css";
 import SpotlightBackground from "@/components/main/SpotlightBackground";
 import Navbar from "@/components/main/Navbar";
 import Footer from "@/components/main/Footer";
+import { SmoothCursor } from "@/components/ui/smooth-cursor";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -32,7 +33,9 @@ export default function RootLayout({
     <html lang="en">
       <body
         className={`${inter.className} bg-[#030014] overflow-y-scroll overflow-x-hidden`}
+        style={{ cursor: 'auto' }}
       >
+        <SmoothCursor />
         <SpotlightBackground />
         <Navbar />
         {children}
