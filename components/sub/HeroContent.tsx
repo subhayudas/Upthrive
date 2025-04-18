@@ -54,6 +54,30 @@ const HeroContent = () => {
       </motion.a>
 
       <motion.div variants={slideInFromBottom(0.9)} className="w-full pt-20 relative z-10">
+        {/* Glowing arc at the bottom - matching the reference image */}
+        <div className="absolute bottom-0 left-0 right-0 mx-auto w-full max-w-[95%] h-[1px] overflow-hidden">
+          <div className="absolute inset-0 w-full h-full bg-gradient-to-r from-transparent via-orange-500 to-transparent opacity-80"></div>
+        </div>
+        
+        {/* Main glowing arc - curved side at the top */}
+        <div className="absolute bottom-0 left-0 right-0 mx-auto w-full max-w-[95%] h-[200px] overflow-hidden">
+          <div 
+            className="w-full h-[400px] rounded-[50%] bg-gradient-to-r from-transparent via-orange-500 to-transparent opacity-15 blur-[15px]"
+            style={{
+              transform: "translateY(50%)"
+            }}
+          ></div>
+        </div>
+        
+        {/* Secondary glow for enhanced effect */}
+        <div className="absolute bottom-0 left-0 right-0 mx-auto w-[90%] h-[160px] overflow-hidden">
+          <div 
+            className="w-full h-[320px] rounded-[50%] bg-gradient-to-r from-transparent via-orange-600 to-transparent opacity-10 blur-[8px]"
+            style={{
+              transform: "translateY(50%)"
+            }}
+          ></div>
+        </div>
       </motion.div>
     </motion.div>
   );
