@@ -12,7 +12,6 @@ import MacbookDemo from "@/components/main/MacbookDemo";
 import FeatureShowcase from "@/components/main/FeatureShowcase";
 import Statistics from "@/components/main/Statistics";
 import ProcessTimeline from "@/components/main/ProcessTimeline";
-import ClientLogos from "@/components/main/ClientLogos";
 import CallToAction from "@/components/main/CallToAction";
 
 export default function Home() {
