@@ -37,8 +37,8 @@ const HeroContent = () => {
         className="relative z-10 mx-auto max-w-3xl text-5xl sm:text-6xl lg:text-7xl font-light tracking-tight mb-6"
         style={{ letterSpacing: "-0.02em" }}
       >
-        <span className="block mb-3 animated-gradient-text">CREATING</span>
-        <span className="block animated-gradient-text"> Culture-Driven BRANDS</span>
+        <span className="block mb-3 hero-violet-gradient">CREATING</span>
+        <span className="block"><span className="animated-gradient-text">Culture-Driven</span> <span className="hero-violet-gradient">BRANDS</span></span>
       </motion.h1>
 
       <motion.p 
