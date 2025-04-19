@@ -78,7 +78,7 @@ const TerminalDemo = () => {
             Modern Solutions
           </h1>
         </div>
-        <div className="mt-2">Cutting-Edge Technology</div>
+       
       </div>
       <p className="mt-2 sm:mt-4 text-base sm:text-lg font-normal text-neutral-300 max-w-lg text-center mx-auto mb-6 sm:mb-10">
         We leverage the latest technologies to deliver exceptional digital experiences for your business.

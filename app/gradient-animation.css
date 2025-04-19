@@ -35,13 +35,13 @@
   background: linear-gradient(
     to right,
     #333333, /* dark gray */
-    #8A2BE2, /* violet */
-    #9370DB, /* medium purple */
+    #e87924, /* violet */
+    #f19737, /* medium purple */
     #d3d3d3, /* light gray */
     #ffffff, /* white */
     #d3d3d3, /* light gray */
-    #9370DB, /* medium purple */
-    #8A2BE2, /* violet */
+    #c34d2c, /* medium purple */
+    #e28d2b, /* violet */
     #333333  /* dark gray */
   );
   background-size: 300% auto;
