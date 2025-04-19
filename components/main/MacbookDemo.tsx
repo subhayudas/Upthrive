@@ -12,11 +12,11 @@ export default function MacbookDemo() {
     <motion.div 
       initial="hidden"
       animate="visible"
-      className="overflow-hidden w-full py-12 sm:py-16 md:py-24 lg:py-32 relative" 
+      className="overflow-hidden w-full py-12 sm:py-16 md:py-10 lg:py-32 relative" 
       ref={containerRef}
     > 
       {/* Background glow effect */}
-      <div className="absolute inset-0 bg-gradient-to-b from-transparent via-purple-500/5 to-transparent opacity-50 pointer-events-none"></div>
+
       
       <motion.div 
         variants={slideInFromTop}
@@ -24,32 +24,17 @@ export default function MacbookDemo() {
       >
         <motion.div 
           variants={slideInFromTop}
-          className="Welcome-box py-2 px-4 border border-[#7042f88b] bg-[#7042f80d] rounded-full opacity-90 text-center inline-flex items-center mx-auto mb-4 backdrop-blur-sm shadow-[0_0_15px_rgba(112,66,248,0.15)]"
+          className="Welcome-box  px-4 border border-[#7042f88b] bg-[#7042f80d] rounded-full opacity-90 text-center inline-flex items-center mx-auto mb-4 backdrop-blur-sm shadow-[0_0_15px_rgba(112,66,248,0.15)]"
         >
           <SparklesIcon className="text-[#b49bff] mr-2 h-5 w-5 animate-pulse" />
           <h1 className="Welcome-text text-sm font-medium tracking-wide animated-gradient-text">
             Crafting Digital Excellence
           </h1>
         </motion.div>
-        
-        <motion.h2 
-          variants={slideInFromBottom(0.2)}
-          className="font-bold text-4xl md:text-6xl animated-gradient-text mb-3 tracking-tight"
-        >
-          See Our Work In Action
-        </motion.h2>
-        
-        <motion.p
-          variants={slideInFromBottom(0.3)}
-          className="max-w-2xl mx-auto text-gray-400 text-lg mb-8 animated-gradient-text"
-        >
-          Explore our portfolio of stunning digital experiences that combine beautiful design with powerful functionality
-        </motion.p>
       </motion.div>
-      
       <motion.div
         variants={slideInFromBottom(0.4)}
-        className="relative z-10"
+        className="relative z-5"
       >
         <div className="mx-auto max-w-[1400px] px-4 sm:px-6 lg:px-8">
           <MacbookScroll
@@ -61,7 +46,7 @@ export default function MacbookDemo() {
                 className="flex flex-col items-center gap-3"
               >
                 <span className="text-center text-3xl font-bold animated-gradient-text">
-                  Stunning websites that drive results
+                  STUNNING WEBSITES THAT DRIVES RESULTS
                 </span>
                 <span className="text-center text-xl animated-gradient-text max-w-2xl">
                   Built with modern technologies for exceptional user experience
@@ -69,7 +54,6 @@ export default function MacbookDemo() {
               </motion.div>
             }
             src="/macssdark.png"
-            showGradient={true}
           />
         </div>
       </motion.div>
