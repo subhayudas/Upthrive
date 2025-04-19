@@ -24,11 +24,11 @@ export default function MacbookDemo() {
       >
         <motion.div 
           variants={slideInFromTop}
-          className="Welcome-box  px-4 border border-[#7042f88b] bg-[#7042f80d] rounded-full opacity-90 text-center inline-flex items-center mx-auto mb-4 backdrop-blur-sm shadow-[0_0_15px_rgba(112,66,248,0.15)]"
+          className="Welcome-box py-2 px-4 border border-[#7042f88b] bg-[#7042f80d] rounded-full opacity-90 text-center inline-flex items-center mx-auto mb-4 backdrop-blur-sm shadow-[0_0_15px_rgba(112,66,248,0.15)]"
         >
           <SparklesIcon className="text-[#b49bff] mr-2 h-5 w-5 animate-pulse" />
           <h1 className="Welcome-text text-sm font-medium tracking-wide animated-gradient-text">
-            Crafting Digital Excellence
+            Coming Soon
           </h1>
         </motion.div>
       </motion.div>
