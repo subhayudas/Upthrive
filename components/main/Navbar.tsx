@@ -142,12 +142,27 @@ const Navbar = () => {
           {/* Logo and Brand Name */}
           <div className="flex items-center space-x-2 sm:space-x-3">
             <motion.div
-                whileHover={{ rotate: 360, scale: 1.1 }}
-                transition={{ duration: 1.5, ease: "easeInOut" }}
+                whileHover={{ scale: 1.15 }}
+                transition={{ type: "spring", stiffness: 400, damping: 10 }}
                 className="relative"
               >
                 <motion.div
-                  className="absolute -inset-1 rounded-full opacity-0"
+                  initial={{ opacity: 0.5, scale: 1 }}
+                  animate={{ 
+                    opacity: [0.5, 0.8, 0.5], 
+                    scale: [1, 1.05, 1],
+                    boxShadow: [
+                      '0 0 5px 2px rgba(249, 115, 22, 0.4)', 
+                      '0 0 15px 5px rgba(249, 115, 22, 0.6)', 
+                      '0 0 5px 2px rgba(249, 115, 22, 0.4)'
+                    ]
+                  }}
+                  transition={{ 
+                    duration: 2, 
+                    repeat: Infinity, 
+                    ease: "easeInOut" 
+                  }}
+                  className="absolute inset-0 rounded-full bg-orange-500/20"
                 />
                 <Link href="#Home">
                   <Image
@@ -155,7 +170,7 @@ const Navbar = () => {
                     alt="logo"
                     width={40}
                     height={40}
-                    className="cursor-pointer relative z-10 sm:w-[50px] sm:h-[50px]"
+                    className="cursor-pointer relative z-10 sm:w-[50px] sm:h-[50px] rounded-full border-2 border-orange-400/30"
                   />
                 </Link>
               </motion.div>
