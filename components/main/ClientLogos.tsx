@@ -4,6 +4,7 @@ import React, { useRef } from "react";
 import { motion, useScroll, useTransform, useInView } from "framer-motion";
 import { SparklesIcon } from "@heroicons/react/24/solid";
 import AnimatedHeading from "../ui/animated-heading";
+import AnimatedButton from "../ui/animated-button";
 import Image from "next/image";
 
 const ClientLogos = () => {
@@ -139,12 +140,11 @@ const ClientLogos = () => {
           className="text-center mt-16"
         >
           <p className="text-gray-300 mb-6">Ready to join these leading companies?</p>
-          <a 
-            href="#contact" 
-            className="inline-block px-6 py-3 rounded-xl bg-gradient-to-r from-orange-500 to-orange-600 text-white font-medium hover:from-orange-600 hover:to-orange-700 transition-all duration-300 shadow-lg hover:shadow-orange-500/20"
+          <AnimatedButton 
+            href="#contact"
           >
             Get Started Today
-          </a>
+          </AnimatedButton>
         </motion.div>
       </div>
     </div>

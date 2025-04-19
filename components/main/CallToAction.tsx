@@ -4,6 +4,7 @@ import React, { useRef } from "react";
 import { motion, useScroll, useTransform, useInView, Variants } from "framer-motion";
 import { SparklesIcon } from "@heroicons/react/24/solid";
 import AnimatedHeading from "../ui/animated-heading";
+import AnimatedButton from "../ui/animated-button";
 
 const CallToAction = () => {
   const containerRef = useRef(null);
@@ -73,30 +74,32 @@ const CallToAction = () => {
             </motion.p>
             
             <div className="flex flex-wrap gap-4">
-              <motion.a
+              <motion.div
                 initial={{ opacity: 0, x: -20 }}
                 animate={isInView ? { opacity: 1, x: 0 } : { opacity: 0, x: -20 }}
                 transition={{ duration: 0.5, delay: 0.4 }}
-                whileHover={{ scale: 1.03 }}
-                className="px-8 py-4 rounded-xl bg-gradient-to-r from-orange-500 to-orange-600 text-white font-medium hover:from-orange-600 hover:to-orange-700 transition-all duration-300 shadow-lg"
-                href="https://cal.com/mralamin/30min"
-                target="_blank"
                 style={{ willChange: "transform" }}
               >
-                Book a Free Consultation
-              </motion.a>
+                <AnimatedButton
+                  href="https://cal.com/mralamin/30min"
+                  target="_blank"
+                >
+                  Book a Free Consultation
+                </AnimatedButton>
+              </motion.div>
               
-              <motion.a
+              <motion.div
                 initial={{ opacity: 0, x: 20 }}
                 animate={isInView ? { opacity: 1, x: 0 } : { opacity: 0, x: 20 }}
                 transition={{ duration: 0.5, delay: 0.5 }}
-                whileHover={{ scale: 1.03 }}
-                className="px-8 py-4 rounded-xl bg-transparent border border-gray-600 text-white font-medium hover:bg-gray-800/30 transition-all duration-300"
-                href="#contact"
                 style={{ willChange: "transform" }}
               >
-                Learn More
-              </motion.a>
+                <AnimatedButton
+                  href="#contact"
+                >
+                  Learn More
+                </AnimatedButton>
+              </motion.div>
             </div>
           </div>
           
