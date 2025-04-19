@@ -20,10 +20,11 @@ export default function Home() {
       <div className="flex flex-col">
         <Hero />
         <Services />
+        <TestimonialSlider />
         <MacbookDemo />
         <Approach />
         <TerminalDemo />
-        <TestimonialSlider />
+        
         <Statistics />
         <ProcessTimeline />
         <CallToAction />
