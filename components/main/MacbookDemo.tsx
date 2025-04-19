@@ -12,7 +12,7 @@ export default function MacbookDemo() {
     <motion.div 
       initial="hidden"
       animate="visible"
-      className="overflow-hidden w-full py-24 relative" 
+      className="overflow-hidden w-full py-12 sm:py-16 md:py-24 lg:py-32 relative" 
       ref={containerRef}
     > 
       {/* Background glow effect */}
@@ -51,25 +51,27 @@ export default function MacbookDemo() {
         variants={slideInFromBottom(0.4)}
         className="relative z-10"
       >
-        <MacbookScroll
-          title={
-            <motion.div 
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.5, duration: 0.5 }}
-              className="flex flex-col items-center gap-3"
-            >
-              <span className="text-center text-3xl font-bold animated-gradient-text">
-                Stunning websites that drive results
-              </span>
-              <span className="text-center text-xl animated-gradient-text max-w-2xl">
-                Built with modern technologies for exceptional user experience
-              </span>
-            </motion.div>
-          }
-          src="/macssdark.png"
-          showGradient={true}
-        />
+        <div className="mx-auto max-w-[1400px] px-4 sm:px-6 lg:px-8">
+          <MacbookScroll
+            title={
+              <motion.div 
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: 0.5, duration: 0.5 }}
+                className="flex flex-col items-center gap-3"
+              >
+                <span className="text-center text-3xl font-bold animated-gradient-text">
+                  Stunning websites that drive results
+                </span>
+                <span className="text-center text-xl animated-gradient-text max-w-2xl">
+                  Built with modern technologies for exceptional user experience
+                </span>
+              </motion.div>
+            }
+            src="/macssdark.png"
+            showGradient={true}
+          />
+        </div>
       </motion.div>
     </motion.div>
   );
