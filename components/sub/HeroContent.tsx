@@ -105,7 +105,7 @@ const HeroContent = () => {
                 }
               >
                 <SplineScene 
-                  scene="https://prod.spline.design/vKrpmCBkxF03wYCr/scene.splinecode"
+                  scene="https://prod.spline.design/RZKjiMvrkVRS8vyL/scene.splinecode"
                   className="w-full h-full"
                 />
               </ErrorBoundary>
