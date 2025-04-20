@@ -1,5 +1,5 @@
 "use client";
-import React from "react";
+import React, { Component, ErrorInfo, ReactNode } from "react";
 import { motion } from "framer-motion";
 import {
   slideInFromLeft,
@@ -15,7 +15,15 @@ import { Card } from "../ui/card";
 // Import SplineScene with dynamic import and no SSR to prevent server-side rendering
 const SplineScene = dynamic(
   () => import("@/components/ui/splite").then((mod) => mod.SplineScene),
-  { ssr: false }
+  { ssr: false, loading: () => (
+    <div className="w-full h-full flex items-center justify-center">
+      <div className="animate-pulse flex space-x-2">
+        <div className="h-3 w-3 bg-violet-400 rounded-full"></div>
+        <div className="h-3 w-3 bg-violet-400 rounded-full"></div>
+        <div className="h-3 w-3 bg-violet-400 rounded-full"></div>
+      </div>
+    </div>
+  ) }
 );
 
 const HeroContent = () => {
@@ -78,12 +86,26 @@ const HeroContent = () => {
             variants={slideInFromRight(0.5)}
             className="w-full md:w-1/2 h-[500px] relative"
           >
-            {/* Only render SplineScene on client-side */}
+            {/* Only render SplineScene on client-side with error handling */}
             {typeof window !== 'undefined' && (
-              <SplineScene 
-                scene="https://prod.spline.design/kZDDjO5HuC9GJUM2/scene.splinecode"
-                className="w-full h-full"
-              />
+              <ErrorBoundary fallback={
+                <div className="w-full h-full flex items-center justify-center">
+                  <div className="text-center p-8">
+                    <div className="mb-4 text-violet-400">
+                      <svg xmlns="http://www.w3.org/2000/svg" className="h-12 w-12 mx-auto" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                      </svg>
+                    </div>
+                    <h3 className="text-lg font-medium">Interactive 3D Experience</h3>
+                    <p className="text-sm text-white/70 mt-2">Experience our interactive 3D showcase</p>
+                  </div>
+                </div>
+              }>
+                <SplineScene 
+                  scene="https://prod.spline.design/kZDDjO5HuC9GJUM2/scene.splinecode"
+                  className="w-full h-full"
+                />
+              </ErrorBoundary>
             )}
           </motion.div>
         </div>
@@ -91,5 +113,26 @@ const HeroContent = () => {
     </motion.div>
   );
 };
+
+// Simple error boundary component to handle 3D model loading failures
+class ErrorBoundary extends Component<{ children: ReactNode; fallback: ReactNode }> {
+  state = { hasError: false };
+
+  static getDerivedStateFromError() {
+    return { hasError: true };
+  }
+
+  componentDidCatch(error: Error, errorInfo: ErrorInfo) {
+    console.error("Spline component failed:", error, errorInfo);
+  }
+
+  render() {
+    if (this.state.hasError) {
+      return this.props.fallback;
+    }
+
+    return this.props.children;
+  }
+}
 
 export default HeroContent;
