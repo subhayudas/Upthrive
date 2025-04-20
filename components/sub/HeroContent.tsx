@@ -86,7 +86,7 @@ const HeroContent = () => {
           {/* Right content - 3D Model */}
           <motion.div 
             variants={slideInFromRight(0.5)}
-            className="w-full md:w-1/2 h-[500px] relative"
+            className="w-full md:w-1/2 overflow-hidden h-[600px] relative"
           >
             <script type="module" src="https://unpkg.com/@splinetool/viewer@1.9.82/build/spline-viewer.js"></script>
             <spline-viewer url="https://prod.spline.design/kZDDjO5HuC9GJUM2/scene.splinecode"></spline-viewer>
