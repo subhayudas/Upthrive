@@ -90,7 +90,7 @@ const HeroContent = () => {
           >
             <div className="absolute inset-0 h-[700px] -bottom-[100px]">
               <script type="module" src="https://unpkg.com/@splinetool/viewer@1.9.82/build/spline-viewer.js"></script>
-              <spline-viewer url="https://prod.spline.design/kZDDjO5HuC9GJUM2/scene.splinecode"></spline-viewer>
+              <spline-viewer url="https://prod.spline.design/TZVJd5fzPLgyO56B/scene.splinecode"></spline-viewer>
             </div>
           </motion.div>
         </div>
