@@ -9,55 +9,76 @@ import {
 } from "@/utils/motion";
 import { SparklesIcon } from "@heroicons/react/24/solid";
 import AnimatedButton from "../ui/animated-button";
+import { SplineScene } from "@/components/ui/splite";
+import { Card } from "../ui/card";
 
 const HeroContent = () => {
   return (
     <motion.div 
       initial="hidden"
       animate="visible"
-      className="flex flex-col items-center justify-center text-center px-4 py-10 sm:py-16 lg:py-24 min-h-screen relative"
+      className="flex flex-col items-center justify-center px-4 py-10 sm:py-16 lg:py-24 min-h-screen relative"
       style={{ fontFamily: "Helvetica, Arial, sans-serif" }}
     >
-      {/* Frosted glass background effect */}
-      <div className="absolute inset-0 bg-black/10 backdrop-blur-sm z-0"></div>
+      {/* Removed background overlay to make main background visible */}
       
-      <motion.div 
-          variants={slideInFromTop}
-          className="Welcome-box py-2 px-4 border border-[#7042f88b] bg-[#7042f80d] rounded-full opacity-90 text-center inline-flex items-center mx-auto mb-4 backdrop-blur-sm shadow-[0_0_15px_rgba(112,66,248,0.15)]"
-        >
-          <SparklesIcon className="text-[#b49bff] mr-2 h-5 w-5 animate-pulse" />
-          <h1 className="Welcome-text text-sm font-medium tracking-wide animated-gradient-text">
-            Fullstack Digital Agency
-          </h1>
-        </motion.div>
+      <Card className="w-full max-w-7xl mx-auto bg-transparent relative overflow-hidden rounded-xl border border-white/10 shadow-[0_0_25px_rgba(112,66,248,0.15)]">
+        {/* Optional subtle gradient overlay */}
+        <div className="absolute inset-0 bg-gradient-to-r from-black/10 to-transparent z-0"></div>
+       
         
+        <div className="flex flex-col md:flex-row h-full">
+          {/* Left content */}
+          <div className="w-full md:w-1/2 p-8 relative z-10 flex flex-col justify-center text-left">
+            <motion.div 
+              variants={slideInFromTop}
+              className="Welcome-box py-2 px-4 border border-[#7042f88b] bg-[#7042f80d] rounded-full opacity-90 text-center inline-flex items-center mb-4 backdrop-blur-sm shadow-[0_0_15px_rgba(112,66,248,0.15)] w-fit"
+            >
+              <SparklesIcon className="text-[#b49bff] mr-2 h-5 w-5 animate-pulse" />
+              <h1 className="Welcome-text text-sm font-medium tracking-wide animated-gradient-text">
+                Fullstack Digital Agency
+              </h1>
+            </motion.div>
 
-      <motion.h1 
-        variants={slideInFromLeft(0.5)} 
-        className="relative z-10 mx-auto max-w-3xl text-5xl sm:text-6xl lg:text-7xl font-light tracking-tight mb-6"
-        style={{ letterSpacing: "-0.02em" }}
-      >
-        <span className="block mb-3 hero-violet-gradient">CREATING</span>
-        <span className="block"><span className="animated-gradient-text">Culture-Driven</span> <span className="hero-violet-gradient">BRANDS</span></span>
-      </motion.h1>
+            <motion.h1 
+              variants={slideInFromLeft(0.5)} 
+              className="relative z-10 text-5xl sm:text-6xl lg:text-7xl font-light tracking-tight mb-6"
+              style={{ letterSpacing: "-0.02em" }}
+            >
+              <span className="block mb-3 hero-violet-gradient">CREATING</span>
+              <span className="block"><span className="animated-gradient-text">Culture-Driven</span> <span className="hero-violet-gradient">BRANDS</span></span>
+            </motion.h1>
 
-      <motion.p 
-        variants={slideInFromRight(0.7)} 
-        className="relative z-10 mx-auto mt-6 max-w-xl text-base sm:text-lg text-white/70 leading-relaxed font-light"
-      >
-        We craft digital experiences that captivate audiences, drive conversions, and elevate your brand story. Partner with us to transform your vision into digital reality.
-      </motion.p>
+            <motion.p 
+              variants={slideInFromRight(0.7)} 
+              className="relative z-10 mt-6 max-w-xl text-base sm:text-lg text-white/70 leading-relaxed font-light"
+            >
+              We craft digital experiences that captivate audiences, drive conversions, and elevate your brand story. Partner with us to transform your vision into digital reality.
+            </motion.p>
 
-      <motion.div variants={slideInFromBottom(0.6)} className="relative z-10 mt-10">
-        <AnimatedButton 
-          href="https://cal.com/mralamin/30min"
-          target="_blank"
-          className="relative z-10"
-        >
-          Book A Call
-        </AnimatedButton>
-      </motion.div>
+            <motion.div variants={slideInFromBottom(0.6)} className="relative z-10 mt-10">
+              <AnimatedButton 
+                href="https://cal.com/mralamin/30min"
+                target="_blank"
+                className="inline-flex items-center justify-center whitespace-nowrap text-sm"
+              >
+                Book A Call
+              </AnimatedButton>
+            </motion.div>
+          </div>
 
+          {/* Right content - 3D Model */}
+          <motion.div 
+            variants={slideInFromRight(0.5)}
+            className="w-full md:w-1/2 h-[500px] relative"
+          >
+            <SplineScene 
+              scene="https://prod.spline.design/kZDDjO5HuC9GJUM2/scene.splinecode"
+              className="w-full h-full"
+            />
+          </motion.div>
+        </div>
+      </Card>
     </motion.div>
   );
 };

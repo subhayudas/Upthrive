@@ -47,9 +47,9 @@ const CallToAction = () => {
         className="max-w-7xl mx-auto relative bg-gradient-to-br from-gray-900/90 to-black/90 backdrop-blur-sm rounded-3xl border border-gray-800 overflow-hidden shadow-2xl"
       >
         {/* Decorative elements - enhanced design */}
-        <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-blue-500 via-purple-500 to-indigo-500"></div>
-        <div className="absolute -bottom-16 -right-16 w-32 h-32 bg-blue-500/10 rounded-full blur-xl"></div>
-        <div className="absolute -top-16 -left-16 w-32 h-32 bg-purple-500/10 rounded-full blur-xl"></div>
+        <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-orange-500 via-amber-500 to-yellow-500"></div>
+        <div className="absolute -bottom-16 -right-16 w-32 h-32 bg-orange-500/10 rounded-full blur-xl"></div>
+        <div className="absolute -top-16 -left-16 w-32 h-32 bg-amber-500/10 rounded-full blur-xl"></div>
         
         <div className="p-8 sm:p-12 lg:p-16 flex flex-col lg:flex-row items-center justify-between gap-12">
           <div className="w-full lg:w-2/3">
@@ -57,14 +57,14 @@ const CallToAction = () => {
               initial={{ opacity: 0, y: -20 }}
               animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: -20 }}
               transition={{ duration: 0.5 }}
-              className="Welcome-box py-[8px] px-[7px] border border-[#7042f88b] opacity-[0.9] inline-flex items-center mb-4"
+              className="Welcome-box py-[8px] px-[7px] border border-[#f87042] opacity-[0.9] inline-flex items-center mb-4"
             >
-              <SparklesIcon className="text-blue-400 mr-[10px] h-5 w-5" />
+              <SparklesIcon className="text-orange-400 mr-[10px] h-5 w-5" />
               <h1 className="Welcome-text text-[13px] font-medium">Ready to Transform?</h1>
             </motion.div>
             
             <AnimatedHeading as="h2" className="text-4xl md:text-5xl font-bold mb-6">
-              Let&apos;s Create Something <span className="text-gradient bg-gradient-to-r from-blue-500 to-purple-600">Extraordinary</span> Together
+              Let&apos;s Create Something <span className="text-gradient bg-gradient-to-r from-orange-500 to-amber-600">Extraordinary</span> Together
             </AnimatedHeading>
             
             <motion.p 
@@ -115,8 +115,8 @@ const CallToAction = () => {
           >
             <div className="relative w-72 h-72">
               {/* Enhanced decorative elements */}
-              <div className="absolute inset-0 rounded-full border-2 border-dashed border-purple-500/40 animate-spin-slow"></div>
-              <div className="absolute inset-4 rounded-full border border-blue-500/20"></div>
+              <div className="absolute inset-0 rounded-full border-2 border-dashed border-orange-500/40 animate-spin-slow"></div>
+              <div className="absolute inset-4 rounded-full border border-amber-500/20"></div>
               
               <motion.div 
                 initial={{ scale: 0.8, opacity: 0 }}
@@ -124,7 +124,7 @@ const CallToAction = () => {
                 transition={{ duration: 0.8, delay: 0.6 }}
                 className="absolute inset-0 flex items-center justify-center"
               >
-                <div className="w-48 h-48 rounded-full bg-gradient-to-br from-blue-600 to-purple-600 flex items-center justify-center shadow-lg shadow-purple-500/30 relative overflow-hidden">
+                <div className="w-48 h-48 rounded-full bg-gradient-to-br from-orange-600 to-amber-600 flex items-center justify-center shadow-lg shadow-orange-500/30 relative overflow-hidden">
                   {/* Professional person avatar */}
                   <div className="relative w-40 h-40 rounded-full overflow-hidden flex items-center justify-center">
                     <BusinessPersonAvatar className="w-36 h-36" />
@@ -132,7 +132,7 @@ const CallToAction = () => {
                   {/* Inner glow */}
                   <div className="absolute inset-0 border-4 border-white/20 rounded-full"></div>
                   {/* Outer glow */}
-                  <div className="absolute -inset-1 bg-gradient-to-r from-blue-500/20 to-purple-500/20 rounded-full blur-md"></div>
+                  <div className="absolute -inset-1 bg-gradient-to-r from-orange-500/20 to-amber-500/20 rounded-full blur-md"></div>
                 </div>
               </motion.div>
             </div>

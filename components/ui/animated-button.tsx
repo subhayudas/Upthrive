@@ -78,7 +78,7 @@ const AnimatedButton: React.FC<AnimatedButtonProps> = ({
       
         transform-origin: center;
       
-        padding: 1rem 2rem;
+        padding: 0.75rem 1.5rem;
         background-color: transparent;
       
         border: none;
