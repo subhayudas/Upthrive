@@ -33,12 +33,12 @@ const HeroContent = () => {
     <motion.div 
       initial="hidden"
       animate="visible"
-      className="flex flex-col items-center justify-center px-4 py-10 sm:py-16 lg:py-24 min-h-screen relative"
+      className="flex flex-col items-center justify-center px-4 py-10 sm:py-16 lg:py-24 min-h-screen relative overflow-hidden"
       style={{ fontFamily: "Helvetica, Arial, sans-serif" }}
     >
       {/* Removed background overlay to make main background visible */}
       
-      <Card className="w-full max-w-7xl mx-auto bg-transparent relative overflow-hidden rounded-xl border border-white/10 shadow-[0_0_25px_rgba(112,66,248,0.15)]">
+      <Card className="w-full max-w-7xl mx-auto bg-transparent relative overflow-hidden rounded-xl border border-white/10 shadow-[0_0_25px_rgba(112,66,248,0.15)]" style={{ minHeight: '600px' }}>
         {/* Optional subtle gradient overlay */}
         <div className="absolute inset-0 bg-gradient-to-r from-black/10 to-transparent z-0"></div>
        
@@ -86,10 +86,12 @@ const HeroContent = () => {
           {/* Right content - 3D Model */}
           <motion.div 
             variants={slideInFromRight(0.5)}
-            className="w-full md:w-1/2 overflow-hidden h-[600px] relative"
+            className="w-full md:w-1/2 relative"
           >
-            <script type="module" src="https://unpkg.com/@splinetool/viewer@1.9.82/build/spline-viewer.js"></script>
-            <spline-viewer url="https://prod.spline.design/kZDDjO5HuC9GJUM2/scene.splinecode"></spline-viewer>
+            <div className="absolute inset-0 h-[700px] -bottom-[100px]">
+              <script type="module" src="https://unpkg.com/@splinetool/viewer@1.9.82/build/spline-viewer.js"></script>
+              <spline-viewer url="https://prod.spline.design/kZDDjO5HuC9GJUM2/scene.splinecode"></spline-viewer>
+            </div>
           </motion.div>
         </div>
       </Card>
