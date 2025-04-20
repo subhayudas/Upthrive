@@ -1,181 +1,193 @@
 "use client";
-import React, { useEffect, useState, useRef } from "react";
+import React, { useEffect, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 
 const LoadingAnimation = () => {
   const [isLoading, setIsLoading] = useState(true);
+  const [progress, setProgress] = useState(0);
+  const [glowIntensity, setGlowIntensity] = useState(0);
 
   useEffect(() => {
-    // Simulate loading time (you can adjust this)
-    const timer = setTimeout(() => {
+    // Progress counter animation
+    let count = 0;
+    const interval = setInterval(() => {
+      count++;
+      setProgress(count);
+      if (count >= 100) {
+        clearInterval(interval);
+      }
+    }, 30);
+
+    // Glow animation
+    const glowInterval = setInterval(() => {
+      setGlowIntensity(prev => (prev + 0.1) % 1);
+    }, 50);
+
+    // Preloader animations timeline
+    const timer3 = setTimeout(() => {
       setIsLoading(false);
-    }, 3000);
+    }, 4500);
 
-    return () => clearTimeout(timer);
-  }, []);
-
-  const containerVariants = {
-    initial: { opacity: 1 },
-    exit: { 
-      opacity: 0,
-      transition: { 
-        duration: 0.8,
-        ease: "easeInOut" 
-      }
-    }
-  };
-
-  const logoVariants = {
-    initial: { scale: 0.8, opacity: 0 },
-    animate: { 
-      scale: 1, 
-      opacity: 1,
-      transition: { 
-        duration: 0.8,
-        ease: "easeOut" 
-      }
-    },
-    exit: { 
-      scale: 1.2, 
-      opacity: 0,
-      transition: { 
-        duration: 0.5,
-        ease: "easeInOut" 
-      }
-    }
-  };
-
-  const textVariants = {
-    initial: { y: 20, opacity: 0 },
-    animate: { 
-      y: 0, 
-      opacity: 1,
-      transition: { 
-        delay: 0.5,
-        duration: 0.8,
-        ease: "easeOut" 
-      }
-    }
-  };
-
-  const progressVariants = {
-    initial: { width: "0%" },
-    animate: { 
-      width: "100%",
-      transition: { 
-        duration: 2.5,
-        ease: [0.43, 0.13, 0.23, 0.96] 
-      }
-    }
-  };
-
-  const particleCount = 20;
-  const particles = Array.from({ length: particleCount });
-  const [windowSize, setWindowSize] = useState({ width: 0, height: 0 });
-  
-  useEffect(() => {
-    // Only access window in the browser
-    setWindowSize({
-      width: window.innerWidth,
-      height: window.innerHeight
-    });
-    
-    const handleResize = () => {
-      setWindowSize({
-        width: window.innerWidth,
-        height: window.innerHeight
-      });
+    return () => {
+      clearInterval(interval);
+      clearInterval(glowInterval);
+      clearTimeout(timer3);
     };
-    
-    window.addEventListener('resize', handleResize);
-    return () => window.removeEventListener('resize', handleResize);
   }, []);
 
   return (
     <AnimatePresence mode="wait">
       {isLoading && (
         <motion.div
-          className="fixed inset-0 flex flex-col items-center justify-center z-50 bg-[#030014]"
-          variants={containerVariants}
-          initial="initial"
-          exit="exit"
+          id="preloader"
+          initial={{ opacity: 1 }}
+          exit={{ 
+            opacity: 0,
+            scale: [1, 0.98, 0.9],
+            y: -60,
+            filter: "blur(10px)",
+            transition: {
+              duration: 0.8,
+              ease: [0.4, 0, 0.2, 1],
+              scale: {
+                times: [0, 0.3, 1],
+                ease: "easeInOut"
+              }
+            }
+          }}
+          className="transition-all duration-[1450ms] ease-in-out fixed top-0 left-0 w-full h-full z-50 bg-gradient-to-b from-[#0b0b0b] to-[#121212] flex flex-col justify-center items-start md:items-start md:justify-start md:pt-[20vh] md:px-[6.5vw] overflow-hidden"
         >
-          {/* Particles */}
-          {particles.map((_, i) => (
-            <motion.div
-              key={i}
-              className="absolute w-1 h-1 md:w-2 md:h-2 rounded-full bg-violet-500"
-              initial={{
-                opacity: 0,
-                x: Math.random() * (windowSize.width || 1000),
-                y: Math.random() * (windowSize.height || 800),
-              }}
-              animate={{
-                opacity: [0, 1, 0],
-                scale: [0, Math.random() * 3 + 1, 0],
-                x: Math.random() * (windowSize.width || 1000),
-                y: Math.random() * (windowSize.height || 800),
-              }}
-              transition={{
-                duration: Math.random() * 3 + 2,
-                repeat: Infinity,
-                repeatType: "loop",
-                ease: "easeInOut",
-              }}
-            />
-          ))}
-          
-          {/* Glowing circle behind logo */}
-          <motion.div
-            className="absolute w-32 h-32 md:w-48 md:h-48 rounded-full bg-gradient-to-r from-violet-600 to-indigo-600 blur-xl opacity-20"
-            animate={{
-              scale: [1, 1.2, 1],
-            }}
-            transition={{
-              duration: 2,
-              repeat: Infinity,
-              repeatType: "reverse",
-              ease: "easeInOut",
-            }}
-          />
-
-          {/* Logo */}
-          <motion.div
-            className="relative z-10 mb-8"
-            variants={logoVariants}
-            initial="initial"
-            animate="animate"
-            exit="exit"
-          >
-            <div className="w-24 h-24 md:w-32 md:h-32 flex items-center justify-center rounded-full bg-gradient-to-br from-violet-600 to-indigo-800 shadow-[0_0_30px_rgba(112,66,248,0.6)]">
-              <span className="text-4xl md:text-5xl font-bold text-white">U</span>
-            </div>
-          </motion.div>
-
-          {/* Text */}
-          <motion.div
-            className="text-center"
-            variants={textVariants}
-            initial="initial"
-            animate="animate"
-          >
-            <h1 className="text-2xl md:text-3xl font-light mb-2 animated-gradient-text">
-              UPTHRIVE
-            </h1>
-            <p className="text-sm md:text-base text-white/70 mb-8">
-              Creating Culture-Driven Brands
-            </p>
-          </motion.div>
-
-          {/* Progress bar */}
-          <div className="w-64 md:w-80 h-1 bg-white/10 rounded-full overflow-hidden">
-            <motion.div
-              className="h-full bg-gradient-to-r from-violet-600 to-indigo-600"
-              variants={progressVariants}
-              initial="initial"
-              animate="animate"
-            />
+          {/* Background elements */}
+          <div className="absolute inset-0 overflow-hidden">
+            <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-orange-500/10 rounded-full blur-[100px] animate-pulse"></div>
+            <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-orange-600/5 rounded-full blur-[120px] animate-pulse"></div>
+            <div className="absolute inset-0 bg-[url('/grid.svg')] bg-center opacity-10"></div>
           </div>
+
+          {/* Progress counter with enhanced styling and layout */}
+          <div className="line relative z-10" id="line1">
+            <motion.div 
+              id="progress"
+              className="flex items-center mb-6 relative"
+              initial={{ opacity: 0, scale: 0.9 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{ duration: 0.5 }}
+            >
+              <div className="flex items-center space-x-1">
+                <motion.h5 
+                  className="text-5xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-orange-400 to-orange-600"
+                  animate={{ 
+                    textShadow: [
+                      '0 0 8px rgba(249, 115, 22, 0.5)',
+                      '0 0 20px rgba(249, 115, 22, 0.7)',
+                      '0 0 8px rgba(249, 115, 22, 0.5)'
+                    ]
+                  }}
+                  transition={{ duration: 1.5, repeat: Infinity }}
+                >
+                  {progress.toString().padStart(2, '0')}
+                </motion.h5>
+                <span className="text-orange-300/80 font-medium text-xl">/</span>
+                <span className="text-orange-300/80 font-medium text-xl">100</span>
+              </div>
+              
+              {/* Progress bar - enhanced */}
+              <div className="ml-6 w-32 h-3 bg-gray-800/50 rounded-full overflow-hidden backdrop-blur-sm border border-orange-500/20">
+                <motion.div 
+                  className="h-full bg-gradient-to-r from-orange-500 via-orange-400 to-orange-500"
+                  style={{ width: `${progress}%` }}
+                  initial={{ width: 0 }}
+                  animate={{
+                    boxShadow: [
+                      '0 0 5px rgba(249, 115, 22, 0.5)',
+                      '0 0 10px rgba(249, 115, 22, 0.7)',
+                      '0 0 5px rgba(249, 115, 22, 0.5)'
+                    ]
+                  }}
+                  transition={{ boxShadow: { duration: 1.5, repeat: Infinity } }}
+                />
+              </div>
+            </motion.div>
+            
+            <motion.h1 
+              initial={{ y: 150, opacity: 0 }}
+              animate={{ y: 0, opacity: 1 }}
+              transition={{ duration: 0.5, delay: 0.3 }}
+              className="text-5xl md:text-6xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-white to-orange-100 relative"
+              style={{
+                textShadow: `0 0 ${10 + glowIntensity * 15}px rgba(249, 115, 22, ${0.3 + glowIntensity * 0.3})`
+              }}
+            >
+              Your
+            </motion.h1>
+          </div>
+          
+          <div className="line relative z-10" id="line2">
+            <motion.h1 
+              initial={{ y: 150, opacity: 0 }}
+              animate={{ y: 0, opacity: 1 }}
+              transition={{ duration: 0.5, delay: 0.55 }}
+              className="text-5xl md:text-6xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-orange-100 to-orange-300 relative"
+              style={{
+                textShadow: `0 0 ${10 + glowIntensity * 15}px rgba(249, 115, 22, ${0.3 + glowIntensity * 0.3})`
+              }}
+            >
+              Web Experience
+            </motion.h1>
+          </div>
+          
+          <div className="line relative z-10" id="line3">
+            <motion.h1 
+              initial={{ y: 150, opacity: 0 }}
+              animate={{ y: 0, opacity: 1 }}
+              transition={{ duration: 0.5, delay: 0.8 }}
+              className="text-5xl md:text-6xl font-bold relative"
+            >
+              <span className="bg-clip-text text-transparent bg-gradient-to-r from-orange-300 to-orange-500"
+                style={{
+                  textShadow: `0 0 ${10 + glowIntensity * 15}px rgba(249, 115, 22, ${0.3 + glowIntensity * 0.3})`
+                }}
+              >is </span>
+              <span className="bg-clip-text text-transparent bg-gradient-to-r from-orange-400 to-orange-600"
+                style={{
+                  textShadow: `0 0 ${10 + glowIntensity * 15}px rgba(249, 115, 22, ${0.3 + glowIntensity * 0.3})`
+                }}
+              >Loading Right</span>
+              <motion.span 
+                id="flash" 
+                className="bg-clip-text text-transparent bg-gradient-to-r from-orange-500 to-orange-700"
+                animate={{ 
+                  textShadow: [
+                    '0 0 10px rgba(249, 115, 22, 0.7)',
+                    '0 0 20px rgba(249, 115, 22, 0.9)',
+                    '0 0 10px rgba(249, 115, 22, 0.7)'
+                  ]
+                }}
+                transition={{ duration: 1, repeat: Infinity }}
+                style={{
+                  textShadow: `0 0 ${15 + glowIntensity * 20}px rgba(249, 115, 22, ${0.5 + glowIntensity * 0.4})`
+                }}
+              >Now</motion.span>
+            </motion.h1>
+          </div>
+
+          <motion.div 
+            id="wait-message"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 0.4, delay: 1.2 }}
+            className="w-full text-center mt-12 relative z-10"
+          >
+            <motion.p 
+              className="text-orange-200/90 text-lg md:text-base font-medium"
+              animate={{ 
+                opacity: [0.7, 1, 0.7]
+              }}
+              transition={{ duration: 2, repeat: Infinity }}
+            >
+              Please wait a few seconds...
+            </motion.p>
+          </motion.div>
         </motion.div>
       )}
     </AnimatePresence>
