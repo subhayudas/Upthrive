@@ -89,7 +89,7 @@ const HeroContent = () => {
             className="w-full md:w-1/2 h-[500px] relative"
           >
             <script type="module" src="https://unpkg.com/@splinetool/viewer@1.9.82/build/spline-viewer.js"></script>
-            <spline-viewer url="https://prod.spline.design/RZKjiMvrkVRS8vyL/scene.splinecode"></spline-viewer>
+            <spline-viewer url="https://prod.spline.design/kZDDjO5HuC9GJUM2/scene.splinecode"></spline-viewer>
           </motion.div>
         </div>
       </Card>
