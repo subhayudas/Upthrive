@@ -88,28 +88,8 @@ const HeroContent = () => {
             variants={slideInFromRight(0.5)}
             className="w-full md:w-1/2 h-[500px] relative"
           >
-            {/* Only render SplineScene on client-side with error handling */}
-            {typeof window !== 'undefined' && (
-              <ErrorBoundary
-                fallback={
-                  <div className="w-full h-full flex items-center justify-center bg-black/20 rounded-lg">
-                    <div className="text-center p-6">
-                      <div className="mb-3 text-violet-400">
-                        <svg xmlns="http://www.w3.org/2000/svg" className="h-10 w-10 mx-auto" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
-                        </svg>
-                      </div>
-                      <h3 className="text-base font-medium">3D Experience Unavailable</h3>
-                    </div>
-                  </div>
-                }
-              >
-                <SplineScene 
-                  scene="https://prod.spline.design/RZKjiMvrkVRS8vyL/scene.splinecode"
-                  className="w-full h-full"
-                />
-              </ErrorBoundary>
-            )}
+            <script type="module" src="https://unpkg.com/@splinetool/viewer@1.9.82/build/spline-viewer.js"></script>
+            <spline-viewer url="https://prod.spline.design/RZKjiMvrkVRS8vyL/scene.splinecode"></spline-viewer>
           </motion.div>
         </div>
       </Card>
