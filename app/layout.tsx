@@ -5,6 +5,7 @@ import "./gradient-animation.css";
 import SpotlightBackground from "@/components/main/SpotlightBackground";
 import Navbar from "@/components/main/Navbar";
 import Footer from "@/components/main/Footer";
+import LoadingAnimation from "@/components/main/LoadingAnimation";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -34,6 +35,7 @@ export default function RootLayout({
         className={`${inter.className} bg-[#030014] overflow-y-scroll overflow-x-hidden`}
         style={{ cursor: 'auto' }}
       >
+        <LoadingAnimation />
         <SpotlightBackground />
         <Navbar />
         {children}
