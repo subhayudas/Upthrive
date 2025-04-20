@@ -15,7 +15,9 @@ import { Card } from "../ui/card";
 // Import SplineScene with dynamic import and no SSR to prevent server-side rendering
 const SplineScene = dynamic(
   () => import("@/components/ui/splite").then((mod) => mod.SplineScene),
-  { ssr: false, loading: () => (
+  { 
+    ssr: false, 
+    loading: () => (
     <div className="w-full h-full flex items-center justify-center">
       <div className="animate-pulse flex space-x-2">
         <div className="h-3 w-3 bg-violet-400 rounded-full"></div>

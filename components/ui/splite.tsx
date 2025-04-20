@@ -1,7 +1,7 @@
 'use client'
 
-import { Suspense, lazy, useState, useEffect } from 'react'
-const Spline = lazy(() => import('@splinetool/react-spline'))
+import { Suspense, useState, useEffect } from 'react'
+import Spline from '@splinetool/react-spline'
 
 interface SplineSceneProps {
   scene: string
