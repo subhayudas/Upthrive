@@ -9,8 +9,14 @@ import {
 } from "@/utils/motion";
 import { SparklesIcon } from "@heroicons/react/24/solid";
 import AnimatedButton from "../ui/animated-button";
-import { SplineScene } from "@/components/ui/splite";
+import dynamic from 'next/dynamic';
 import { Card } from "../ui/card";
+
+// Import SplineScene with dynamic import and no SSR to prevent server-side rendering
+const SplineScene = dynamic(
+  () => import("@/components/ui/splite").then((mod) => mod.SplineScene),
+  { ssr: false }
+);
 
 const HeroContent = () => {
   return (
@@ -72,10 +78,13 @@ const HeroContent = () => {
             variants={slideInFromRight(0.5)}
             className="w-full md:w-1/2 h-[500px] relative"
           >
-            <SplineScene 
-              scene="https://prod.spline.design/kZDDjO5HuC9GJUM2/scene.splinecode"
-              className="w-full h-full"
-            />
+            {/* Only render SplineScene on client-side */}
+            {typeof window !== 'undefined' && (
+              <SplineScene 
+                scene="https://prod.spline.design/kZDDjO5HuC9GJUM2/scene.splinecode"
+                className="w-full h-full"
+              />
+            )}
           </motion.div>
         </div>
       </Card>
