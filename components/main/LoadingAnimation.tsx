@@ -118,7 +118,7 @@ const LoadingAnimation = () => {
                 textShadow: `0 0 ${10 + glowIntensity * 15}px rgba(249, 115, 22, ${0.3 + glowIntensity * 0.3})`
               }}
             >
-              Your
+              You are
             </motion.h1>
           </div>
           
@@ -132,7 +132,7 @@ const LoadingAnimation = () => {
                 textShadow: `0 0 ${10 + glowIntensity * 15}px rgba(249, 115, 22, ${0.3 + glowIntensity * 0.3})`
               }}
             >
-              Web Experience
+              One step away from
             </motion.h1>
           </div>
           
@@ -147,12 +147,12 @@ const LoadingAnimation = () => {
                 style={{
                   textShadow: `0 0 ${10 + glowIntensity * 15}px rgba(249, 115, 22, ${0.3 + glowIntensity * 0.3})`
                 }}
-              >is </span>
+              >your </span>
               <span className="bg-clip-text text-transparent bg-gradient-to-r from-orange-400 to-orange-600"
                 style={{
                   textShadow: `0 0 ${10 + glowIntensity * 15}px rgba(249, 115, 22, ${0.3 + glowIntensity * 0.3})`
                 }}
-              >Loading Right</span>
+              >Dream br</span>
               <motion.span 
                 id="flash" 
                 className="bg-clip-text text-transparent bg-gradient-to-r from-orange-500 to-orange-700"
@@ -167,7 +167,7 @@ const LoadingAnimation = () => {
                 style={{
                   textShadow: `0 0 ${15 + glowIntensity * 20}px rgba(249, 115, 22, ${0.5 + glowIntensity * 0.4})`
                 }}
-              >Now</motion.span>
+              >and</motion.span>
             </motion.h1>
           </div>
 
@@ -178,15 +178,7 @@ const LoadingAnimation = () => {
             transition={{ duration: 0.4, delay: 1.2 }}
             className="w-full text-center mt-12 relative z-10"
           >
-            <motion.p 
-              className="text-orange-200/90 text-lg md:text-base font-medium"
-              animate={{ 
-                opacity: [0.7, 1, 0.7]
-              }}
-              transition={{ duration: 2, repeat: Infinity }}
-            >
-              Please wait a few seconds...
-            </motion.p>
+            
           </motion.div>
         </motion.div>
       )}
