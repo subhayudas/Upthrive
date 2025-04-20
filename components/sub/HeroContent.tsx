@@ -90,19 +90,20 @@ const HeroContent = () => {
           >
             {/* Only render SplineScene on client-side with error handling */}
             {typeof window !== 'undefined' && (
-              <ErrorBoundary fallback={
-                <div className="w-full h-full flex items-center justify-center">
-                  <div className="text-center p-8">
-                    <div className="mb-4 text-violet-400">
-                      <svg xmlns="http://www.w3.org/2000/svg" className="h-12 w-12 mx-auto" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
-                      </svg>
+              <ErrorBoundary
+                fallback={
+                  <div className="w-full h-full flex items-center justify-center bg-black/20 rounded-lg">
+                    <div className="text-center p-6">
+                      <div className="mb-3 text-violet-400">
+                        <svg xmlns="http://www.w3.org/2000/svg" className="h-10 w-10 mx-auto" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                        </svg>
+                      </div>
+                      <h3 className="text-base font-medium">3D Experience Unavailable</h3>
                     </div>
-                    <h3 className="text-lg font-medium">Interactive 3D Experience</h3>
-                    <p className="text-sm text-white/70 mt-2">Experience our interactive 3D showcase</p>
                   </div>
-                </div>
-              }>
+                }
+              >
                 <SplineScene 
                   scene="https://prod.spline.design/vKrpmCBkxF03wYCr/scene.splinecode"
                   className="w-full h-full"
