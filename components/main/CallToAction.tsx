@@ -84,8 +84,7 @@ const CallToAction = () => {
                 style={{ willChange: "transform" }}
               >
                 <AnimatedButton
-                  href="https://cal.com/mralamin/30min"
-                  target="_blank"
+                  href="#booking-form"
                 >
                   Book a Free Consultation
                 </AnimatedButton>

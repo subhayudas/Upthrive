@@ -74,8 +74,7 @@ const HeroContent = () => {
 
             <motion.div variants={slideInFromBottom(0.6)} className="relative z-10 mt-10">
               <AnimatedButton 
-                href="https://cal.com/mralamin/30min"
-                target="_blank"
+                href="#booking-form"
                 className="inline-flex items-center justify-center whitespace-nowrap text-sm"
               >
                 Book A Call

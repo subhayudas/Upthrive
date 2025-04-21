@@ -14,6 +14,9 @@ import Statistics from "@/components/main/Statistics";
 import ProcessTimeline from "@/components/main/ProcessTimeline";
 import CallToAction from "@/components/main/CallToAction";
 
+// Import the BookingForm component at the top of your file
+import BookingForm from '@/components/main/BookingForm';
+
 export default function Home() {
   return (
     <main className="h-full w-full">
@@ -28,6 +31,7 @@ export default function Home() {
         <Statistics />
         <ProcessTimeline />
         <CallToAction />
+        <BookingForm />
       </div>
     </main>
   );
