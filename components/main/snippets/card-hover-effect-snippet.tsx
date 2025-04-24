@@ -36,8 +36,8 @@ export const projects = [
   },
   {
     icon: <div className="bg-blue-100 p-4 rounded-full"><PiLightbulb className="w-8 h-8 text-orange-600" /></div>,
-    title: "Content Marketing",
-    description: "Fuel your brand's growth with compelling content marketing strategies.",
+    title: "Content Writing",
+    description: "Fuel your brand's growth with compelling content writing.",
   },
   
 ];
