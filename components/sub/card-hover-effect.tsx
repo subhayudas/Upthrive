@@ -1,7 +1,10 @@
 import { cn } from "@/lib/utils";
 import { AnimatePresence, motion } from "framer-motion";
 import Link from "next/link";
-import { useState } from "react";
+import { useState, useEffect, useCallback } from "react";
+import { useMediaQuery } from "@/hooks/use-media-query";
+
+
 
 export const HoverEffect = ({
   items,
@@ -11,50 +14,101 @@ export const HoverEffect = ({
     icon: React.ReactNode;
     title: string;
     description: string;
-
   }[];
   className?: string;
 }) => {
-  let [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
+  const [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
+  const [touchedIndex, setTouchedIndex] = useState<number | null>(null);
+  const isMobile = useMediaQuery('(max-width: 768px)');
+  
+  // Memoized handlers to prevent recreating functions on each render
+  const handleMouseEnter = useCallback((idx: number) => {
+    if (!isMobile) setHoveredIndex(idx);
+  }, [isMobile]);
+  
+  const handleMouseLeave = useCallback(() => {
+    if (!isMobile) setHoveredIndex(null);
+  }, [isMobile]);
+  
+  const handleClick = useCallback((idx: number) => {
+    if (isMobile) setTouchedIndex(touchedIndex === idx ? null : idx);
+  }, [isMobile, touchedIndex]);
+
+  // Reset touched index when component unmounts or when switching to desktop
+  useEffect(() => {
+    return () => setTouchedIndex(null);
+  }, [isMobile]);
+  
+  // Add passive event listeners for better touch performance
+  useEffect(() => {
+    if (typeof document !== 'undefined') {
+      // Add passive touch events to improve mobile performance
+      const opts = { passive: true };
+      const noop = () => {};
+      document.addEventListener('touchstart', noop, opts);
+      document.addEventListener('touchmove', noop, opts);
+      
+      // Prevent unnecessary hover effects on mobile
+      if (isMobile) {
+        document.documentElement.classList.add('mobile-device');
+      } else {
+        document.documentElement.classList.remove('mobile-device');
+      }
+      
+      
+    }
+  }, [isMobile]);
 
   return (
     <div
       className={cn(
-        "grid grid-cols-1 md:grid-cols-2  lg:grid-cols-3  py-10",
+        "grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 py-10",
         className
       )}
     >
-      {items.map((item, idx) => (
-        <div
-       key={item?.title}
-          className="relative group  block p-2 h-full w-full"
-          onMouseEnter={() => setHoveredIndex(idx)}
-          onMouseLeave={() => setHoveredIndex(null)}
-        >
-          <AnimatePresence>
-            {hoveredIndex === idx && (
-              <motion.span
-                className="absolute inset-0 h-full w-full bg-orange-600 dark:bg-orange-600 block  rounded-3xl"
-                layoutId="hoverBackground"
-                initial={{ opacity: 0 }}
-                animate={{
-                  opacity: 1,
-                  transition: { duration: 0.15 },
-                }}
-                exit={{
-                  opacity: 0,
-                  transition: { duration: 0.15, delay: 0.2 },
-                }}
-              />
+      {items.map((item, idx) => {
+        // Only calculate isActive when needed to reduce unnecessary calculations
+        const isActive = isMobile ? touchedIndex === idx : hoveredIndex === idx;
+        
+        return (
+          <div
+            key={item?.title}
+            className={cn(
+              "relative group block p-2 h-full w-full touch-manipulation",
+              isMobile ? "mobile-card" : "desktop-card"
             )}
-          </AnimatePresence>
-          <Card>
-            <div className="flex items-center">{item.icon}</div>
-            <CardTitle>{item.title}</CardTitle>
-            <CardDescription>{item.description}</CardDescription>
-          </Card>
-        </div>
-      ))}
+            onMouseEnter={isMobile ? undefined : () => handleMouseEnter(idx)}
+            onMouseLeave={isMobile ? undefined : handleMouseLeave}
+            onClick={() => handleClick(idx)}
+            onTouchStart={() => isMobile && handleClick(idx)}
+          >
+            {/* Only render animation if not on mobile or if specifically touched on mobile */}
+            <AnimatePresence mode="wait">
+              {isActive && (
+                <motion.span
+                  className="absolute inset-0 h-full w-full bg-orange-600 dark:bg-orange-600 block rounded-3xl will-change-opacity"
+                  layoutId={isMobile ? undefined : "hoverBackground"} // Disable layoutId on mobile for better performance
+                  initial={{ opacity: 0 }}
+                  animate={{
+                    opacity: 0.9, // Slightly reduced opacity for better performance
+                    transition: { duration: 0.1, ease: "linear" }, // Simplified animation
+                  }}
+                  exit={{
+                    opacity: 0,
+                    transition: { duration: 0.1, ease: "linear" }, // Simplified exit animation
+                  }}
+                  style={{ willChange: "opacity", transform: "translateZ(0)" }} // Force hardware acceleration
+                />
+              )}
+            </AnimatePresence>
+            <Card>
+              <div className="flex items-center">{item.icon}</div>
+              <CardTitle>{item.title}</CardTitle>
+              <CardDescription>{item.description}</CardDescription>
+            </Card>
+          </div>
+        );
+      })}
     </div>
   );
 };
@@ -69,16 +123,20 @@ export const Card = ({
   return (
     <div
       className={cn(
-        "rounded-2xl h-full w-full p-4 overflow-hidden bg-black border border-transparent dark:border-white/[0.2] group-hover:border-slate-700 relative z-20",
+        "rounded-2xl h-full w-full p-8 overflow-hidden bg-black border border-transparent dark:border-white/[0.2] group-hover:border-slate-700 relative z-20 transform-gpu",
         className
       )}
+      style={{
+        willChange: "transform",
+        transform: "translateZ(0)",
+        transition: "border-color 0.1s linear"
+      }}
     >
-      <div className="relative z-50">
-        <div className="p-4">{children}</div>
-      </div>
+      {children}
     </div>
   );
 };
+
 export const CardTitle = ({
   className,
   children,
@@ -92,6 +150,7 @@ export const CardTitle = ({
     </h4>
   );
 };
+
 export const CardDescription = ({
   className,
   children,
@@ -102,7 +161,7 @@ export const CardDescription = ({
   return (
     <p
       className={cn(
-        "mt-8 text-zinc-400 tracking-wide leading-relaxed text-sm",
+        "mt-4 text-zinc-400 tracking-wide leading-relaxed text-sm",
         className
       )}
     >

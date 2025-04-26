@@ -2,10 +2,12 @@ import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
 import "./gradient-animation.css";
+import "../styles/mobile-optimizations.css";
 import SpotlightBackground from "@/components/main/SpotlightBackground";
 import Navbar from "@/components/main/Navbar";
 import Footer from "@/components/main/Footer";
 import LoadingAnimation from "@/components/main/LoadingAnimation";
+import ClientSpotlight from "@/components/main/ClientSpotlight";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -36,7 +38,7 @@ export default function RootLayout({
         style={{ cursor: 'auto' }}
       >
         <LoadingAnimation />
-        <SpotlightBackground />
+        <ClientSpotlight />
         <Navbar />
         {children}
         <Footer />
@@ -44,3 +46,4 @@ export default function RootLayout({
     </html>
   );
 }
+
