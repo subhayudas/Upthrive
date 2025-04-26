@@ -84,11 +84,11 @@ const Navbar = () => {
   const mobileMenuVariants = {
     closed: { 
       opacity: 0,
-      y: -20,
-      scale: 0.95,
+      y: -10,
+      scale: 0.98,
       transition: { 
-        duration: 0.2,
-        ease: "easeInOut"
+        duration: 0.15,
+        ease: "easeOut"
       }
     },
     open: { 
@@ -96,10 +96,10 @@ const Navbar = () => {
       y: 0,
       scale: 1,
       transition: { 
-        duration: 0.3,
+        duration: 0.2,
         ease: "easeOut",
-        staggerChildren: 0.07,
-        delayChildren: 0.1
+        staggerChildren: 0.05,
+        delayChildren: 0.05
       }
     }
   };
@@ -108,13 +108,13 @@ const Navbar = () => {
   const menuItemVariants = {
     closed: { 
       opacity: 0,
-      y: -10,
+      y: -5,
       transition: { duration: 0.1 }
     },
     open: { 
       opacity: 1,
       y: 0,
-      transition: { duration: 0.3 }
+      transition: { duration: 0.2 }
     }
   };
 
@@ -123,12 +123,12 @@ const Navbar = () => {
       initial="hidden"
       animate="visible"
       variants={navVariants}
-      className={`fixed w-full z-50 top-0 px-2 sm:px-4 md:px-10 transition-all duration-300 ${scrolled ? "py-1 sm:py-2" : "py-2 sm:py-4"}`}
+      className={`fixed w-full z-50 top-0 px-3 sm:px-4 md:px-10 transition-all duration-300 ${scrolled ? "py-1 sm:py-2" : "py-2 sm:py-4"}`}
     >
       <div className="max-w-screen-xl mx-auto">
         <div 
-          className={`${scrolled ? "py-1 sm:py-2" : "py-2 sm:py-3"} 
-          px-3 sm:px-4 md:px-6 rounded-2xl 
+          className={`${scrolled ? "py-2" : "py-3"} 
+          px-4 sm:px-4 md:px-6 rounded-2xl 
           bg-gradient-to-r from-[#03001417] via-[#03001440] to-[#03001417] 
           backdrop-blur-xl border border-[#ffffff30] 
           shadow-[inset_0_1px_2px_rgba(255,255,255,0.4),_0_8px_10px_rgba(0,0,0,0.2)] 
@@ -137,7 +137,7 @@ const Navbar = () => {
           hover:border-[#ffffff40]
           flex items-center justify-between
           before:content-[''] before:absolute before:inset-0 before:rounded-2xl before:bg-gradient-to-b before:from-[#ffffff20] before:to-transparent before:opacity-50 before:pointer-events-none
-          relative`}
+          relative touch-manipulation`}
         >
           {/* Logo and Brand Name */}
           <div className="flex items-center space-x-2 sm:space-x-3">
@@ -196,7 +196,7 @@ const Navbar = () => {
           <div className="flex md:hidden">
             <button
               onClick={toggleMenu}
-              className="text-white p-2 focus:outline-none focus:ring-2 focus:ring-orange-500/50 rounded-lg"
+              className="text-white p-2.5 focus:outline-none focus:ring-2 focus:ring-orange-500/50 rounded-lg touch-manipulation active:scale-95 transition-transform"
               aria-expanded={isMenuOpen}
               aria-label="Toggle navigation"
             >
@@ -395,7 +395,7 @@ const Navbar = () => {
             animate="open"
             exit="closed"
             variants={mobileMenuVariants}
-            className="absolute top-[calc(100%+8px)] left-2 right-2 bg-gradient-to-r from-[#03001417] via-[#03001450] to-[#03001417] backdrop-blur-lg border border-[#ffffff20] rounded-xl shadow-xl p-5 z-50"
+            className="fixed top-[calc(4rem)] left-3 right-3 bg-gradient-to-r from-[#03001417] via-[#03001450] to-[#03001417] backdrop-blur-lg border border-[#ffffff20] rounded-xl shadow-xl p-4 z-50 max-h-[calc(100vh-5rem)] overflow-y-auto touch-manipulation"
           >
             <div className="flex flex-col space-y-5">
               <motion.div 
