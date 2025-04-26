@@ -44,7 +44,7 @@ const Counter: React.FC<CounterProps> = ({ end, duration, suffix = "", prefix = 
   }, [end, duration, isInView]);
   
   return (
-    <div ref={counterRef} className="font-bold text-5xl md:text-6xl text-white">
+    <div ref={counterRef} className="font-bold text-4xl sm:text-5xl md:text-6xl text-white">
       {prefix}{count}{suffix}
     </div>
   );
@@ -90,7 +90,7 @@ const Statistics = () => {
   ];
   
   return (
-    <div className="py-24 px-4 sm:px-6 lg:px-8 relative overflow-hidden" ref={containerRef}>
+    <div className="py-16 sm:py-20 lg:py-24 px-4 sm:px-6 lg:px-8 relative overflow-hidden" ref={containerRef}>
       {/* Background elements */}
       <div className="absolute inset-0 overflow-hidden">
         <div className="absolute -top-40 -right-40 w-80 h-80 bg-orange-500/10 rounded-full blur-3xl"></div>
@@ -124,7 +124,7 @@ const Statistics = () => {
           </motion.p>
         </div>
         
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8">
           {stats.map((stat) => (
             <motion.div
               key={stat.id}
@@ -141,7 +141,7 @@ const Statistics = () => {
                 scale: 1.05,
                 transition: { type: "spring", stiffness: 400, damping: 10 }
               }}
-              className="relative rounded-2xl p-8 bg-gradient-to-br from-gray-900/80 to-gray-800/80 backdrop-blur-sm border border-gray-800 hover:border-gray-700 transition-all duration-300 flex flex-col items-center text-center"
+              className="relative rounded-2xl p-6 sm:p-8 bg-gradient-to-br from-gray-900/80 to-gray-800/80 backdrop-blur-sm border border-gray-800 hover:border-gray-700 transition-all duration-300 flex flex-col items-center text-center"
             >
               <div className={`absolute inset-0 bg-gradient-to-br ${stat.color} opacity-5 rounded-2xl`}></div>
               

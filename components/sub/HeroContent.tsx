@@ -33,19 +33,19 @@ const HeroContent = () => {
     <motion.div 
       initial="hidden"
       animate="visible"
-      className="flex flex-col items-center justify-center px-4 py-10 sm:py-16 lg:py-24 min-h-screen relative overflow-hidden"
+      className="flex flex-col items-center justify-center px-4 py-8 sm:py-16 lg:py-24 min-h-[100svh] relative overflow-hidden"
       style={{ fontFamily: "Helvetica, Arial, sans-serif" }}
     >
       {/* Removed background overlay to make main background visible */}
       
-      <Card className="w-full max-w-7xl mx-auto bg-transparent relative overflow-hidden rounded-xl border border-white/10 shadow-[0_0_25px_rgba(112,66,248,0.15)]" style={{ minHeight: '600px' }}>
+      <Card className="w-full max-w-7xl mx-auto bg-transparent relative overflow-hidden rounded-xl border border-white/10 shadow-[0_0_25px_rgba(112,66,248,0.15)]" style={{ minHeight: 'auto' }}>
         {/* Optional subtle gradient overlay */}
         <div className="absolute inset-0 bg-gradient-to-r from-black/10 to-transparent z-0"></div>
        
         
         <div className="flex flex-col md:flex-row h-full">
           {/* Left content */}
-          <div className="w-full md:w-1/2 p-8 relative z-10 flex flex-col justify-center text-left">
+          <div className="w-full md:w-1/2 p-4 sm:p-6 md:p-8 relative z-10 flex flex-col justify-center text-left">
             <motion.div 
               variants={slideInFromTop}
               className="Welcome-box py-2 px-4 border border-[#7042f88b] bg-[#7042f80d] rounded-full opacity-90 text-center inline-flex items-center mb-4 backdrop-blur-sm shadow-[0_0_15px_rgba(112,66,248,0.15)] w-fit"
@@ -58,7 +58,7 @@ const HeroContent = () => {
 
             <motion.h1 
               variants={slideInFromLeft(0.5)} 
-              className="relative z-10 text-5xl sm:text-6xl lg:text-7xl font-light tracking-tight mb-6"
+              className="relative z-10 text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-light tracking-tight mb-4 sm:mb-6"
               style={{ letterSpacing: "-0.02em" }}
             >
               <span className="block mb-3 hero-violet-gradient">CREATING</span>
@@ -67,7 +67,7 @@ const HeroContent = () => {
 
             <motion.p 
               variants={slideInFromRight(0.7)} 
-              className="relative z-10 mt-6 max-w-xl text-base sm:text-lg text-white/70 leading-relaxed font-light"
+              className="relative z-10 mt-4 sm:mt-6 max-w-xl text-sm sm:text-base md:text-lg text-white/70 leading-relaxed font-light"
             >
               We craft digital experiences that captivate audiences, drive conversions, and elevate your brand story. Partner with us to transform your vision into digital reality.
             </motion.p>
@@ -87,7 +87,7 @@ const HeroContent = () => {
             variants={slideInFromRight(0.5)}
             className="hidden md:block w-full md:w-1/2 relative"
           >
-            <div className="absolute inset-0 h-[700px] -bottom-[100px]">
+            <div className="absolute inset-0 h-[400px] sm:h-[500px] md:h-[600px] lg:h-[700px] -bottom-[50px] sm:-bottom-[75px] md:-bottom-[100px]">
               <script type="module" src="https://unpkg.com/@splinetool/viewer@1.9.82/build/spline-viewer.js"></script>
               <spline-viewer url="https://prod.spline.design/vKrpmCBkxF03wYCr/scene.splinecode"></spline-viewer>
             </div>

@@ -79,7 +79,7 @@ const FeatureShowcase = () => {
   };
 
   return (
-    <div className="py-20 px-4 sm:px-6 lg:px-8 bg-black/30 backdrop-blur-sm" ref={containerRef}>
+    <div className="py-16 sm:py-20 px-4 sm:px-6 lg:px-8 bg-black/30 backdrop-blur-sm" ref={containerRef}>
       <div className="max-w-7xl mx-auto">
         <div className="text-center mb-16">
           <motion.div variants={slideInFromTop} className="Welcome-box py-[8px] px-[7px] border border-[#7042f88b] opacity-[0.9] text-center mx-auto inline-flex items-center">
@@ -105,7 +105,7 @@ const FeatureShowcase = () => {
           variants={containerVariants}
           initial="hidden"
           animate={isInView ? "visible" : "hidden"}
-          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
+          className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8"
         >
           {features.map((feature, index) => (
             <motion.div
@@ -116,10 +116,10 @@ const FeatureShowcase = () => {
                 boxShadow: "0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04)",
                 transition: { type: "spring", stiffness: 400, damping: 10 }
               }}
-              className="relative overflow-hidden rounded-2xl p-6 bg-gradient-to-br from-gray-900 to-gray-800 border border-gray-800 hover:border-gray-700 transition-all duration-300"
+              className="relative overflow-hidden rounded-2xl p-5 sm:p-6 bg-gradient-to-br from-gray-900 to-gray-800 border border-gray-800 hover:border-gray-700 transition-all duration-300"
             >
               <div className="absolute -right-10 -top-10 w-32 h-32 bg-gradient-to-br opacity-20 rounded-full blur-2xl"></div>
-              <div className={`text-4xl mb-4 bg-gradient-to-br ${feature.color} inline-block rounded-xl p-3`}>
+              <div className={`text-3xl sm:text-4xl mb-3 sm:mb-4 bg-gradient-to-br ${feature.color} inline-block rounded-xl p-2 sm:p-3`}>
                 {feature.icon}
               </div>
               <h3 className="text-xl font-bold mb-2 text-white">{feature.title}</h3>
