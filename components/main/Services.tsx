@@ -5,6 +5,7 @@ import { motion, useInView, useScroll, useTransform, AnimatePresence } from "fra
 import { SparklesIcon } from "@heroicons/react/24/solid";
 import AnimatedHeading from "../ui/animated-heading";
 import { projects } from "./snippets/card-hover-effect-snippet";
+import Image from "next/image";
 
 const Services = () => {
   const containerRef = useRef(null);
@@ -86,6 +87,26 @@ const Services = () => {
     }
   };
 
+  // Image animation variants
+  const imageVariants = {
+    hidden: { opacity: 0, scale: 0.9 },
+    visible: { 
+      opacity: 1, 
+      scale: 1,
+      transition: { 
+        duration: 0.5, 
+        ease: "easeOut" 
+      }
+    },
+    hover: { 
+      scale: 1.05,
+      transition: { 
+        duration: 0.3, 
+        ease: "easeOut" 
+      }
+    }
+  };
+
   // Floating animation for background elements
   const floatingAnimation = {
     y: [0, -10, 0],
@@ -162,7 +183,7 @@ const Services = () => {
           </motion.p>
         </div>
 
-        {/* Services Grid with enhanced animations */}
+        {/* Services Grid with enhanced animations and images */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8 md:gap-10">
           {projects.map((service, index) => (
             <motion.div
@@ -178,10 +199,27 @@ const Services = () => {
               onClick={() => setSelectedService(selectedService === index ? null : index)}
               layoutId={`service-card-${index}`}
             >
+              {/* Service Image */}
+              <div className="relative w-full h-48 overflow-hidden">
+                <motion.div
+                  className="absolute inset-0"
+                  variants={imageVariants}
+                >
+                  <Image
+                    src={service.imageUrl}
+                    alt={service.title}
+                    fill
+                    className="object-cover transition-transform duration-500 group-hover:scale-110"
+                    sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent" />
+                </motion.div>
+              </div>
+
               {/* Card inner content with enhanced animations */}
               <div className="p-6 sm:p-8 relative z-10">
                 <motion.div 
-                  className="mb-5 sm:mb-6 relative"
+                  className="mb-5 sm:mb-6 relative -mt-12"
                   variants={iconVariants}
                 >
                   <motion.div 
@@ -199,167 +237,144 @@ const Services = () => {
                   className="text-xl sm:text-2xl font-bold mb-3 sm:mb-4 bg-clip-text text-transparent bg-gradient-to-r from-white to-gray-300 group-hover:from-orange-400 group-hover:to-orange-200 transition-all duration-300"
                   initial={{ opacity: 0.9 }}
                   whileHover={{ scale: 1.02 }}
+                  transition={{ duration: 0.2 }}
                 >
                   {service.title}
                 </motion.h3>
                 
                 <motion.p 
-                  className="text-sm sm:text-base text-neutral-400 group-hover:text-neutral-200 transition-colors duration-300 leading-relaxed"
+                  className="text-sm sm:text-base text-neutral-300 group-hover:text-neutral-200 transition-colors duration-300"
                   initial={{ opacity: 0.8 }}
                   whileHover={{ opacity: 1 }}
+                  transition={{ duration: 0.2 }}
                 >
                   {service.description}
                 </motion.p>
                 
                 <motion.div 
-                  className="mt-6 sm:mt-8 flex items-center text-orange-500 font-medium text-sm sm:text-base"
-                  initial={{ opacity: 0.6, x: 0 }}
-                  whileHover={{ opacity: 1, x: 5 }}
-                  transition={{ duration: 0.2 }}
+                  className="mt-6 sm:mt-8"
+                  initial={{ opacity: 0, y: 10 }}
+                  whileHover={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.3 }}
                 >
-                  <span className="mr-2">Learn more</span>
-                  <svg className="w-4 h-4 sm:w-5 sm:h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
-                  </svg>
+                  <span className="inline-flex items-center text-sm font-medium text-orange-400 group-hover:text-orange-300">
+                    Learn more
+                    <svg className="ml-1 w-4 h-4 group-hover:translate-x-1 transition-transform duration-300" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                    </svg>
+                  </span>
                 </motion.div>
               </div>
               
-              {/* Enhanced hover effects */}
+              {/* Animated gradient border on hover */}
               <motion.div 
-                className="absolute inset-0 -z-10 opacity-0 group-hover:opacity-100 transition-opacity duration-500"
+                className="absolute inset-0 border-2 border-transparent rounded-2xl opacity-0 group-hover:opacity-100"
                 initial={{ opacity: 0 }}
-                whileHover={{ opacity: 1 }}
-              >
-                <div className="absolute inset-0 bg-gradient-to-br from-orange-600/10 via-purple-600/10 to-blue-600/10" />
-                <motion.div 
-                  className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,rgba(255,140,50,0.2),transparent_70%)]" 
-                  animate={{
-                    scale: [1, 1.2, 1],
-                    opacity: [0.3, 0.5, 0.3],
-                    transition: { duration: 4, repeat: Infinity }
-                  }}
-                />
-                <div className="absolute bottom-0 left-0 right-0 h-1/3 bg-gradient-to-t from-orange-500/20 to-transparent" />
-              </motion.div>
-              
-              {/* Animated border glow */}
-              <motion.div 
-                className="absolute inset-0 -z-20 opacity-0 group-hover:opacity-100"
-                initial={{ opacity: 0 }}
-                whileHover={{ opacity: 1 }}
+                whileHover={{ 
+                  opacity: 1,
+                  background: "linear-gradient(to right, rgba(249, 115, 22, 0.2), rgba(168, 85, 247, 0.2)) border-box",
+                  borderColor: "transparent"
+                }}
                 transition={{ duration: 0.3 }}
-              >
-                <div className="absolute inset-0 rounded-2xl border-2 border-transparent bg-transparent [background:linear-gradient(to_right,#000_0%,#000_100%)_padding-box,linear-gradient(to_right,#ff8c32_0%,#a855f7_50%,#3b82f6_100%)_border-box] z-10" />
-              </motion.div>
+              />
             </motion.div>
           ))}
         </div>
-        
-        {/* Enhanced Call to action */}
-        <motion.div 
-          className="mt-16 sm:mt-20 md:mt-24 text-center"
-          initial={{ opacity: 0, y: 30 }}
-          animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
-          transition={{ duration: 0.7, delay: 0.8, ease: [0.215, 0.61, 0.355, 1] }}
-        >
-          <motion.button 
-            className="relative px-8 sm:px-10 py-3 sm:py-4 text-white text-sm sm:text-base font-medium rounded-full overflow-hidden group"
-            whileHover={{ scale: 1.05 }}
-            whileTap={{ scale: 0.95 }}
-          >
-            <span className="relative z-10 flex items-center justify-center gap-2">
-              <span>Get Started Today</span>
-              <svg className="w-4 h-4 sm:w-5 sm:h-5 transition-transform group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
-              </svg>
-            </span>
-            <motion.div 
-              className="absolute inset-0 bg-gradient-to-r from-orange-500 via-orange-600 to-orange-700"
-              animate={{
-                background: [
-                  'linear-gradient(to right, #f97316, #ea580c, #c2410c)',
-                  'linear-gradient(to right, #c2410c, #f97316, #ea580c)',
-                  'linear-gradient(to right, #ea580c, #c2410c, #f97316)'
-                ],
-                transition: { duration: 3, repeat: Infinity }
-              }}
-            />
-            <motion.div 
-              className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300"
-              initial={{ opacity: 0 }}
-              whileHover={{ opacity: 1 }}
-            >
-              <div className="absolute inset-0 bg-gradient-to-r from-orange-600 via-orange-500 to-orange-600 blur-md" />
-            </motion.div>
-          </motion.button>
-        </motion.div>
-      </div>
 
-      {/* Modal for expanded service view */}
-      <AnimatePresence>
-        {selectedService !== null && (
-          <motion.div 
-            className="fixed inset-0 z-50 flex items-center justify-center p-4 sm:p-6"
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            exit={{ opacity: 0 }}
-            onClick={() => setSelectedService(null)}
-          >
-            <motion.div 
-              className="absolute inset-0 bg-black/80 backdrop-blur-sm"
+        {/* Expanded service view when selected */}
+        <AnimatePresence>
+          {selectedService !== null && (
+            <motion.div
+              layoutId={`service-card-${selectedService}`}
+              className="fixed inset-0 z-50 flex items-center justify-center p-4 sm:p-6"
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
-            />
-            <motion.div
-              className="relative bg-gradient-to-br from-gray-900 to-black border border-white/10 rounded-2xl overflow-hidden max-w-3xl w-full p-6 sm:p-8"
-              layoutId={`service-card-${selectedService}`}
-              onClick={(e) => e.stopPropagation()}
+              transition={{ duration: 0.3 }}
             >
-              <div className="flex flex-col sm:flex-row gap-6 sm:gap-8 items-start">
-                <motion.div className="sm:w-1/3">
-                  <div className="bg-gradient-to-br from-gray-800 to-gray-900 p-6 rounded-xl border border-white/10">
-                    {projects[selectedService].icon}
+              <motion.div 
+                className="absolute inset-0 bg-black/80 backdrop-blur-sm"
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                exit={{ opacity: 0 }}
+                onClick={() => setSelectedService(null)}
+              />
+              
+              <motion.div 
+                className="relative bg-gradient-to-br from-gray-900 to-black/95 border border-white/10 rounded-2xl overflow-hidden max-w-3xl w-full max-h-[80vh] overflow-y-auto"
+                initial={{ scale: 0.9, y: 20 }}
+                animate={{ scale: 1, y: 0 }}
+                exit={{ scale: 0.9, y: 20 }}
+                transition={{ type: "spring", stiffness: 300, damping: 25 }}
+              >
+                {/* Service Image in modal */}
+                <div className="relative w-full h-64 sm:h-80">
+                  <Image
+                    src={projects[selectedService].imageUrl}
+                    alt={projects[selectedService].title}
+                    fill
+                    className="object-cover"
+                    sizes="(max-width: 640px) 100vw, (max-width: 1024px) 80vw, 60vw"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-gray-900 via-gray-900/60 to-transparent" />
+                  
+                  <button 
+                    className="absolute top-4 right-4 p-2 rounded-full bg-black/50 text-white hover:bg-black/70 transition-colors duration-200"
+                    onClick={(e) => {
+                      e.stopPropagation();
+                      setSelectedService(null);
+                    }}
+                  >
+                    <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+                    </svg>
+                  </button>
+                </div>
+                
+                <div className="p-6 sm:p-8">
+                  <div className="flex items-center mb-6">
+                    <div className="p-3 rounded-full bg-gradient-to-br from-orange-500/20 to-purple-500/20 border border-white/10 mr-4">
+                      {projects[selectedService].icon}
+                    </div>
+                    <h3 className="text-2xl sm:text-3xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-white to-gray-300">
+                      {projects[selectedService].title}
+                    </h3>
                   </div>
-                </motion.div>
-                <div className="sm:w-2/3">
-                  <h2 className="text-2xl sm:text-3xl font-bold mb-4 text-white">
-                    {projects[selectedService].title}
-                  </h2>
-                  <p className="text-neutral-300 mb-6">
+                  
+                  <p className="text-base sm:text-lg text-neutral-300 mb-6">
                     {projects[selectedService].description}
                   </p>
+                  
                   <div className="space-y-4">
-                    <div className="bg-black/40 p-4 rounded-lg border border-white/5">
-                      <h3 className="text-lg font-medium text-orange-400 mb-2">Key Benefits</h3>
-                      <ul className="list-disc list-inside text-neutral-300 space-y-1">
-                        <li>Enhanced user engagement and conversion rates</li>
-                        <li>Professional and consistent brand representation</li>
-                        <li>Cutting-edge solutions tailored to your needs</li>
-                      </ul>
-                    </div>
-                    <motion.button 
-                      className="w-full py-3 bg-gradient-to-r from-orange-500 to-orange-700 text-white font-medium rounded-lg hover:shadow-lg hover:shadow-orange-500/20 transition-all duration-300"
-                      whileHover={{ scale: 1.02 }}
-                      whileTap={{ scale: 0.98 }}
-                    >
-                      Request a Quote
-                    </motion.button>
+                    <h4 className="text-lg sm:text-xl font-semibold text-white">What we offer:</h4>
+                    <ul className="space-y-3 text-neutral-300">
+                      {[...Array(4)].map((_, i) => (
+                        <li key={i} className="flex items-start">
+                          <svg className="w-5 h-5 text-orange-400 mr-2 mt-0.5 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                          </svg>
+                          <span>
+                            {i === 0 && "Custom tailored solutions designed specifically for your business needs"}
+                            {i === 1 && "Expert team with years of industry experience and proven results"}
+                            {i === 2 && "Ongoing support and maintenance to ensure lasting success"}
+                            {i === 3 && "Competitive pricing with flexible packages to fit your budget"}
+                          </span>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                  
+                  <div className="mt-8 flex justify-end">
+                    <button className="px-6 py-3 rounded-full bg-gradient-to-r from-orange-500 to-orange-600 hover:from-orange-600 hover:to-orange-700 text-white font-medium transition-all duration-300 transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-orange-500 focus:ring-opacity-50">
+                      Get Started
+                    </button>
                   </div>
                 </div>
-              </div>
-              <button 
-                className="absolute top-4 right-4 text-white/80 hover:text-white"
-                onClick={() => setSelectedService(null)}
-              >
-                <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
-                </svg>
-              </button>
+              </motion.div>
             </motion.div>
-          </motion.div>
-        )}
-      </AnimatePresence>
+          )}
+        </AnimatePresence>
+      </div>
     </motion.div>
   );
 };
