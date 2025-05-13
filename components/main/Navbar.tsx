@@ -187,7 +187,7 @@ const Navbar = () => {
                   transition={{ duration: 5, repeat: Infinity, ease: "easeInOut" }}
                   className="bg-clip-text text-transparent bg-gradient-to-r from-orange-500 via-amber-300 to-orange-500 bg-size-200"
                 >
-                  Upthrive
+                  UpThrive
                 </motion.span>
               </motion.span>
           </div>
