@@ -166,29 +166,29 @@ const ProcessTimeline = () => {
   ];
 
   return (
-    <div className="py-16 sm:py-20 lg:py-24 px-4 sm:px-6 lg:px-8 relative overflow-hidden">
+    <div id="ProcessTimeline" className="py-16 sm:py-20 lg:py-24 px-4 sm:px-6 lg:px-8 relative overflow-hidden">
       {/* Background elements */}
       <div className="absolute inset-0 overflow-hidden">
         <div className="absolute top-1/4 right-0 w-72 h-72 bg-orange-500/10 rounded-full blur-3xl"></div>
         <div className="absolute bottom-1/4 left-0 w-72 h-72 bg-blue-500/10 rounded-full blur-3xl"></div>
       </div>
-      
+
       <div className="max-w-7xl mx-auto relative">
         <div className="text-center mb-16">
           <div className="Welcome-box py-[8px] px-[7px] border border-[#7042f88b] opacity-[0.9] text-center mx-auto inline-flex items-center">
             <SparklesIcon className="text-[#b49bff] mr-[10px] h-5 w-5" />
             <h1 className="Welcome-text text-[13px]">Our Process</h1>
           </div>
-          
+
           <AnimatedHeading as="h2" className="mt-4 text-4xl md:text-5xl font-bold">
             How We Deliver Excellence
           </AnimatedHeading>
-          
+
           <p className="mt-4 text-base sm:text-lg text-gray-300 max-w-2xl mx-auto px-2">
             Our proven six-step process ensures consistent, high-quality results for every project.
           </p>
         </div>
-        
+
         <div className="relative w-full overflow-clip">
           <Timeline data={processData} />
         </div>

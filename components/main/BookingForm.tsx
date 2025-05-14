@@ -73,7 +73,7 @@ const BookingForm = () => {
   };
 
   return (
-    <div id="booking-form" className="py-16 px-4 sm:px-6 lg:px-8 relative overflow-hidden">
+    <div id="BookingForm" className="py-16 px-4 sm:px-6 lg:px-8 relative overflow-hidden">
       {/* Background elements */}
       <div className="absolute inset-0 overflow-hidden">
         <div className="absolute top-1/4 right-0 w-72 h-72 bg-orange-500/10 rounded-full blur-3xl"></div>

@@ -257,7 +257,7 @@ const Navbar = () => {
                 </motion.svg>
               </motion.a>
               <motion.a
-                href="https://linkedin.com"
+                href="https://www.linkedin.com/company/upthriveindia"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-white hover:text-orange-400 transition-colors duration-300"
@@ -276,7 +276,7 @@ const Navbar = () => {
                 </motion.svg>
               </motion.a>
               <motion.a
-                href="https://instagram.com"
+                href="https://www.instagram.com/upthrive.in/"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-white hover:text-orange-400 transition-colors duration-300"

@@ -8,7 +8,7 @@ import AnimatedHeading from "../ui/animated-heading";
 
 const Approach = () => {
   return (
-    <section className="max-w-6xl mx-auto mt-8 px-2">
+    <section id="Approach" className="max-w-6xl mx-auto mt-8 px-2">
      <div className="font-bold text-4xl pb-5 md:text-5xl text-center mt-20">
         <div className="Welcome-box py-[8px] px-[7px] sm:py-2 sm:px2 border border-[#7042f88b] opacity-[0.9] text-center mx-auto ">
           <SparklesIcon className="text-[#b49bff] mr-[10px] sm:mr-1 h-5 w-5" />
@@ -21,18 +21,18 @@ const Approach = () => {
         </AnimatedHeading>
         <p
         className="mt-4 text-lg font-normal
-          text-neutral-300 max-w-lg 
+          text-neutral-300 max-w-lg
           text-center mx-auto"
       >
-        With precision and passion, we bring your project to fruition, ensuring excellence every step of the way. 
+        With precision and passion, we bring your project to fruition, ensuring excellence every step of the way.
       </p>
       </div>
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12  ">
         <Card
           title="Planning & Strategy"
           icon={<AceternityIcon order="Phase 1" />}
-          des="We'll collaborate to map out your website's goals, target audience, 
-          and key functionalities. We'll discuss things like site structure, 
+          des="We'll collaborate to map out your website's goals, target audience,
+          and key functionalities. We'll discuss things like site structure,
           navigation, and content requirements."
         >
           <CanvasRevealEffect
@@ -65,7 +65,7 @@ const Approach = () => {
         <Card
           title="Development & Launch"
           icon={<AceternityIcon order="Phase 3" />}
-          des="This is where the magic happens! Based on the approved design, 
+          des="This is where the magic happens! Based on the approved design,
           I'll translate everything into functional code, building your website
           from the ground up."
         >
@@ -148,7 +148,7 @@ const AceternityIcon = ({ order }: { order: string }) => {
          bg-[conic-gradient(from_90deg_at_50%_50%,#E2CBFF_0%,#393BB2_50%,#E2CBFF_100%)]"
       />
       <span
-        className="inline-flex h-full w-full cursor-pointer items-center 
+        className="inline-flex h-full w-full cursor-pointer items-center
         justify-center rounded-full bg-slate-950 text-purple backdrop-blur-3xl font-bold text-2xl py-[8px] px-[7px] sm:py-2 sm:px2 mx-auto"
         style={{ color: "#dc7633" }}
       >

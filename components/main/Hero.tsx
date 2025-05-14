@@ -3,7 +3,7 @@ import HeroContent from "../sub/HeroContent";
 
 const Hero = () => {
   return (
-    <div className="relative w-full" id="Home">
+    <div className="relative w-full" id="Hero">
       <HeroContent />
     </div>
   );

@@ -14,11 +14,11 @@ const TeamSection = () => {
   const [activeIndex, setActiveIndex] = useState(0);
   const sectionRef = useRef(null);
   const isInView = useInView(sectionRef, { once: false, amount: 0.2 });
-  
+
   // Mouse position for 3D effect
   const mouseX = useMotionValue(0);
   const mouseY = useMotionValue(0);
-  
+
   // Smooth spring animation for mouse movement
   const rotateX = useSpring(mouseY, { stiffness: 100, damping: 30 });
   const rotateY = useSpring(mouseX, { stiffness: 100, damping: 30 });
@@ -28,10 +28,10 @@ const TeamSection = () => {
     const rect = e.currentTarget.getBoundingClientRect();
     const centerX = rect.left + rect.width / 2;
     const centerY = rect.top + rect.height / 2;
-    
+
     const offsetX = (e.clientX - centerX) / 25;
     const offsetY = (e.clientY - centerY) / 25;
-    
+
     mouseX.set(offsetX);
     mouseY.set(-offsetY);
   };
@@ -40,7 +40,7 @@ const TeamSection = () => {
     mouseX.set(0);
     mouseY.set(0);
   };
-  
+
   const teamMembers = [
     {
       name: "Shaurya Narayan Singh",
@@ -110,12 +110,12 @@ const TeamSection = () => {
       }
     }
   };
-  
+
   const cardVariants = {
     initial: { scale: 0.9, opacity: 0, y: 50 },
-    animate: { 
-      scale: 1, 
-      opacity: 1, 
+    animate: {
+      scale: 1,
+      opacity: 1,
       y: 0,
       transition: {
         type: "spring",
@@ -124,9 +124,9 @@ const TeamSection = () => {
         duration: 0.5
       }
     },
-    exit: { 
-      scale: 0.9, 
-      opacity: 0, 
+    exit: {
+      scale: 0.9,
+      opacity: 0,
       y: -50,
       transition: {
         duration: 0.3
@@ -142,11 +142,11 @@ const TeamSection = () => {
       }
     }
   };
-  
+
   const imageVariants = {
     initial: { scale: 1.2, opacity: 0 },
-    animate: { 
-      scale: 1, 
+    animate: {
+      scale: 1,
       opacity: 1,
       transition: {
         type: "spring",
@@ -156,7 +156,7 @@ const TeamSection = () => {
       }
     }
   };
-  
+
   const socialIconVariants = {
     initial: { opacity: 0, y: 20 },
     animate: (custom: number) => ({
@@ -178,7 +178,7 @@ const TeamSection = () => {
       }
     }
   };
-  
+
   const skillVariants = {
     initial: { opacity: 0, x: -20 },
     animate: (custom: number) => ({
@@ -192,10 +192,10 @@ const TeamSection = () => {
   };
 
   return (
-    <section id="team" className="bg-transparent text-white px-8 py-24 md:px-20 overflow-hidden" ref={sectionRef}>
+    <section id="TeamSection" className="bg-transparent text-white px-8 py-24 md:px-20 overflow-hidden" ref={sectionRef}>
       <div className="container mx-auto">
         {/* Section Header with Animation */}
-        <motion.div 
+        <motion.div
           className="text-center mb-16"
           initial={{ opacity: 0, y: 30 }}
           animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
@@ -203,7 +203,7 @@ const TeamSection = () => {
         >
           <div className="flex items-center justify-center mb-3">
             <div className="h-[1px] w-12 bg-gradient-to-r from-transparent to-orange-500 mr-4"></div>
-            <motion.span 
+            <motion.span
               className="text-orange-500 uppercase tracking-wider text-sm font-medium flex items-center"
               initial={{ opacity: 0, scale: 0.8 }}
               animate={isInView ? { opacity: 1, scale: 1 } : { opacity: 0, scale: 0.8 }}
@@ -219,12 +219,12 @@ const TeamSection = () => {
             </motion.span>
             <div className="h-[1px] w-12 bg-gradient-to-l from-transparent to-orange-500 ml-4"></div>
           </div>
-          
+
           <AnimatedHeading as="h2" className="text-4xl md:text-5xl font-bold mb-4">
             Meet Our Founders
           </AnimatedHeading>
-          
-          <motion.p 
+
+          <motion.p
             className="text-gray-300 max-w-2xl mx-auto text-sm md:text-base"
             initial={{ opacity: 0 }}
             animate={isInView ? { opacity: 1 } : { opacity: 0 }}
@@ -237,7 +237,7 @@ const TeamSection = () => {
 
         {/* Team Member Selector */}
         <div className="mb-16">
-          <motion.div 
+          <motion.div
             className="flex flex-wrap justify-center gap-4"
             initial={{ opacity: 0, y: 20 }}
             animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
@@ -246,8 +246,8 @@ const TeamSection = () => {
             {teamMembers.map((member, index) => (
               <motion.button
                 key={index}
-                className={`px-6 py-3 rounded-full text-sm md:text-base font-medium transition-all duration-300 ${activeIndex === index 
-                  ? `bg-gradient-to-r ${member.color} text-white shadow-lg` 
+                className={`px-6 py-3 rounded-full text-sm md:text-base font-medium transition-all duration-300 ${activeIndex === index
+                  ? `bg-gradient-to-r ${member.color} text-white shadow-lg`
                   : 'bg-gray-800/50 text-gray-300 hover:bg-gray-700/50'}`}
                 onClick={() => setActiveIndex(index)}
                 whileHover={{ y: -3 }}
@@ -271,12 +271,12 @@ const TeamSection = () => {
               variants={cardVariants}
               onMouseMove={handleMouseMove}
               onMouseLeave={handleMouseLeave}
-              style={{ 
+              style={{
                 perspective: 1000,
                 transformStyle: "preserve-3d"
               }}
             >
-              <motion.div 
+              <motion.div
                 className="grid grid-cols-1 md:grid-cols-2 gap-8 rounded-2xl overflow-hidden bg-gradient-to-br from-gray-900/90 to-gray-800/90 backdrop-blur-lg border border-gray-700/50 p-6 md:p-8 shadow-xl"
                 style={{
                   rotateX: rotateX,
@@ -292,7 +292,7 @@ const TeamSection = () => {
                     animate={{ opacity: 1 }}
                     transition={{ duration: 0.5 }}
                   />
-                  
+
                   <motion.div
                     className="relative h-full w-full"
                     variants={imageVariants}
@@ -306,9 +306,9 @@ const TeamSection = () => {
                       priority
                     />
                   </motion.div>
-                  
+
                   {/* Glowing accent */}
-                  <motion.div 
+                  <motion.div
                     className="absolute bottom-0 left-0 right-0 h-1/3 z-20"
                     initial={{ opacity: 0 }}
                     animate={{ opacity: 1 }}
@@ -317,7 +317,7 @@ const TeamSection = () => {
                       background: `linear-gradient(to top, ${teamMembers[activeIndex].accent}40, transparent)`
                     }}
                   />
-                  
+
                   {/* Social Icons */}
                   <div className="absolute bottom-6 left-6 z-30 flex space-x-4">
                     <motion.a
@@ -355,7 +355,7 @@ const TeamSection = () => {
                     </motion.a>
                   </div>
                 </div>
-                
+
                 {/* Content Column */}
                 <div className="flex flex-col justify-center relative z-10">
                   <motion.div
@@ -364,15 +364,15 @@ const TeamSection = () => {
                     transition={{ delay: 0.2, duration: 0.5 }}
                   >
                     <div className="mb-6">
-                      <motion.div 
+                      <motion.div
                         className="h-1 w-16 rounded-full mb-6"
                         initial={{ width: 0 }}
                         animate={{ width: 64 }}
                         transition={{ delay: 0.3, duration: 0.5 }}
                         style={{ background: `linear-gradient(to right, ${teamMembers[activeIndex].accent}, ${teamMembers[activeIndex].accent}80)` }}
                       />
-                      
-                      <motion.h3 
+
+                      <motion.h3
                         className="text-3xl md:text-4xl font-bold mb-2 text-white"
                         initial={{ opacity: 0, y: 20 }}
                         animate={{ opacity: 1, y: 0 }}
@@ -380,8 +380,8 @@ const TeamSection = () => {
                       >
                         {teamMembers[activeIndex].name}
                       </motion.h3>
-                      
-                      <motion.p 
+
+                      <motion.p
                         className="text-lg font-medium mb-6"
                         initial={{ opacity: 0 }}
                         animate={{ opacity: 1 }}
@@ -390,8 +390,8 @@ const TeamSection = () => {
                       >
                         {teamMembers[activeIndex].role}
                       </motion.p>
-                      
-                      <motion.p 
+
+                      <motion.p
                         className="text-gray-300 mb-8 text-base md:text-lg"
                         initial={{ opacity: 0 }}
                         animate={{ opacity: 1 }}
@@ -400,12 +400,12 @@ const TeamSection = () => {
                         {teamMembers[activeIndex].bio}
                       </motion.p>
                     </div>
-                    
+
                     <div className="mb-8">
                       <h4 className="text-white text-lg font-medium mb-4">Expertise</h4>
                       <div className="flex flex-wrap gap-2">
                         {teamMembers[activeIndex].skills.map((skill, i) => (
-                          <motion.span 
+                          <motion.span
                             key={i}
                             className="px-4 py-2 rounded-full text-sm bg-white/10 backdrop-blur-md border border-white/10"
                             variants={skillVariants}
@@ -416,11 +416,11 @@ const TeamSection = () => {
                         ))}
                       </div>
                     </div>
-                    
+
                     <div className="flex space-x-3">
                       <motion.button
                         className="flex items-center gap-2 px-5 py-2.5 rounded-lg font-medium text-white transition-all duration-300"
-                        style={{ 
+                        style={{
                           background: `linear-gradient(to right, ${teamMembers[activeIndex].accent}, ${teamMembers[activeIndex].accent}80)`,
                           boxShadow: `0 8px 20px -8px ${teamMembers[activeIndex].accent}80`
                         }}
@@ -433,7 +433,7 @@ const TeamSection = () => {
                         Connect
                         <ArrowRightIcon className="h-4 w-4" />
                       </motion.button>
-                      
+
                       <motion.button
                         className="px-5 py-2.5 rounded-lg font-medium text-white bg-white/10 backdrop-blur-md border border-white/10 hover:bg-white/20 transition-all duration-300"
                         whileHover={{ y: -3 }}
@@ -448,40 +448,40 @@ const TeamSection = () => {
                   </motion.div>
                 </div>
               </motion.div>
-              
+
               {/* 3D floating elements */}
-              <motion.div 
+              <motion.div
                 className="absolute -top-8 -right-8 w-24 h-24 rounded-full opacity-30 blur-xl z-0"
-                animate={{ 
+                animate={{
                   y: [0, 15, 0],
                   scale: [1, 1.2, 1],
                   opacity: [0.2, 0.3, 0.2]
                 }}
-                transition={{ 
-                  duration: 5, 
+                transition={{
+                  duration: 5,
                   repeat: Infinity,
-                  repeatType: "reverse" 
+                  repeatType: "reverse"
                 }}
-                style={{ 
+                style={{
                   background: `radial-gradient(circle, ${teamMembers[activeIndex].accent}, transparent)`,
                   transformStyle: "preserve-3d",
                   transform: "translateZ(20px)"
                 }}
               />
-              
-              <motion.div 
+
+              <motion.div
                 className="absolute -bottom-10 -left-10 w-32 h-32 rounded-full opacity-20 blur-xl z-0"
-                animate={{ 
+                animate={{
                   y: [0, -20, 0],
                   scale: [1, 1.1, 1],
                   opacity: [0.1, 0.2, 0.1]
                 }}
-                transition={{ 
-                  duration: 7, 
+                transition={{
+                  duration: 7,
                   repeat: Infinity,
-                  repeatType: "reverse" 
+                  repeatType: "reverse"
                 }}
-                style={{ 
+                style={{
                   background: `radial-gradient(circle, ${teamMembers[activeIndex].accent}, transparent)`,
                   transformStyle: "preserve-3d",
                   transform: "translateZ(10px)"
