@@ -12,6 +12,7 @@ import MacbookDemo from "@/components/main/MacbookDemo";
 import FeatureShowcase from "@/components/main/FeatureShowcase";
 import Statistics from "@/components/main/Statistics";
 import ProcessTimeline from "@/components/main/ProcessTimeline";
+import TeamSection from "@/components/main/TeamSection";
 import CallToAction from "@/components/main/CallToAction";
 
 // Import the BookingForm component at the top of your file
@@ -30,6 +31,7 @@ export default function Home() {
         
         <Statistics />
         <ProcessTimeline />
+        <TeamSection />
         <CallToAction />
         <BookingForm />
       </div>
