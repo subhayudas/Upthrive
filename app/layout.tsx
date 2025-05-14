@@ -9,6 +9,8 @@ import Footer from "@/components/main/Footer";
 import LoadingAnimation from "@/components/main/LoadingAnimation";
 import ClientSpotlight from "@/components/main/ClientSpotlight";
 
+import FluidCursorWrapper from "@/components/ui/FluidCursorWrapper";
+
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
@@ -38,6 +40,7 @@ export default function RootLayout({
         style={{ cursor: 'auto' }}
       >
         <LoadingAnimation />
+        <FluidCursorWrapper />
         <ClientSpotlight />
         <Navbar />
         {children}
