@@ -97,9 +97,9 @@ const CallToAction = () => {
                 style={{ willChange: "transform" }}
               >
                 <AnimatedButton
-                  href="#contact"
+                  href="https://api.whatsapp.com/send?phone=919810724697&text=Hey"
                 >
-                  Learn More
+                  Text Us
                 </AnimatedButton>
               </motion.div>
             </div>

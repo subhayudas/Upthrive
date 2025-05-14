@@ -40,13 +40,13 @@ const Navbar = () => {
   // Navbar variants for animation
   const navVariants = {
     hidden: { opacity: 0, y: -20 },
-    visible: { 
-      opacity: 1, 
+    visible: {
+      opacity: 1,
       y: 0,
-      transition: { 
-        type: "spring", 
-        stiffness: 100, 
-        damping: 15 
+      transition: {
+        type: "spring",
+        stiffness: 100,
+        damping: 15
       }
     }
   };
@@ -54,14 +54,14 @@ const Navbar = () => {
   // Link hover animation variants
   const linkVariants = {
     initial: { y: 0, scale: 1, rotateX: 0 },
-    hover: { 
-      y: -5, 
+    hover: {
+      y: -5,
       scale: 1.05,
       rotateX: 10,
-      transition: { 
-        type: "spring", 
-        stiffness: 400, 
-        damping: 10 
+      transition: {
+        type: "spring",
+        stiffness: 400,
+        damping: 10
       }
     }
   };
@@ -82,20 +82,20 @@ const Navbar = () => {
 
   // Mobile menu animation variants
   const mobileMenuVariants = {
-    closed: { 
+    closed: {
       opacity: 0,
       y: -10,
       scale: 0.98,
-      transition: { 
+      transition: {
         duration: 0.15,
         ease: "easeOut"
       }
     },
-    open: { 
+    open: {
       opacity: 1,
       y: 0,
       scale: 1,
-      transition: { 
+      transition: {
         duration: 0.2,
         ease: "easeOut",
         staggerChildren: 0.05,
@@ -106,12 +106,12 @@ const Navbar = () => {
 
   // Mobile menu item animation variants
   const menuItemVariants = {
-    closed: { 
+    closed: {
       opacity: 0,
       y: -5,
       transition: { duration: 0.1 }
     },
-    open: { 
+    open: {
       opacity: 1,
       y: 0,
       transition: { duration: 0.2 }
@@ -119,20 +119,20 @@ const Navbar = () => {
   };
 
   return (
-    <motion.nav 
+    <motion.nav
       initial="hidden"
       animate="visible"
       variants={navVariants}
       className={`fixed w-full z-50 top-0 px-3 sm:px-4 md:px-10 transition-all duration-300 ${scrolled ? "py-1 sm:py-2" : "py-2 sm:py-4"}`}
     >
       <div className="max-w-screen-xl mx-auto">
-        <div 
-          className={`${scrolled ? "py-2" : "py-3"} 
-          px-4 sm:px-4 md:px-6 rounded-2xl 
-          bg-gradient-to-r from-[#03001417] via-[#03001440] to-[#03001417] 
-          backdrop-blur-xl border border-[#ffffff30] 
-          shadow-[inset_0_1px_2px_rgba(255,255,255,0.4),_0_8px_10px_rgba(0,0,0,0.2)] 
-          transition-all duration-300 ease-in-out 
+        <div
+          className={`${scrolled ? "py-2" : "py-3"}
+          px-4 sm:px-4 md:px-6 rounded-2xl
+          bg-gradient-to-r from-[#03001417] via-[#03001440] to-[#03001417]
+          backdrop-blur-xl border border-[#ffffff30]
+          shadow-[inset_0_1px_2px_rgba(255,255,255,0.4),_0_8px_10px_rgba(0,0,0,0.2)]
+          transition-all duration-300 ease-in-out
           transform hover:scale-[1.01]
           hover:border-[#ffffff40]
           flex items-center justify-between
@@ -148,19 +148,19 @@ const Navbar = () => {
               >
                 <motion.div
                   initial={{ opacity: 0.5, scale: 1 }}
-                  animate={{ 
-                    opacity: [0.5, 0.8, 0.5], 
+                  animate={{
+                    opacity: [0.5, 0.8, 0.5],
                     scale: [1, 1.05, 1],
                     boxShadow: [
-                      '0 0 5px 2px rgba(249, 115, 22, 0.4)', 
-                      '0 0 15px 5px rgba(249, 115, 22, 0.6)', 
+                      '0 0 5px 2px rgba(249, 115, 22, 0.4)',
+                      '0 0 15px 5px rgba(249, 115, 22, 0.6)',
                       '0 0 5px 2px rgba(249, 115, 22, 0.4)'
                     ]
                   }}
-                  transition={{ 
-                    duration: 2, 
-                    repeat: Infinity, 
-                    ease: "easeInOut" 
+                  transition={{
+                    duration: 2,
+                    repeat: Infinity,
+                    ease: "easeInOut"
                   }}
                   className="absolute inset-0 rounded-full bg-orange-500/20"
                 />
@@ -175,7 +175,7 @@ const Navbar = () => {
                 </Link>
               </motion.div>
 
-            <motion.span 
+            <motion.span
                 className="self-center text-lg sm:text-xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-orange-500 to-amber-300"
                 whileHover={{ scale: 1.05, y: -2 }}
                 whileTap={{ scale: 0.95 }}
@@ -236,7 +236,7 @@ const Navbar = () => {
           {/* Desktop Navigation - Removed navlinks, kept socials */}
           <div className="hidden md:flex md:items-center md:space-x-6">
             <div className="flex items-center space-x-5">
-             
+
               <motion.a
                 href="https://twitter.com"
                 target="_blank"
@@ -314,15 +314,17 @@ const Navbar = () => {
                 </motion.svg>
               </motion.a>
             </div>
-              
-            <Link
-              href="#ContactForm"
+
+            <a
+              href="https://api.whatsapp.com/send?phone=919810724697&text=Hey"
+              target="_blank"
+              rel="noopener noreferrer"
               className="relative inline-flex h-12 overflow-hidden items-center justify-center rounded-xl px-6 font-medium group"
             >
-              <motion.span 
+              <motion.span
                 className="absolute inset-0 w-full h-full bg-gradient-to-br from-orange-600 via-orange-500 to-amber-500 opacity-0 group-hover:opacity-100"
                 initial={{ opacity: 0 }}
-                whileHover={{ 
+                whileHover={{
                   opacity: 1,
                   backgroundPosition: ["0% 0%", "100% 100%"],
                   transition: { duration: 1.5, ease: "easeInOut" }
@@ -334,28 +336,28 @@ const Navbar = () => {
               <span className="absolute bottom-0 left-0 w-4 h-full bg-gradient-to-r from-white to-transparent opacity-5"></span>
               <span className="absolute bottom-0 right-0 w-4 h-full bg-gradient-to-l from-white to-transparent opacity-5"></span>
               <span className="absolute inset-0 w-full h-full border border-white opacity-10 rounded-xl"></span>
-              <motion.span 
+              <motion.span
                 className="absolute bg-white rounded-full opacity-5"
                 initial={{ width: 0, height: 0, x: "50%", y: "50%" }}
-                whileHover={{ 
-                  width: 200, 
-                  height: 200, 
-                  x: 0, 
+                whileHover={{
+                  width: 200,
+                  height: 200,
+                  x: 0,
                   y: 0,
-                  transition: { duration: 0.5, ease: "easeOut" } 
+                  transition: { duration: 0.5, ease: "easeOut" }
                 }}
               ></motion.span>
-              <motion.span 
+              <motion.span
                 className="relative text-white group-hover:text-white z-10 flex items-center text-base font-medium"
                 whileHover={{ scale: 1.05 }}
                 transition={{ type: "spring", stiffness: 400 }}
               >
-                Contact Us
-                <motion.svg 
-                  xmlns="http://www.w3.org/2000/svg" 
-                  className="h-5 w-5 ml-1.5" 
-                  fill="none" 
-                  viewBox="0 0 24 24" 
+                Text Us
+                <motion.svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  className="h-5 w-5 ml-1.5"
+                  fill="none"
+                  viewBox="0 0 24 24"
                   stroke="currentColor"
                   initial={{ x: 0, opacity: 0.5 }}
                   animate={{ x: [0, 3, 0], opacity: [0.5, 1, 0.5] }}
@@ -364,7 +366,7 @@ const Navbar = () => {
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
                 </motion.svg>
               </motion.span>
-            </Link>
+            </a>
           </div>
         </div>
       </div>
@@ -380,11 +382,11 @@ const Navbar = () => {
             className="fixed top-[calc(4rem)] left-3 right-3 bg-gradient-to-r from-[#03001417] via-[#03001450] to-[#03001417] backdrop-blur-lg border border-[#ffffff20] rounded-xl shadow-xl p-4 z-50 max-h-[calc(100vh-5rem)] overflow-y-auto touch-manipulation"
           >
             <div className="flex flex-col space-y-5">
-              <motion.div 
+              <motion.div
                 className="flex justify-center space-x-6 py-3"
                 variants={menuItemVariants}
               >
-                
+
                 <motion.a
                   href="https://twitter.com"
                   target="_blank"
@@ -434,15 +436,17 @@ const Navbar = () => {
                   </svg>
                 </motion.a>
               </motion.div>
-              
+
               <motion.div variants={menuItemVariants} className="pt-2">
-                <Link
-                  href="#ContactForm"
+                <a
+                  href="https://api.whatsapp.com/send?phone=919810724697&text=Hey"
+                  target="_blank"
+                  rel="noopener noreferrer"
                   onClick={handleLinkClick}
                   className="block w-full bg-gradient-to-r from-orange-500 to-amber-500 text-white font-medium py-3 px-4 rounded-xl text-center hover:shadow-lg hover:shadow-orange-500/20 transition-all duration-300"
                 >
-                  Contact Us
-                </Link>
+                  Text Us
+                </a>
               </motion.div>
             </div>
           </motion.div>

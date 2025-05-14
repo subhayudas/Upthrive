@@ -88,8 +88,8 @@ const HeroContent = () => {
             className="hidden md:block w-full md:w-1/2 relative"
           >
             <div className="absolute inset-0 h-[400px] sm:h-[500px] md:h-[600px] lg:h-[700px] -bottom-[50px] sm:-bottom-[75px] md:-bottom-[100px]">
-              <script type="module" src="https://unpkg.com/@splinetool/viewer@1.9.82/build/spline-viewer.js"></script>
-              <spline-viewer url="https://prod.spline.design/vKrpmCBkxF03wYCr/scene.splinecode"></spline-viewer>
+            <script type="module" src="https://unpkg.com/@splinetool/viewer@1.9.94/build/spline-viewer.js"></script>
+            <spline-viewer url="https://prod.spline.design/vKrpmCBkxF03wYCr/scene.splinecode"></spline-viewer>
             </div>
           </motion.div>
         </div>

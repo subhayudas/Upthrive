@@ -14,7 +14,7 @@ import FluidCursorWrapper from "@/components/ui/FluidCursorWrapper";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  metadataBase: new URL('https://www.Upthrive.xyz/'),
+  metadataBase: new URL('https://www.Upthrive.in/'),
   title: {
     default: "Welcome to Upthrive",
     template: "We're your secret weapon in the digital arena",
@@ -24,7 +24,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
   },
   openGraph: {
-    images: '/opengraph-image.png',
+    images: '/upthrive.png',
   },
 };
 
