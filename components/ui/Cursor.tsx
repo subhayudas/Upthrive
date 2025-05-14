@@ -1,5 +1,5 @@
 "use client";
-import cn from "@/utils/cn";
+import { cn } from "@/lib/utils";
 import { AnimatePresence, motion, MotionStyle } from "motion/react";
 import { PropsWithChildren } from "react";
 interface CursorProps extends PropsWithChildren {
