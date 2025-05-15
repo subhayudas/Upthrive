@@ -14,12 +14,12 @@ const CallToAction = () => {
     target: containerRef,
     offset: ["start end", "end start"]
   });
-  
+
   // Parallax effect values
   const y2 = useTransform(scrollYProgress, [0, 1], [0, 30]);
   const scale = useTransform(scrollYProgress, [0, 0.5, 1], [0.95, 1, 0.95]);
   const opacity = useTransform(scrollYProgress, [0, 0.5, 1], [0.8, 1, 0.8]);
-  
+
   // Animation variants properly typed
   const floatingAnimation: Variants = {
     hidden: { y: 0 },
@@ -33,7 +33,7 @@ const CallToAction = () => {
       }
     }
   };
-  
+
   return (
     <div className="py-32 px-4 sm:px-6 lg:px-8 relative overflow-hidden" ref={containerRef}>
       {/* Static background instead of animated */}
@@ -41,8 +41,8 @@ const CallToAction = () => {
         <div className="absolute -top-20 -right-20 w-96 h-96 bg-orange-500/10 rounded-full blur-2xl"></div>
         <div className="absolute -bottom-40 -left-40 w-96 h-96 bg-blue-500/10 rounded-full blur-2xl"></div>
       </div>
-      
-      <motion.div 
+
+      <motion.div
         style={{ scale, opacity, willChange: "transform, opacity" }}
         className="max-w-7xl mx-auto relative bg-gradient-to-br from-gray-900/90 to-black/90 backdrop-blur-sm rounded-3xl border border-gray-800 overflow-hidden shadow-2xl"
       >
@@ -50,10 +50,10 @@ const CallToAction = () => {
         <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-orange-500 via-amber-500 to-yellow-500"></div>
         <div className="absolute -bottom-16 -right-16 w-32 h-32 bg-orange-500/10 rounded-full blur-xl"></div>
         <div className="absolute -top-16 -left-16 w-32 h-32 bg-amber-500/10 rounded-full blur-xl"></div>
-        
+
         <div className="p-8 sm:p-12 lg:p-16 flex flex-col lg:flex-row items-center justify-between gap-12">
           <div className="w-full lg:w-2/3">
-            <motion.div 
+            <motion.div
               initial={{ opacity: 0, y: -20 }}
               animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: -20 }}
               transition={{ duration: 0.5 }}
@@ -62,12 +62,12 @@ const CallToAction = () => {
               <SparklesIcon className="text-orange-400 mr-[10px] h-5 w-5" />
               <h1 className="Welcome-text text-[13px] font-medium">Ready to Transform?</h1>
             </motion.div>
-            
+
             <AnimatedHeading as="h2" className="text-4xl md:text-5xl font-bold mb-6">
               Let&apos;s Create Something <span className="text-gradient bg-gradient-to-r from-orange-500 to-amber-600">Extraordinary</span> Together
             </AnimatedHeading>
-            
-            <motion.p 
+
+            <motion.p
               initial={{ opacity: 0, y: 20 }}
               animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
               transition={{ duration: 0.5, delay: 0.2 }}
@@ -75,7 +75,7 @@ const CallToAction = () => {
             >
               Join the ranks of businesses that have transformed their digital presence and achieved remarkable growth with our expert team. The journey to digital excellence starts with a conversation.
             </motion.p>
-            
+
             <div className="flex flex-wrap gap-4">
               <motion.div
                 initial={{ opacity: 0, x: -20 }}
@@ -84,12 +84,12 @@ const CallToAction = () => {
                 style={{ willChange: "transform" }}
               >
                 <AnimatedButton
-                  href="#booking-form"
+                  href="#BookingForm"
                 >
                   Book a Free Consultation
                 </AnimatedButton>
               </motion.div>
-              
+
               <motion.div
                 initial={{ opacity: 0, x: 20 }}
                 animate={isInView ? { opacity: 1, x: 0 } : { opacity: 0, x: 20 }}
@@ -104,8 +104,8 @@ const CallToAction = () => {
               </motion.div>
             </div>
           </div>
-          
-          <motion.div 
+
+          <motion.div
             style={{ y: y2, willChange: "transform" }}
             initial={{ opacity: 0, scale: 0.8 }}
             animate={isInView ? { opacity: 1, scale: 1 } : { opacity: 0, scale: 0.8 }}
@@ -116,8 +116,8 @@ const CallToAction = () => {
               {/* Enhanced decorative elements */}
               <div className="absolute inset-0 rounded-full border-2 border-dashed border-orange-500/40 animate-spin-slow"></div>
               <div className="absolute inset-4 rounded-full border border-amber-500/20"></div>
-              
-              <motion.div 
+
+              <motion.div
                 initial={{ scale: 0.8, opacity: 0 }}
                 animate={isInView ? { scale: 1, opacity: 1 } : { scale: 0.8, opacity: 0 }}
                 transition={{ duration: 0.8, delay: 0.6 }}

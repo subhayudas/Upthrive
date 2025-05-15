@@ -11,7 +11,7 @@ const Services = () => {
   const containerRef = useRef(null);
   const [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
   const [selectedService, setSelectedService] = useState<number | null>(null);
-  
+
   const isInView = useInView(containerRef, { once: false, margin: "-100px" });
   const { scrollYProgress } = useScroll({
     target: containerRef,
@@ -20,7 +20,7 @@ const Services = () => {
 
   const opacity = useTransform(scrollYProgress, [0, 0.2, 0.9, 1], [0, 1, 1, 0]);
   const y = useTransform(scrollYProgress, [0, 0.2, 0.9, 1], [100, 0, 0, -100]);
-  
+
   // Animated background elements
   const bgElement1X = useTransform(scrollYProgress, [0, 1], ["-10%", "10%"]);
   const bgElement1Y = useTransform(scrollYProgress, [0, 1], ["-5%", "5%"]);
@@ -29,7 +29,7 @@ const Services = () => {
 
   // Text animation variants
   const headingWords = "Elevate Your Business with Our Premium Services".split(" ");
-  
+
   const wordVariants = {
     hidden: { opacity: 0, y: 20 },
     visible: (i: number) => ({
@@ -55,8 +55,8 @@ const Services = () => {
         ease: [0.215, 0.61, 0.355, 1]
       }
     }),
-    hover: { 
-      y: -15, 
+    hover: {
+      y: -15,
       scale: 1.03,
       transition: {
         type: "spring",
@@ -69,7 +69,7 @@ const Services = () => {
   // Icon animation variants
   const iconVariants = {
     initial: { scale: 1 },
-    hover: { 
+    hover: {
       scale: 1.1,
       rotate: [0, -5, 5, -5, 0],
       transition: {
@@ -90,19 +90,19 @@ const Services = () => {
   // Image animation variants
   const imageVariants = {
     hidden: { opacity: 0, scale: 0.9 },
-    visible: { 
-      opacity: 1, 
+    visible: {
+      opacity: 1,
       scale: 1,
-      transition: { 
-        duration: 0.5, 
-        ease: "easeOut" 
+      transition: {
+        duration: 0.5,
+        ease: "easeOut"
       }
     },
-    hover: { 
+    hover: {
       scale: 1.05,
-      transition: { 
-        duration: 0.3, 
-        ease: "easeOut" 
+      transition: {
+        duration: 0.3,
+        ease: "easeOut"
       }
     }
   };
@@ -119,23 +119,23 @@ const Services = () => {
   };
 
   return (
-    <motion.div 
-      id="Services" 
+    <motion.div
+      id="Services"
       className="relative py-16 sm:py-20 md:py-24 overflow-hidden px-4 sm:px-6"
       ref={containerRef}
       style={{ opacity, y }}
     >
       {/* Animated background elements */}
       <div className="absolute inset-0 -z-10 overflow-hidden">
-        <motion.div 
+        <motion.div
           className="absolute top-0 left-0 w-48 sm:w-64 md:w-96 h-48 sm:h-64 md:h-96 bg-gradient-to-br from-orange-500/20 via-orange-400/10 to-transparent rounded-full blur-3xl"
           style={{ x: bgElement1X, y: bgElement1Y }}
-          
+
         />
-        <motion.div 
+        <motion.div
           className="absolute bottom-0 right-0 w-64 sm:w-80 md:w-[30rem] h-64 sm:h-80 md:h-[30rem] bg-gradient-to-tl from-blue-500/20 via-purple-500/10 to-transparent rounded-full blur-3xl"
           style={{ x: bgElement2X, y: bgElement2Y }}
-          
+
         />
         <div className="absolute inset-0 bg-[url('/grid.svg')] bg-center [mask-image:linear-gradient(180deg,white,rgba(255,255,255,0))] opacity-10"></div>
       </div>
@@ -143,7 +143,7 @@ const Services = () => {
       <div className="max-w-7xl mx-auto">
         {/* Header with animated text */}
         <div className="text-center mb-12 sm:mb-16 md:mb-20">
-          <motion.div 
+          <motion.div
             className="inline-flex items-center px-3 sm:px-4 py-1.5 sm:py-2 rounded-full border border-[#7042f88b] bg-black/30 backdrop-blur-md mb-4 sm:mb-6"
             initial={{ opacity: 0, y: 20, scale: 0.9 }}
             animate={isInView ? { opacity: 1, y: 0, scale: 1 } : { opacity: 0, y: 20, scale: 0.9 }}
@@ -154,7 +154,7 @@ const Services = () => {
               Innovative Solutions for Modern Businesses
             </AnimatedHeading>
           </motion.div>
-          
+
           <div className="overflow-hidden">
             <div className="flex flex-wrap justify-center gap-x-2 sm:gap-x-3 mb-4 sm:mb-6">
               {headingWords.map((word, i) => (
@@ -171,14 +171,14 @@ const Services = () => {
               ))}
             </div>
           </div>
-          
+
           <motion.p
             className="text-base sm:text-lg md:text-xl text-neutral-300 max-w-3xl mx-auto px-2 leading-relaxed"
             initial={{ opacity: 0, y: 30 }}
             animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
             transition={{ duration: 0.7, delay: 0.5, ease: [0.215, 0.61, 0.355, 1] }}
           >
-            Discover our comprehensive suite of professional services designed to transform 
+            Discover our comprehensive suite of professional services designed to transform
             your digital presence and accelerate your business growth in today's competitive landscape.
           </motion.p>
         </div>
@@ -218,11 +218,11 @@ const Services = () => {
 
               {/* Card inner content with enhanced animations */}
               <div className="p-6 sm:p-8 relative z-10">
-                <motion.div 
+                <motion.div
                   className="mb-5 sm:mb-6 relative -mt-12"
                   variants={iconVariants}
                 >
-                  <motion.div 
+                  <motion.div
                     className="absolute -inset-1 bg-gradient-to-r from-orange-500 to-purple-600 rounded-full opacity-0 group-hover:opacity-70 blur-md"
                     initial={{ opacity: 0 }}
                     whileHover={{ opacity: 0.7 }}
@@ -232,8 +232,8 @@ const Services = () => {
                     {service.icon}
                   </div>
                 </motion.div>
-                
-                <motion.h3 
+
+                <motion.h3
                   className="text-xl sm:text-2xl font-bold mb-3 sm:mb-4 bg-clip-text text-transparent bg-gradient-to-r from-white to-gray-300 group-hover:from-orange-400 group-hover:to-orange-200 transition-all duration-300"
                   initial={{ opacity: 0.9 }}
                   whileHover={{ scale: 1.02 }}
@@ -241,8 +241,8 @@ const Services = () => {
                 >
                   {service.title}
                 </motion.h3>
-                
-                <motion.p 
+
+                <motion.p
                   className="text-sm sm:text-base text-neutral-300 group-hover:text-neutral-200 transition-colors duration-300"
                   initial={{ opacity: 0.8 }}
                   whileHover={{ opacity: 1 }}
@@ -250,8 +250,8 @@ const Services = () => {
                 >
                   {service.description}
                 </motion.p>
-                
-                <motion.div 
+
+                <motion.div
                   className="mt-6 sm:mt-8"
                   initial={{ opacity: 0, y: 10 }}
                   whileHover={{ opacity: 1, y: 0 }}
@@ -265,12 +265,12 @@ const Services = () => {
                   </span>
                 </motion.div>
               </div>
-              
+
               {/* Animated gradient border on hover */}
-              <motion.div 
+              <motion.div
                 className="absolute inset-0 border-2 border-transparent rounded-2xl opacity-0 group-hover:opacity-100"
                 initial={{ opacity: 0 }}
-                whileHover={{ 
+                whileHover={{
                   opacity: 1,
                   background: "linear-gradient(to right, rgba(249, 115, 22, 0.2), rgba(168, 85, 247, 0.2)) border-box",
                   borderColor: "transparent"
@@ -292,15 +292,15 @@ const Services = () => {
               exit={{ opacity: 0 }}
               transition={{ duration: 0.3 }}
             >
-              <motion.div 
+              <motion.div
                 className="absolute inset-0 bg-black/80 backdrop-blur-sm"
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
                 exit={{ opacity: 0 }}
                 onClick={() => setSelectedService(null)}
               />
-              
-              <motion.div 
+
+              <motion.div
                 className="relative bg-gradient-to-br from-gray-900 to-black/95 border border-white/10 rounded-2xl overflow-hidden max-w-3xl w-full max-h-[80vh] overflow-y-auto"
                 initial={{ scale: 0.9, y: 20 }}
                 animate={{ scale: 1, y: 0 }}
@@ -317,8 +317,8 @@ const Services = () => {
                     sizes="(max-width: 640px) 100vw, (max-width: 1024px) 80vw, 60vw"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-gray-900 via-gray-900/60 to-transparent" />
-                  
-                  <button 
+
+                  <button
                     className="absolute top-4 right-4 p-2 rounded-full bg-black/50 text-white hover:bg-black/70 transition-colors duration-200"
                     onClick={(e) => {
                       e.stopPropagation();
@@ -330,7 +330,7 @@ const Services = () => {
                     </svg>
                   </button>
                 </div>
-                
+
                 <div className="p-6 sm:p-8">
                   <div className="flex items-center mb-6">
                     <div className="p-3 rounded-full bg-gradient-to-br from-orange-500/20 to-purple-500/20 border border-white/10 mr-4">
@@ -340,11 +340,11 @@ const Services = () => {
                       {projects[selectedService].title}
                     </h3>
                   </div>
-                  
+
                   <p className="text-base sm:text-lg text-neutral-300 mb-6">
                     {projects[selectedService].description}
                   </p>
-                  
+
                   <div className="space-y-4">
                     <h4 className="text-lg sm:text-xl font-semibold text-white">What we offer:</h4>
                     <ul className="space-y-3 text-neutral-300">
@@ -363,11 +363,14 @@ const Services = () => {
                       ))}
                     </ul>
                   </div>
-                  
+
                   <div className="mt-8 flex justify-end">
-                    <button className="px-6 py-3 rounded-full bg-gradient-to-r from-orange-500 to-orange-600 hover:from-orange-600 hover:to-orange-700 text-white font-medium transition-all duration-300 transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-orange-500 focus:ring-opacity-50">
+                    <a
+                      href="#BookingForm"
+                      className="px-6 py-3 rounded-full bg-gradient-to-r from-orange-500 to-orange-600 hover:from-orange-600 hover:to-orange-700 text-white font-medium transition-all duration-300 transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-orange-500 focus:ring-opacity-50 inline-block text-center"
+                    >
                       Get Started
-                    </button>
+                    </a>
                   </div>
                 </div>
               </motion.div>
