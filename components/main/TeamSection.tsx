@@ -48,9 +48,9 @@ const TeamSection = () => {
       bio: "Visionary leader with expertise in digital marketing and business strategy. Drives the company's vision and strategic direction with a focus on innovation and client success.",
       image: "/team/Shaurya.jpg",
       social: {
-        linkedin: "https://linkedin.com/in/shaurya-narayan-singh",
+        linkedin: "https://www.linkedin.com/in/shaurya-narayan-singh-422623280/",
         twitter: "https://twitter.com/shaurya_ns",
-        instagram: "https://instagram.com/shaurya_ns"
+        instagram: "https://www.instagram.com/shauryx.singh/"
       },
       color: "from-blue-500 to-indigo-600",
       accent: "#4f46e5",
@@ -62,9 +62,9 @@ const TeamSection = () => {
       bio: "Tech innovator with a passion for creating cutting-edge digital solutions. Leads our technical strategy and ensures we stay ahead of the digital curve.",
       image: "/team/Yuvraj.jpg",
       social: {
-        linkedin: "https://linkedin.com/in/yuvraj-wadhawan",
+        linkedin: "https://www.linkedin.com/in/yuvrajw/",
         twitter: "https://twitter.com/yuvraj_wadhawan",
-        instagram: "https://instagram.com/yuvraj_wadhawan"
+        instagram: "https://www.instagram.com/yuvraj.wadhawan/"
       },
       color: "from-purple-500 to-violet-600",
       accent: "#8b5cf6",
@@ -76,9 +76,9 @@ const TeamSection = () => {
       bio: "Operations expert focused on delivering exceptional client experiences. Ensures seamless execution of projects and maintains our high standards of quality.",
       image: "/team/Rohan.jpg",
       social: {
-        linkedin: "https://linkedin.com/in/rohan-bhambri",
+        linkedin: "https://www.linkedin.com/in/rohan-bhambri-814a34308/",
         twitter: "https://twitter.com/rohan_bhambri",
-        instagram: "https://instagram.com/rohan_bhambri"
+        instagram: "https://www.instagram.com/rohanbhambri_/"
       },
       color: "from-orange-500 to-amber-600",
       accent: "#f59e0b",
