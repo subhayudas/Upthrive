@@ -1,6 +1,7 @@
 import Hero from "@/components/main/Hero";
 import Projects from "@/components/main/Projects";
 import Services from "@/components/main/Services";
+import Portfolio from "@/components/main/Portfolio";
 import TestimonialSlider from "@/components/main/TestimonialSlider";
 import FAQSection from "@/components/main/FAQSection";
 import ContactForm from "@/components/main/ContactForm";
@@ -24,6 +25,7 @@ export default function Home() {
       <div className="flex flex-col">
         <Hero />
         <Services />
+        <Portfolio />
         <TestimonialSlider />
         <MacbookDemo />
         <Approach />

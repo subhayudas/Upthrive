@@ -41,7 +41,6 @@ export default function RootLayout({
       >
         <LoadingAnimation />
         <FluidCursorWrapper />
-        <ClientSpotlight />
         <Navbar />
         {children}
         <Footer />
