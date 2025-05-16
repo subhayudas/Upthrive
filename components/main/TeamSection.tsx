@@ -44,7 +44,7 @@ const TeamSection = () => {
   const teamMembers = [
     {
       name: "Shaurya Narayan Singh",
-      role: "Co-Founder & CEO",
+      role: "Co-Founder",
       bio: "Visionary leader with expertise in digital marketing and business strategy. Drives the company's vision and strategic direction with a focus on innovation and client success.",
       image: "/team/Shaurya.jpg",
       social: {
@@ -58,7 +58,7 @@ const TeamSection = () => {
     },
     {
       name: "Yuvraj Wadhawan",
-      role: "Co-Founder & CFO",
+      role: "Co-Founder",
       bio: "Tech innovator with a passion for creating cutting-edge digital solutions. Leads our technical strategy and ensures we stay ahead of the digital curve.",
       image: "/team/Yuvraj.jpg",
       social: {
@@ -72,7 +72,7 @@ const TeamSection = () => {
     },
     {
       name: "Rohan Bhambri",
-      role: "Co-Founder & COO",
+      role: "COO",
       bio: "Operations expert focused on delivering exceptional client experiences. Ensures seamless execution of projects and maintains our high standards of quality.",
       image: "/team/Rohan.jpg",
       social: {
