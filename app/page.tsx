@@ -25,7 +25,6 @@ export default function Home() {
       <div className="flex flex-col">
         <Hero />
         <Services />
-        <Portfolio />
         <TestimonialSlider />
         <MacbookDemo />
         <Approach />
