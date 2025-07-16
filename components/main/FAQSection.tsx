@@ -19,7 +19,7 @@ const FAQItem: React.FC<FAQItemProps> = ({ question, answer }) => {
   return (
     <details className="group mb-4" open={isOpen}>
       <summary
-        className="flex cursor-pointer items-center justify-between gap-1.5 rounded-lg bg-orange-400 p-4 text-gray-900 focus:outline-none"
+                        className="flex cursor-pointer items-center justify-between gap-1.5 rounded-lg bg-gray-400 p-4 text-gray-900 focus:outline-none"
         onClick={toggleOpen}
       >
         <AnimatedHeading as="h3" className="font-medium text-lg">{question}</AnimatedHeading>

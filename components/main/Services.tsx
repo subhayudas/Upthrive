@@ -21,12 +21,6 @@ const Services = () => {
   const opacity = useTransform(scrollYProgress, [0, 0.2, 0.9, 1], [0, 1, 1, 0]);
   const y = useTransform(scrollYProgress, [0, 0.2, 0.9, 1], [100, 0, 0, -100]);
 
-  // Animated background elements
-  const bgElement1X = useTransform(scrollYProgress, [0, 1], ["-10%", "10%"]);
-  const bgElement1Y = useTransform(scrollYProgress, [0, 1], ["-5%", "5%"]);
-  const bgElement2X = useTransform(scrollYProgress, [0, 1], ["10%", "-10%"]);
-  const bgElement2Y = useTransform(scrollYProgress, [0, 1], ["5%", "-5%"]);
-
   // Text animation variants
   const headingWords = "Elevate Your Business with Our Premium Services".split(" ");
 
@@ -125,20 +119,7 @@ const Services = () => {
       ref={containerRef}
       style={{ opacity, y }}
     >
-      {/* Animated background elements */}
-      <div className="absolute inset-0 -z-10 overflow-hidden">
-        <motion.div
-          className="absolute top-0 left-0 w-48 sm:w-64 md:w-96 h-48 sm:h-64 md:h-96 bg-gradient-to-br from-orange-500/20 via-orange-400/10 to-transparent rounded-full blur-3xl"
-          style={{ x: bgElement1X, y: bgElement1Y }}
-
-        />
-        <motion.div
-          className="absolute bottom-0 right-0 w-64 sm:w-80 md:w-[30rem] h-64 sm:h-80 md:h-[30rem] bg-gradient-to-tl from-blue-500/20 via-purple-500/10 to-transparent rounded-full blur-3xl"
-          style={{ x: bgElement2X, y: bgElement2Y }}
-
-        />
-        <div className="absolute inset-0 bg-[url('/grid.svg')] bg-center [mask-image:linear-gradient(180deg,white,rgba(255,255,255,0))] opacity-10"></div>
-      </div>
+      {/* Background elements removed for performance */}
 
       <div className="max-w-7xl mx-auto">
         {/* Header with animated text */}
@@ -223,7 +204,7 @@ const Services = () => {
                   variants={iconVariants}
                 >
                   <motion.div
-                    className="absolute -inset-1 bg-gradient-to-r from-orange-500 to-purple-600 rounded-full opacity-0 group-hover:opacity-70 blur-md"
+                    className="absolute -inset-1 bg-gradient-to-r from-gray-500 to-purple-600 rounded-full opacity-0 group-hover:opacity-70 blur-md"
                     initial={{ opacity: 0 }}
                     whileHover={{ opacity: 0.7 }}
                     transition={{ duration: 0.3 }}
@@ -234,7 +215,7 @@ const Services = () => {
                 </motion.div>
 
                 <motion.h3
-                  className="text-xl sm:text-2xl font-bold mb-3 sm:mb-4 bg-clip-text text-transparent bg-gradient-to-r from-white to-gray-300 group-hover:from-orange-400 group-hover:to-orange-200 transition-all duration-300"
+                  className="text-xl sm:text-2xl font-bold mb-3 sm:mb-4 bg-clip-text text-transparent bg-gradient-to-r from-white to-gray-300 group-hover:from-gray-300 group-hover:to-gray-100 transition-all duration-300"
                   initial={{ opacity: 0.9 }}
                   whileHover={{ scale: 1.02 }}
                   transition={{ duration: 0.2 }}
@@ -257,7 +238,7 @@ const Services = () => {
                   whileHover={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.3 }}
                 >
-                  <span className="inline-flex items-center text-sm font-medium text-orange-400 group-hover:text-orange-300">
+                  <span className="inline-flex items-center text-sm font-medium text-gray-400 group-hover:text-gray-300">
                     Learn more
                     <svg className="ml-1 w-4 h-4 group-hover:translate-x-1 transition-transform duration-300" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
@@ -333,7 +314,7 @@ const Services = () => {
 
                 <div className="p-6 sm:p-8">
                   <div className="flex items-center mb-6">
-                    <div className="p-3 rounded-full bg-gradient-to-br from-orange-500/20 to-purple-500/20 border border-white/10 mr-4">
+                    <div className="p-3 rounded-full bg-gradient-to-br from-gray-500/20 to-purple-500/20 border border-white/10 mr-4">
                       {projects[selectedService].icon}
                     </div>
                     <h3 className="text-2xl sm:text-3xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-white to-gray-300">
@@ -350,7 +331,7 @@ const Services = () => {
                     <ul className="space-y-3 text-neutral-300">
                       {[...Array(4)].map((_, i) => (
                         <li key={i} className="flex items-start">
-                          <svg className="w-5 h-5 text-orange-400 mr-2 mt-0.5 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                          <svg className="w-5 h-5 text-gray-400 mr-2 mt-0.5 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
                           </svg>
                           <span>
@@ -367,7 +348,7 @@ const Services = () => {
                   <div className="mt-8 flex justify-end">
                     <a
                       href="#BookingForm"
-                      className="px-6 py-3 rounded-full bg-gradient-to-r from-orange-500 to-orange-600 hover:from-orange-600 hover:to-orange-700 text-white font-medium transition-all duration-300 transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-orange-500 focus:ring-opacity-50 inline-block text-center"
+                      className="px-6 py-3 rounded-full bg-gradient-to-r from-gray-500 to-gray-600 hover:from-gray-600 hover:to-gray-700 text-white font-medium transition-all duration-300 transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-gray-500 focus:ring-opacity-50 inline-block text-center"
                     >
                       Get Started
                     </a>

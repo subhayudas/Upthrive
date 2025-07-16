@@ -37,10 +37,10 @@ const Approach = () => {
         >
           <CanvasRevealEffect
             animationSpeed={3}
-            containerClassName="bg-orange-600 rounded-3xl overflow-hidden"
+            containerClassName="bg-gray-600 rounded-3xl overflow-hidden"
             colors={[
-              [255, 166, 158],
-              [221, 255, 247],
+              [192, 192, 192],
+              [230, 230, 230],
             ]}
             dotSize={2}
           />
@@ -53,10 +53,10 @@ const Approach = () => {
 >
   <CanvasRevealEffect
     animationSpeed={3}
-    containerClassName="bg-orange-600 rounded-3xl overflow-hidden"
+    containerClassName="bg-gray-600 rounded-3xl overflow-hidden"
     colors={[
-      [255, 166, 158],
-      [221, 255, 247],
+      [192, 192, 192],
+      [230, 230, 230],
     ]}
     dotSize={2}
   />
@@ -71,10 +71,10 @@ const Approach = () => {
         >
           <CanvasRevealEffect
             animationSpeed={3}
-            containerClassName="bg-orange-600 rounded-3xl overflow-hidden"
+            containerClassName="bg-gray-600 rounded-3xl overflow-hidden"
             colors={[
-              [255, 166, 158],
-              [221, 255, 247],
+              [192, 192, 192],
+              [230, 230, 230],
             ]}
             dotSize={2}
           />
@@ -106,7 +106,7 @@ const Card = ({
     <div
       onMouseEnter={() => setHovered(true)}
       onMouseLeave={() => setHovered(false)}
-      className=" border border-black/[0.2] group/canvas-card flex items-center justify-center dark:border-orange-600  max-w-sm w-full mx-auto p-4 relative lg:h-[35rem] rounded-3xl"
+      className=" border border-black/[0.2] group/canvas-card flex items-center justify-center dark:border-gray-500  max-w-sm w-full mx-auto p-4 relative lg:h-[35rem] rounded-3xl"
       style={{
         background: "rgb(4,7,29)",
         backgroundColor: "linear-gradient(90deg, rgba(4,7,29,1) 0%, rgba(12,14,35,1) 100%)",
@@ -150,7 +150,7 @@ const AceternityIcon = ({ order }: { order: string }) => {
       <span
         className="inline-flex h-full w-full cursor-pointer items-center
         justify-center rounded-full bg-slate-950 text-purple backdrop-blur-3xl font-bold text-2xl py-[8px] px-[7px] sm:py-2 sm:px2 mx-auto"
-        style={{ color: "#dc7633" }}
+        style={{ color: "#c0c0c0" }}
       >
         <svg
           xmlns="http://www.w3.org/2000/svg"

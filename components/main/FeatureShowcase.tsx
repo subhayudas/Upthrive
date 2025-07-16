@@ -79,7 +79,7 @@ const FeatureShowcase = () => {
   };
 
   return (
-    <div className="py-16 sm:py-20 px-4 sm:px-6 lg:px-8 bg-black/30 backdrop-blur-sm" ref={containerRef}>
+    <div className="py-16 sm:py-20 px-4 sm:px-6 lg:px-8" ref={containerRef}>
       <div className="max-w-7xl mx-auto">
         <div className="text-center mb-16">
           <motion.div variants={slideInFromTop} className="Welcome-box py-[8px] px-[7px] border border-[#7042f88b] opacity-[0.9] text-center mx-auto inline-flex items-center">
@@ -126,11 +126,11 @@ const FeatureShowcase = () => {
               <p className="text-gray-300">{feature.description}</p>
               
               <div className="mt-6 flex items-center">
-                <div className="h-0.5 w-6 bg-gradient-to-r from-orange-500 to-orange-600 mr-2"></div>
-                <span className="text-orange-500 font-medium text-sm">Learn More</span>
+                <div className="h-0.5 w-6 bg-gradient-to-r from-gray-500 to-gray-600 mr-2"></div>
+                <span className="text-gray-500 font-medium text-sm">Learn More</span>
               </div>
               
-              <div className="absolute bottom-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-orange-500 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+              <div className="absolute bottom-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-gray-500 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
             </motion.div>
           ))}
         </motion.div>

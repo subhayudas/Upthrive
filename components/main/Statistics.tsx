@@ -69,7 +69,7 @@ const Statistics = () => {
       suffix: "+",
       label: "Projects Completed",
       description: "Successful projects across industries",
-      color: "from-orange-500 to-red-500",
+              color: "from-gray-500 to-gray-600",
     },
     {
       id: 3,
@@ -91,12 +91,7 @@ const Statistics = () => {
   
   return (
     <div className="py-16 sm:py-20 lg:py-24 px-4 sm:px-6 lg:px-8 relative overflow-hidden" ref={containerRef}>
-      {/* Background elements */}
-      <div className="absolute inset-0 overflow-hidden">
-        <div className="absolute -top-40 -right-40 w-80 h-80 bg-orange-500/10 rounded-full blur-3xl"></div>
-        <div className="absolute top-40 -left-40 w-80 h-80 bg-blue-500/10 rounded-full blur-3xl"></div>
-        <div className="absolute -bottom-40 left-1/2 transform -translate-x-1/2 w-80 h-80 bg-purple-500/10 rounded-full blur-3xl"></div>
-      </div>
+      {/* Background elements removed for performance */}
       
       <div className="max-w-7xl mx-auto relative">
         <div className="text-center mb-16">

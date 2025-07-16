@@ -67,7 +67,7 @@ const AnimatedButton: React.FC<AnimatedButtonProps> = ({
         --border_radius: 9999px;
         --transtion: 0.3s ease-in-out;
         --offset: 2px;
-        --orange-tint: rgba(210, 85, 43, 0.5);
+        --silver-tint: rgba(192, 192, 192, 0.5);
       
         cursor: pointer;
         position: relative;
@@ -86,7 +86,7 @@ const AnimatedButton: React.FC<AnimatedButtonProps> = ({
         transform: scale(calc(1 + (var(--active, 0) * 0.1)));
       
         transition: transform var(--transtion);
-        box-shadow: 0 0 5px var(--orange-tint);
+        box-shadow: 0 0 5px var(--silver-tint);
       }
       
       .button::before {
@@ -101,11 +101,11 @@ const AnimatedButton: React.FC<AnimatedButtonProps> = ({
         background-color: var(--black-700);
       
         border-radius: var(--border_radius);
-        border: 1px solid rgba(210, 85, 43, 0.5);
+        border: 1px solid rgba(192, 192, 192, 0.5);
         box-shadow: inset 0 0.5px hsl(0, 0%, 100%), inset 0 -1px 2px 0 hsl(0, 0%, 0%),
           0px 4px 10px -4px hsla(0 0% 0% / calc(1 - var(--active, 0))),
-          0 0 0 calc(var(--active, 0) * 0.375rem) hsl(260 97% 50% / 0.75),
-          0 0 15px rgba(210, 85, 43, 0.3);
+          0 0 0 calc(var(--active, 0) * 0.375rem) hsl(0 0% 75% / 0.75),
+          0 0 15px rgba(192, 192, 192, 0.3);
       
         transition: all var(--transtion);
         z-index: 0;
@@ -126,7 +126,7 @@ const AnimatedButton: React.FC<AnimatedButtonProps> = ({
             hsla(266, 45%, 74%, 1) 0px,
             transparent 50%
           ),
-          radial-gradient(at 100% 100%, rgb(210, 85, 43) 0px, transparent 50%),
+          radial-gradient(at 100% 100%, rgb(192, 192, 192) 0px, transparent 50%),
           radial-gradient(at 22% 91%, hsla(266, 36%, 60%, 1) 0px, transparent 50%);
         background-position: top;
       
@@ -138,8 +138,8 @@ const AnimatedButton: React.FC<AnimatedButtonProps> = ({
       
       .button:is(:hover, :focus-visible) {
         --active: 1;
-        border-color: rgba(210, 85, 43, 0.8);
-        box-shadow: 0 0 15px rgba(210, 85, 43, 0.6);
+        border-color: rgba(192, 192, 192, 0.8);
+        box-shadow: 0 0 15px rgba(192, 192, 192, 0.6);
         transform: translateY(-2px);
         transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
       }
@@ -176,7 +176,7 @@ const AnimatedButton: React.FC<AnimatedButtonProps> = ({
       
         width: 100%;
         height: 2rem;
-        background: linear-gradient(90deg, white, rgba(210, 85, 43, 0.8), white);
+        background: linear-gradient(90deg, white, rgba(192, 192, 192, 0.8), white);
       
         mask: linear-gradient(transparent 0%, white 120%);
         animation: rotate 2s linear infinite;

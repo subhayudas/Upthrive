@@ -57,12 +57,7 @@ const LoadingAnimation = () => {
           }}
           className="transition-all duration-[1450ms] ease-in-out fixed top-0 left-0 w-full h-full z-50 bg-gradient-to-b from-[#0b0b0b] to-[#121212] flex flex-col justify-center items-start md:items-start md:justify-start md:pt-[20vh] md:px-[6.5vw] overflow-hidden"
         >
-          {/* Background elements */}
-          <div className="absolute inset-0 overflow-hidden">
-            <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-orange-500/10 rounded-full blur-[100px] animate-pulse"></div>
-            <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-orange-600/5 rounded-full blur-[120px] animate-pulse"></div>
-            <div className="absolute inset-0 bg-[url('/grid.svg')] bg-center opacity-10"></div>
-          </div>
+          {/* Background elements removed for performance */}
 
           {/* Progress counter with enhanced styling and layout */}
           <div className="line relative z-10" id="line1">
@@ -75,7 +70,7 @@ const LoadingAnimation = () => {
             >
               <div className="flex items-center space-x-1">
                 <motion.h5 
-                  className="text-5xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-orange-400 to-orange-600"
+                  className="text-5xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-gray-400 to-gray-600"
                   animate={{ 
                     textShadow: [
                       '0 0 8px rgba(249, 115, 22, 0.5)',
@@ -87,14 +82,14 @@ const LoadingAnimation = () => {
                 >
                   {progress.toString().padStart(2, '0')}
                 </motion.h5>
-                <span className="text-orange-300/80 font-medium text-xl">/</span>
-                <span className="text-orange-300/80 font-medium text-xl">100</span>
+                <span className="text-gray-300/80 font-medium text-xl">/</span>
+                <span className="text-gray-300/80 font-medium text-xl">100</span>
               </div>
               
               {/* Progress bar - enhanced */}
-              <div className="ml-6 w-32 h-3 bg-gray-800/50 rounded-full overflow-hidden backdrop-blur-sm border border-orange-500/20">
+                              <div className="ml-6 w-32 h-3 bg-gray-800/50 rounded-full overflow-hidden backdrop-blur-sm border border-gray-500/20">
                 <motion.div 
-                  className="h-full bg-gradient-to-r from-orange-500 via-orange-400 to-orange-500"
+                                      className="h-full bg-gradient-to-r from-gray-500 via-gray-400 to-gray-500"
                   style={{ width: `${progress}%` }}
                   initial={{ width: 0 }}
                   animate={{
@@ -113,7 +108,7 @@ const LoadingAnimation = () => {
               initial={{ y: 150, opacity: 0 }}
               animate={{ y: 0, opacity: 1 }}
               transition={{ duration: 0.5, delay: 0.3 }}
-              className="text-5xl md:text-6xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-white to-orange-100 relative"
+              className="text-5xl md:text-6xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-white to-gray-100 relative"
               style={{
                 textShadow: `0 0 ${10 + glowIntensity * 15}px rgba(249, 115, 22, ${0.3 + glowIntensity * 0.3})`
               }}
@@ -127,7 +122,7 @@ const LoadingAnimation = () => {
               initial={{ y: 150, opacity: 0 }}
               animate={{ y: 0, opacity: 1 }}
               transition={{ duration: 0.5, delay: 0.55 }}
-              className="text-5xl md:text-6xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-orange-100 to-orange-300 relative"
+              className="text-5xl md:text-6xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-gray-100 to-gray-300 relative"
               style={{
                 textShadow: `0 0 ${10 + glowIntensity * 15}px rgba(249, 115, 22, ${0.3 + glowIntensity * 0.3})`
               }}

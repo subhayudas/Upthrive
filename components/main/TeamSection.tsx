@@ -80,7 +80,7 @@ const TeamSection = () => {
         twitter: "https://twitter.com/rohan_bhambri",
         instagram: "https://www.instagram.com/rohanbhambri_/"
       },
-      color: "from-orange-500 to-amber-600",
+      color: "from-gray-500 to-gray-400",
       accent: "#f59e0b",
       skills: ["Operations Management", "Client Relations", "Project Execution"]
     }
@@ -202,9 +202,9 @@ const TeamSection = () => {
           transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
         >
           <div className="flex items-center justify-center mb-3">
-            <div className="h-[1px] w-12 bg-gradient-to-r from-transparent to-orange-500 mr-4"></div>
+                          <div className="h-[1px] w-12 bg-gradient-to-r from-transparent to-gray-500 mr-4"></div>
             <motion.span
-              className="text-orange-500 uppercase tracking-wider text-sm font-medium flex items-center"
+                              className="text-gray-500 uppercase tracking-wider text-sm font-medium flex items-center"
               initial={{ opacity: 0, scale: 0.8 }}
               animate={isInView ? { opacity: 1, scale: 1 } : { opacity: 0, scale: 0.8 }}
               transition={{ delay: 0.2, duration: 0.5 }}
@@ -213,11 +213,11 @@ const TeamSection = () => {
                 animate={{ rotate: [0, 15, -15, 0] }}
                 transition={{ duration: 2, repeat: Infinity, repeatType: "reverse" }}
               >
-                <SparklesIcon className="h-5 w-5 mr-2 text-orange-500" />
+                <SparklesIcon className="h-5 w-5 mr-2 text-gray-500" />
               </motion.div>
               Our Leadership
             </motion.span>
-            <div className="h-[1px] w-12 bg-gradient-to-l from-transparent to-orange-500 ml-4"></div>
+                          <div className="h-[1px] w-12 bg-gradient-to-l from-transparent to-gray-500 ml-4"></div>
           </div>
 
           <AnimatedHeading as="h2" className="text-4xl md:text-5xl font-bold mb-4">

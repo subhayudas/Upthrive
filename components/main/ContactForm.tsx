@@ -40,7 +40,7 @@ const ContactForm: React.FC = () => {
               <div className="mb-6">
                 <label
                   htmlFor="name"
-                  className="font-bold block mb-2 text-sm text-orange-600 dark:text-orange-600"
+                  className="font-bold block mb-2 text-sm text-gray-400 dark:text-gray-400"
                 >
                   Full Name
                 </label>
@@ -56,7 +56,7 @@ const ContactForm: React.FC = () => {
               <div className="mb-6">
                 <label
                   htmlFor="email"
-                  className="font-bold block mb-2 text-sm text-orange-600 dark:text-orange-600"
+                  className="font-bold block mb-2 text-sm text-gray-400 dark:text-gray-400"
                 >
                   Email Address
                 </label>
@@ -72,7 +72,7 @@ const ContactForm: React.FC = () => {
               <div className="mb-6">
                 <label
                   htmlFor="phone"
-                  className="font-bold text-sm text-orange-600 dark:text-orange-600"
+                  className="font-bold text-sm text-gray-400 dark:text-gray-400"
                 >
                   Phone Number
                 </label>
@@ -88,7 +88,7 @@ const ContactForm: React.FC = () => {
               <div className="mb-6">
                 <label
                   htmlFor="message"
-                  className="font-bold block mb-2 text-sm text-orange-600 dark:text-orange-600"
+                  className="font-bold block mb-2 text-sm text-gray-400 dark:text-gray-400"
                 >
                   Your Message
                 </label>
@@ -104,7 +104,7 @@ const ContactForm: React.FC = () => {
               <div className="mb-6">
                 <button
                   type="submit"
-                  className="w-full px-3 py-4 text-white font-bold transition ease-in-out delay-150 border border-orange-600 bg-orange-600 hover:-translate-y-1 hover:scale-110 hover:bg-gray-800 duration-300 focus:outline-none"
+                  className="w-full px-3 py-4 text-white font-bold transition ease-in-out delay-150 border border-gray-600 bg-gray-600 hover:-translate-y-1 hover:scale-110 hover:bg-gray-800 duration-300 focus:outline-none"
                 >
                   Send Message
                 </button>

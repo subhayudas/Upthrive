@@ -30,18 +30,18 @@
   animation: textGradient 8s ease-in-out infinite;
 }
 
-/* Special violet gradient for hero headings */
+/* Special silver gradient for hero headings */
 .hero-violet-gradient {
   background: linear-gradient(
     to right,
     #333333, /* dark gray */
-    #e87924, /* violet */
-    #f19737, /* medium purple */
-    #d3d3d3, /* light gray */
+    #c0c0c0, /* silver */
+    #e6e6e6, /* light silver */
+    #f5f5f5, /* light gray */
     #ffffff, /* white */
-    #d3d3d3, /* light gray */
-    #c34d2c, /* medium purple */
-    #e28d2b, /* violet */
+    #f5f5f5, /* light gray */
+    #e6e6e6, /* light silver */
+    #c0c0c0, /* silver */
     #333333  /* dark gray */
   );
   background-size: 300% auto;

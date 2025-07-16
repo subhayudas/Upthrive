@@ -123,43 +123,7 @@ const Footer = () => {
 
   return (
     <footer className="relative bg-gradient-to-b from-[#030014] via-[#050320] to-[#0a0428] pt-24 pb-8 overflow-hidden">
-      {/* Animated background elements */}
-      <div className="absolute inset-0 overflow-hidden pointer-events-none">
-        <div className="absolute top-0 left-0 w-full h-[1px] bg-gradient-to-r from-transparent via-orange-500/50 to-transparent opacity-80"></div>
-        
-        {/* Animated glowing orbs */}
-        <motion.div
-          animate={{
-            y: ["-5%", "8%"],
-            x: ["-3%", "3%"],
-            scale: [1, 1.3, 1],
-            opacity: [0.15, 0.25, 0.15]
-          }}
-          transition={{
-            duration: 12,
-            repeat: Infinity,
-            ease: "easeInOut"
-          }}
-          className="absolute top-1/4 left-1/4 w-72 h-72 rounded-full bg-gradient-to-br from-orange-500/10 to-amber-500/5 blur-3xl"
-        />
-        <motion.div
-          animate={{
-            y: ["5%", "-8%"],
-            x: ["3%", "-3%"],
-            scale: [1, 1.4, 1],
-            opacity: [0.1, 0.2, 0.1]
-          }}
-          transition={{
-            duration: 15,
-            repeat: Infinity,
-            ease: "easeInOut"
-          }}
-          className="absolute bottom-1/3 right-1/4 w-96 h-96 rounded-full bg-gradient-to-tr from-purple-500/10 to-blue-500/5 blur-3xl"
-        />
-        
-        {/* Subtle grid pattern overlay */}
-        <div className="absolute inset-0 bg-grid-pattern opacity-5"></div>
-      </div>
+      {/* Background elements removed for performance */}
 
       {/* Main Footer Content */}
       <div className="container mx-auto px-4 relative z-10">

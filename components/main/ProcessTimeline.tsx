@@ -120,14 +120,14 @@ const ProcessTimeline = () => {
           </p>
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4">
             <div className="p-4 sm:p-6 rounded-xl bg-gradient-to-br from-gray-900/80 to-gray-800/80 backdrop-blur-sm border border-gray-800 hover:border-gray-700 transition-all duration-300">
-              <div className="text-3xl bg-gradient-to-br from-orange-500 to-amber-600 inline-block rounded-lg p-2 mb-3">
+              <div className="text-3xl bg-gradient-to-br from-gray-500 to-gray-400 inline-block rounded-lg p-2 mb-3">
                 🧪
               </div>
               <h4 className="text-lg font-semibold text-white mb-2">Testing & QA</h4>
               <p className="text-gray-300 text-sm">Comprehensive testing across devices and platforms to ensure flawless performance</p>
             </div>
             <div className="p-4 sm:p-6 rounded-xl bg-gradient-to-br from-gray-900/80 to-gray-800/80 backdrop-blur-sm border border-gray-800 hover:border-gray-700 transition-all duration-300">
-              <div className="text-3xl bg-gradient-to-br from-orange-500 to-amber-600 inline-block rounded-lg p-2 mb-3">
+              <div className="text-3xl bg-gradient-to-br from-gray-500 to-gray-400 inline-block rounded-lg p-2 mb-3">
                 🚀
               </div>
               <h4 className="text-lg font-semibold text-white mb-2">Deployment</h4>
@@ -167,11 +167,7 @@ const ProcessTimeline = () => {
 
   return (
     <div id="ProcessTimeline" className="py-16 sm:py-20 lg:py-24 px-4 sm:px-6 lg:px-8 relative overflow-hidden">
-      {/* Background elements */}
-      <div className="absolute inset-0 overflow-hidden">
-        <div className="absolute top-1/4 right-0 w-72 h-72 bg-orange-500/10 rounded-full blur-3xl"></div>
-        <div className="absolute bottom-1/4 left-0 w-72 h-72 bg-blue-500/10 rounded-full blur-3xl"></div>
-      </div>
+      {/* Background elements removed for performance */}
 
       <div className="max-w-7xl mx-auto relative">
         <div className="text-center mb-16">

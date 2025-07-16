@@ -74,11 +74,7 @@ const BookingForm = () => {
 
   return (
     <div id="BookingForm" className="py-16 px-4 sm:px-6 lg:px-8 relative overflow-hidden">
-      {/* Background elements */}
-      <div className="absolute inset-0 overflow-hidden">
-        <div className="absolute top-1/4 right-0 w-72 h-72 bg-orange-500/10 rounded-full blur-3xl"></div>
-        <div className="absolute bottom-1/4 left-0 w-72 h-72 bg-blue-500/10 rounded-full blur-3xl"></div>
-      </div>
+      {/* Background elements removed for performance */}
 
       <div className="max-w-3xl mx-auto relative">
         <div className="text-center mb-10">
@@ -119,7 +115,7 @@ const BookingForm = () => {
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
               <div>
                 <label htmlFor="name" className="block text-sm font-medium text-gray-300 mb-1">
-                  Full Name <span className="text-orange-500">*</span>
+                  Full Name <span className="text-gray-500">*</span>
                 </label>
                 <input
                   type="text"
@@ -128,14 +124,14 @@ const BookingForm = () => {
                   value={formData.name}
                   onChange={handleChange}
                   required
-                  className="w-full px-4 py-3 bg-gray-800/50 border border-gray-700 rounded-lg focus:ring-2 focus:ring-orange-500/50 focus:border-orange-500 text-white placeholder-gray-400 transition-all duration-300"
+                  className="w-full px-4 py-3 bg-gray-800/50 border border-gray-700 rounded-lg focus:ring-2 focus:ring-gray-500/50 focus:border-gray-500 text-white placeholder-gray-400 transition-all duration-300"
                   placeholder="John Doe"
                 />
               </div>
 
               <div>
                 <label htmlFor="email" className="block text-sm font-medium text-gray-300 mb-1">
-                  Email Address <span className="text-orange-500">*</span>
+                  Email Address <span className="text-gray-500">*</span>
                 </label>
                 <input
                   type="email"
@@ -144,7 +140,7 @@ const BookingForm = () => {
                   value={formData.email}
                   onChange={handleChange}
                   required
-                  className="w-full px-4 py-3 bg-gray-800/50 border border-gray-700 rounded-lg focus:ring-2 focus:ring-orange-500/50 focus:border-orange-500 text-white placeholder-gray-400 transition-all duration-300"
+                  className="w-full px-4 py-3 bg-gray-800/50 border border-gray-700 rounded-lg focus:ring-2 focus:ring-gray-500/50 focus:border-gray-500 text-white placeholder-gray-400 transition-all duration-300"
                   placeholder="john@example.com"
                 />
               </div>
@@ -161,14 +157,14 @@ const BookingForm = () => {
                   name="phone"
                   value={formData.phone}
                   onChange={handleChange}
-                  className="w-full px-4 py-3 bg-gray-800/50 border border-gray-700 rounded-lg focus:ring-2 focus:ring-orange-500/50 focus:border-orange-500 text-white placeholder-gray-400 transition-all duration-300"
+                  className="w-full px-4 py-3 bg-gray-800/50 border border-gray-700 rounded-lg focus:ring-2 focus:ring-gray-500/50 focus:border-gray-500 text-white placeholder-gray-400 transition-all duration-300"
                   placeholder="+1 (123) 456-7890"
                 />
               </div>
 
               <div>
                 <label htmlFor="service" className="block text-sm font-medium text-gray-300 mb-1">
-                  Service Interested In <span className="text-orange-500">*</span>
+                  Service Interested In <span className="text-gray-500">*</span>
                 </label>
                 <select
                   id="service"
@@ -176,7 +172,7 @@ const BookingForm = () => {
                   value={formData.service}
                   onChange={handleChange}
                   required
-                  className="w-full px-4 py-3 bg-gray-800/50 border border-gray-700 rounded-lg focus:ring-2 focus:ring-orange-500/50 focus:border-orange-500 text-white placeholder-gray-400 transition-all duration-300"
+                  className="w-full px-4 py-3 bg-gray-800/50 border border-gray-700 rounded-lg focus:ring-2 focus:ring-gray-500/50 focus:border-gray-500 text-white placeholder-gray-400 transition-all duration-300"
                 >
                   <option value="" disabled>Select a service</option>
                   <option value="Web Development">Web Development</option>
@@ -191,7 +187,7 @@ const BookingForm = () => {
 
             <div>
               <label htmlFor="message" className="block text-sm font-medium text-gray-300 mb-1">
-                Your Message <span className="text-orange-500">*</span>
+                Your Message <span className="text-gray-500">*</span>
               </label>
               <textarea
                 id="message"
@@ -200,7 +196,7 @@ const BookingForm = () => {
                 onChange={handleChange}
                 required
                 rows={5}
-                className="w-full px-4 py-3 bg-gray-800/50 border border-gray-700 rounded-lg focus:ring-2 focus:ring-orange-500/50 focus:border-orange-500 text-white placeholder-gray-400 transition-all duration-300 resize-none"
+                className="w-full px-4 py-3 bg-gray-800/50 border border-gray-700 rounded-lg focus:ring-2 focus:ring-gray-500/50 focus:border-gray-500 text-white placeholder-gray-400 transition-all duration-300 resize-none"
                 placeholder="Tell us about your project or requirements..."
               ></textarea>
             </div>
@@ -208,7 +204,7 @@ const BookingForm = () => {
             <motion.button
               type="submit"
               disabled={isSubmitting}
-              className="w-full py-4 px-6 bg-gradient-to-r from-orange-500 to-orange-600 hover:from-orange-600 hover:to-orange-700 rounded-lg text-white font-medium shadow-lg shadow-orange-500/20 hover:shadow-orange-500/40 transition-all duration-300 flex items-center justify-center"
+              className="w-full py-4 px-6 bg-gradient-to-r from-gray-500 to-gray-600 hover:from-gray-600 hover:to-gray-700 rounded-lg text-white font-medium shadow-lg shadow-gray-500/20 hover:shadow-gray-500/40 transition-all duration-300 flex items-center justify-center"
               whileHover={{ scale: 1.02 }}
               whileTap={{ scale: 0.98 }}
             >
@@ -241,7 +237,7 @@ const BookingForm = () => {
             </div>
 
             <p className="text-xs text-gray-400 text-center mt-4">
-              By submitting this form, you agree to our <a href="#" className="text-orange-400 hover:text-orange-300 underline">Privacy Policy</a> and <a href="#" className="text-orange-400 hover:text-orange-300 underline">Terms of Service</a>.
+              By submitting this form, you agree to our <a href="#" className="text-gray-400 hover:text-gray-300 underline">Privacy Policy</a> and <a href="#" className="text-gray-400 hover:text-gray-300 underline">Terms of Service</a>.
             </p>
           </form>
         </motion.div>
