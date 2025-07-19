@@ -300,14 +300,14 @@ const Portfolio = () => {
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.5 }}
                   >
-                    <h3 className="text-xl sm:text-2xl font-bold mb-3 sm:mb-4">{clientProjects[activeProject].name}</h3>
+                    <h3 className="text-xl sm:text-2xl font-bold mb-3 sm:mb-4 font-playfair">{clientProjects[activeProject].name}</h3>
                     <p className="text-white/70 text-sm sm:text-base mb-4 sm:mb-6">{clientProjects[activeProject].description}</p>
                     
                     {/* ROI indicator */}
                     <div className="mb-4 sm:mb-6 bg-white/5 rounded-xl p-3 sm:p-4 border border-white/10 hover:bg-white/10 transition-colors duration-300">
                       <p className="text-xs sm:text-sm text-white/70 mb-1 sm:mb-2">Return on Investment</p>
                       <div className="flex items-end gap-2">
-                        <span className="text-2xl sm:text-3xl font-bold text-green-400">{clientProjects[activeProject].roi}</span>
+                        <span className="text-2xl sm:text-3xl font-bold text-green-400 font-playfair">{clientProjects[activeProject].roi}</span>
                         <span className="text-white/70 text-xs sm:text-sm">increase in revenue</span>
                       </div>
                     </div>
@@ -356,7 +356,7 @@ const Portfolio = () => {
           className="text-center bg-gradient-to-r from-black/40 to-black/40 backdrop-blur-sm p-8 rounded-2xl border border-white/10 shadow-[0_0_25px_rgba(112,66,248,0.15)] max-w-3xl mx-auto"
         >
           <div className="absolute -top-10 left-1/2 transform -translate-x-1/2 w-20 h-20 bg-gradient-to-br from-purple-500/30 to-blue-500/30 rounded-full blur-xl"></div>
-          <h3 className="text-2xl sm:text-3xl font-bold mb-4 bg-clip-text text-transparent bg-gradient-to-r from-purple-400 to-pink-400">Ready to Grow Your Business?</h3>
+                        <h3 className="text-2xl sm:text-3xl font-bold mb-4 bg-clip-text text-transparent bg-gradient-to-r from-purple-400 to-pink-400 font-playfair">Ready to Grow Your Business?</h3>
           <p className="text-lg sm:text-xl text-white/80 mb-6">Join our clients who have achieved remarkable ROI with our digital solutions</p>
           <AnimatedButton href="#BookingForm" className="mx-auto text-base px-6 py-3">
             Start Your Success Story

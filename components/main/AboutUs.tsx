@@ -102,7 +102,7 @@ const AboutUs = () => {
             <span>Web Design &amp; Development</span>
           </div>
           <div className="flex justify-between items-center">
-                            <div className="text-gray-500 text-6xl font-bold">230+</div>
+                            <div className="text-gray-500 text-6xl font-bold font-playfair">230+</div>
             <div>
               <a
                 href="https://cal.com/mralamin/30min"

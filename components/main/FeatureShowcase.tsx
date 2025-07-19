@@ -122,7 +122,7 @@ const FeatureShowcase = () => {
               <div className={`text-3xl sm:text-4xl mb-3 sm:mb-4 bg-gradient-to-br ${feature.color} inline-block rounded-xl p-2 sm:p-3`}>
                 {feature.icon}
               </div>
-              <h3 className="text-xl font-bold mb-2 text-white">{feature.title}</h3>
+              <h3 className="text-xl font-bold mb-2 text-white font-questrial">{feature.title}</h3>
               <p className="text-gray-300">{feature.description}</p>
               
               <div className="mt-6 flex items-center">

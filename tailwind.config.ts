@@ -9,6 +9,11 @@ const config: Config = {
   ],
   theme: {
   	extend: {
+  		fontFamily: {
+  			'playfair': ['Playfair', 'serif'],
+  			'comfortaa': ['Comfortaa', 'sans-serif'],
+  			'questrial': ['Questrial', 'sans-serif'],
+  		},
   		colors: {
   			primary: {
   				DEFAULT: 'hsl(var(--primary))',

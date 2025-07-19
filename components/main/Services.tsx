@@ -141,7 +141,7 @@ const Services = () => {
               {headingWords.map((word, i) => (
                 <motion.span
                   key={i}
-                  className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-white via-gray-200 to-gray-400"
+                  className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-white via-gray-200 to-gray-400 font-playfair"
                   custom={i}
                   initial="hidden"
                   animate={isInView ? "visible" : "hidden"}
@@ -317,7 +317,7 @@ const Services = () => {
                     <div className="p-3 rounded-full bg-gradient-to-br from-gray-500/20 to-purple-500/20 border border-white/10 mr-4">
                       {projects[selectedService].icon}
                     </div>
-                    <h3 className="text-2xl sm:text-3xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-white to-gray-300">
+                    <h3 className="text-2xl sm:text-3xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-white to-gray-300 font-playfair">
                       {projects[selectedService].title}
                     </h3>
                   </div>
@@ -327,7 +327,7 @@ const Services = () => {
                   </p>
 
                   <div className="space-y-4">
-                    <h4 className="text-lg sm:text-xl font-semibold text-white">What we offer:</h4>
+                    <h4 className="text-lg sm:text-xl font-semibold text-white font-questrial">What we offer:</h4>
                     <ul className="space-y-3 text-neutral-300">
                       {[...Array(4)].map((_, i) => (
                         <li key={i} className="flex items-start">

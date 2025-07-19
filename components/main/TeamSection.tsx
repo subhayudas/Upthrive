@@ -373,7 +373,7 @@ const TeamSection = () => {
                       />
 
                       <motion.h3
-                        className="text-3xl md:text-4xl font-bold mb-2 text-white"
+                        className="text-3xl md:text-4xl font-bold mb-2 text-white font-playfair"
                         initial={{ opacity: 0, y: 20 }}
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ delay: 0.2, duration: 0.5 }}
@@ -402,7 +402,7 @@ const TeamSection = () => {
                     </div>
 
                     <div className="mb-8">
-                      <h4 className="text-white text-lg font-medium mb-4">Expertise</h4>
+                      <h4 className="text-white text-lg font-medium mb-4 font-questrial">Expertise</h4>
                       <div className="flex flex-wrap gap-2">
                         {teamMembers[activeIndex].skills.map((skill, i) => (
                           <motion.span
