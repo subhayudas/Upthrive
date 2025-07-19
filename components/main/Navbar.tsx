@@ -139,57 +139,24 @@ const Navbar = () => {
           before:content-[''] before:absolute before:inset-0 before:rounded-2xl before:bg-gradient-to-b before:from-[#ffffff20] before:to-transparent before:opacity-50 before:pointer-events-none
           relative touch-manipulation`}
         >
-          {/* Logo and Brand Name */}
-          <div className="flex items-center space-x-2 sm:space-x-3">
+          {/* Logo Image */}
+          <div className="flex items-center" >
             <motion.div
-                whileHover={{ scale: 1.15 }}
-                transition={{ type: "spring", stiffness: 400, damping: 10 }}
-                className="relative"
-              >
-                <motion.div
-                  initial={{ opacity: 0.5, scale: 1 }}
-                  animate={{
-                    opacity: [0.5, 0.8, 0.5],
-                    scale: [1, 1.05, 1],
-                    boxShadow: [
-                      '0 0 5px 2px rgba(249, 115, 22, 0.4)',
-                      '0 0 15px 5px rgba(249, 115, 22, 0.6)',
-                      '0 0 5px 2px rgba(249, 115, 22, 0.4)'
-                    ]
-                  }}
-                  transition={{
-                    duration: 2,
-                    repeat: Infinity,
-                    ease: "easeInOut"
-                  }}
-                  className="absolute inset-0 rounded-full bg-orange-500/20"
+              whileHover={{ scale: 1.05, y: -2 }}
+              whileTap={{ scale: 0.95 }}
+              transition={{ type: "spring", stiffness: 400 }}
+              className="cursor-pointer"
+            >
+              <Link href="#Home">
+                <Image
+                  src="/logo-removebg-preview.png"
+                  alt="UpThrive Logo"
+                  width={360}
+                  height={120}
+                  className="cursor-pointer h-8 sm:h-10 w-auto object-contain"
                 />
-                <Link href="#Home">
-                  <Image
-                    src="/logo.png"
-                    alt="logo"
-                    width={40}
-                    height={40}
-                    className="cursor-pointer relative z-10 sm:w-[50px] sm:h-[50px] rounded-full border-2 border-orange-400/30"
-                  />
-                </Link>
-              </motion.div>
-
-            <motion.span
-                className="self-center text-lg sm:text-xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-orange-500 to-amber-300"
-                whileHover={{ scale: 1.05, y: -2 }}
-                whileTap={{ scale: 0.95 }}
-                transition={{ type: "spring", stiffness: 400 }}
-              >
-                <motion.span
-                  initial={{ backgroundPosition: "0% 50%" }}
-                  animate={{ backgroundPosition: ["0% 50%", "100% 50%", "0% 50%"] }}
-                  transition={{ duration: 5, repeat: Infinity, ease: "easeInOut" }}
-                  className="bg-clip-text text-transparent bg-gradient-to-r from-orange-500 via-amber-300 to-orange-500 bg-size-200"
-                >
-                  UpThrive
-                </motion.span>
-              </motion.span>
+              </Link>
+            </motion.div>
           </div>
 
           {/* Mobile menu button */}

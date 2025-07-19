@@ -64,7 +64,9 @@ const config: Config = {
 			'shiny-text': 'shiny-text 4s linear infinite',
 			'shiny-text-slow': 'shiny-text 8s linear infinite',
 			'line-shadow': 'line-shadow 15s linear infinite',
-			'spotlight': 'spotlight 2s ease .75s 1 forwards'
+			'spotlight': 'spotlight 2s ease .75s 1 forwards',
+			'shimmer-slide': 'shimmer-slide var(--speed) ease-in-out infinite alternate',
+			'spin-around': 'spin-around calc(var(--speed) * 2) infinite linear'
   		},
   		keyframes: {
   			'infinite-scroll': {
@@ -99,6 +101,25 @@ const config: Config = {
 				'100%': {
 					opacity: '1',
 					transform: 'scale(1) translateY(0) translateX(0)'
+				}
+			},
+			'shimmer-slide': {
+				'to': {
+					transform: 'translate(calc(100cqw - 100%), calc(100cqh - 100%))'
+				}
+			},
+			'spin-around': {
+				'0%': {
+					transform: 'translateZ(0) rotate(0)'
+				},
+				'15%, 35%': {
+					transform: 'translateZ(0) rotate(90deg)'
+				},
+				'65%, 85%': {
+					transform: 'translateZ(0) rotate(270deg)'
+				},
+				'100%': {
+					transform: 'translateZ(0) rotate(360deg)'
 				}
 			}
   		},
