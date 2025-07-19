@@ -8,7 +8,7 @@ const LoadingAnimation = () => {
   const [glowIntensity, setGlowIntensity] = useState(0);
 
   useEffect(() => {
-    // Progress counter animation
+    // Progress counter animation - optimized for smoother performance
     let count = 0;
     const interval = setInterval(() => {
       count++;
@@ -16,12 +16,12 @@ const LoadingAnimation = () => {
       if (count >= 100) {
         clearInterval(interval);
       }
-    }, 30);
+    }, 40); // Slightly slower for smoother animation
 
-    // Glow animation
+    // Glow animation - reduced frequency for better performance
     const glowInterval = setInterval(() => {
-      setGlowIntensity(prev => (prev + 0.1) % 1);
-    }, 50);
+      setGlowIntensity(prev => (prev + 0.05) % 1);
+    }, 100);
 
     // Preloader animations timeline
     const timer3 = setTimeout(() => {
@@ -55,62 +55,66 @@ const LoadingAnimation = () => {
               }
             }
           }}
-          className="transition-all duration-[1450ms] ease-in-out fixed top-0 left-0 w-full h-full z-50 bg-gradient-to-b from-[#0b0b0b] to-[#121212] flex flex-col justify-center items-start md:items-start md:justify-start md:pt-[20vh] md:px-[6.5vw] overflow-hidden"
+          className="transition-all duration-[1450ms] ease-in-out fixed top-0 left-0 w-full h-full z-50 bg-gradient-to-b from-[#0a0a0a] to-[#1a1a1a] flex flex-col justify-center items-start md:items-start md:justify-start md:pt-[20vh] md:px-[6.5vw] overflow-hidden"
+          style={{ fontFamily: 'Comfortaa, sans-serif' }}
         >
-          {/* Background elements removed for performance */}
-
-          {/* Progress counter with enhanced styling and layout */}
+          {/* Progress counter with silver/grey styling */}
           <div className="line relative z-10" id="line1">
             <motion.div 
               id="progress"
               className="flex items-center mb-6 relative"
               initial={{ opacity: 0, scale: 0.9 }}
               animate={{ opacity: 1, scale: 1 }}
-              transition={{ duration: 0.5 }}
+              transition={{ duration: 0.6, ease: "easeOut" }}
             >
               <div className="flex items-center space-x-1">
                 <motion.h5 
-                  className="text-5xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-gray-400 to-gray-600"
+                  className="text-5xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-slate-300 to-slate-500"
                   animate={{ 
                     textShadow: [
-                      '0 0 8px rgba(249, 115, 22, 0.5)',
-                      '0 0 20px rgba(249, 115, 22, 0.7)',
-                      '0 0 8px rgba(249, 115, 22, 0.5)'
+                      '0 0 8px rgba(203, 213, 225, 0.4)',
+                      '0 0 16px rgba(203, 213, 225, 0.6)',
+                      '0 0 8px rgba(203, 213, 225, 0.4)'
                     ]
                   }}
-                  transition={{ duration: 1.5, repeat: Infinity }}
+                  transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
                 >
                   {progress.toString().padStart(2, '0')}
                 </motion.h5>
-                <span className="text-gray-300/80 font-medium text-xl">/</span>
-                <span className="text-gray-300/80 font-medium text-xl">100</span>
+                <span className="text-slate-400 font-medium text-xl">/</span>
+                <span className="text-slate-400 font-medium text-xl">100</span>
               </div>
               
-              {/* Progress bar - enhanced */}
-                              <div className="ml-6 w-32 h-3 bg-gray-800/50 rounded-full overflow-hidden backdrop-blur-sm border border-gray-500/20">
+              {/* Progress bar - silver theme */}
+              <div className="ml-6 w-32 h-3 bg-slate-800/30 rounded-full overflow-hidden backdrop-blur-sm border border-slate-600/30">
                 <motion.div 
-                                      className="h-full bg-gradient-to-r from-gray-500 via-gray-400 to-gray-500"
+                  className="h-full bg-gradient-to-r from-slate-400 via-slate-300 to-slate-400"
                   style={{ width: `${progress}%` }}
                   initial={{ width: 0 }}
                   animate={{
                     boxShadow: [
-                      '0 0 5px rgba(249, 115, 22, 0.5)',
-                      '0 0 10px rgba(249, 115, 22, 0.7)',
-                      '0 0 5px rgba(249, 115, 22, 0.5)'
+                      '0 0 4px rgba(203, 213, 225, 0.5)',
+                      '0 0 8px rgba(203, 213, 225, 0.7)',
+                      '0 0 4px rgba(203, 213, 225, 0.5)'
                     ]
                   }}
-                  transition={{ boxShadow: { duration: 1.5, repeat: Infinity } }}
+                  transition={{ 
+                    boxShadow: { duration: 2, repeat: Infinity, ease: "easeInOut" },
+                    width: { duration: 0.3, ease: "easeOut" }
+                  }}
                 />
               </div>
             </motion.div>
             
             <motion.h1 
-              initial={{ y: 150, opacity: 0 }}
+              initial={{ y: 120, opacity: 0 }}
               animate={{ y: 0, opacity: 1 }}
-              transition={{ duration: 0.5, delay: 0.3 }}
-              className="text-5xl md:text-6xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-white to-gray-100 relative"
+              transition={{ duration: 0.7, delay: 0.3, ease: [0.25, 0.46, 0.45, 0.94] }}
+              className="text-5xl md:text-6xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-white to-slate-200 relative"
               style={{
-                textShadow: `0 0 ${10 + glowIntensity * 15}px rgba(249, 115, 22, ${0.3 + glowIntensity * 0.3})`
+                textShadow: `0 0 ${8 + glowIntensity * 12}px rgba(203, 213, 225, ${0.3 + glowIntensity * 0.2})`,
+                fontFamily: 'Comfortaa, sans-serif',
+                fontWeight: '600'
               }}
             >
               You are
@@ -119,12 +123,14 @@ const LoadingAnimation = () => {
           
           <div className="line relative z-10" id="line2">
             <motion.h1 
-              initial={{ y: 150, opacity: 0 }}
+              initial={{ y: 120, opacity: 0 }}
               animate={{ y: 0, opacity: 1 }}
-              transition={{ duration: 0.5, delay: 0.55 }}
-              className="text-5xl md:text-6xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-gray-100 to-gray-300 relative"
+              transition={{ duration: 0.7, delay: 0.5, ease: [0.25, 0.46, 0.45, 0.94] }}
+              className="text-5xl md:text-6xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-slate-100 to-slate-300 relative"
               style={{
-                textShadow: `0 0 ${10 + glowIntensity * 15}px rgba(249, 115, 22, ${0.3 + glowIntensity * 0.3})`
+                textShadow: `0 0 ${8 + glowIntensity * 12}px rgba(203, 213, 225, ${0.3 + glowIntensity * 0.2})`,
+                fontFamily: 'Comfortaa, sans-serif',
+                fontWeight: '600'
               }}
             >
               One step away from
@@ -133,34 +139,35 @@ const LoadingAnimation = () => {
           
           <div className="line relative z-10" id="line3">
             <motion.h1 
-              initial={{ y: 150, opacity: 0 }}
+              initial={{ y: 120, opacity: 0 }}
               animate={{ y: 0, opacity: 1 }}
-              transition={{ duration: 0.5, delay: 0.8 }}
+              transition={{ duration: 0.7, delay: 0.7, ease: [0.25, 0.46, 0.45, 0.94] }}
               className="text-5xl md:text-6xl font-bold relative"
+              style={{ fontFamily: 'Comfortaa, sans-serif', fontWeight: '600' }}
             >
-              <span className="bg-clip-text text-transparent bg-gradient-to-r from-orange-300 to-orange-500"
+              <span className="bg-clip-text text-transparent bg-gradient-to-r from-slate-200 to-slate-400"
                 style={{
-                  textShadow: `0 0 ${10 + glowIntensity * 15}px rgba(249, 115, 22, ${0.3 + glowIntensity * 0.3})`
+                  textShadow: `0 0 ${8 + glowIntensity * 12}px rgba(203, 213, 225, ${0.3 + glowIntensity * 0.2})`
                 }}
               >your </span>
-              <span className="bg-clip-text text-transparent bg-gradient-to-r from-orange-400 to-orange-600"
+              <span className="bg-clip-text text-transparent bg-gradient-to-r from-slate-300 to-slate-500"
                 style={{
-                  textShadow: `0 0 ${10 + glowIntensity * 15}px rgba(249, 115, 22, ${0.3 + glowIntensity * 0.3})`
+                  textShadow: `0 0 ${8 + glowIntensity * 12}px rgba(203, 213, 225, ${0.3 + glowIntensity * 0.2})`
                 }}
               >Dream br</span>
               <motion.span 
                 id="flash" 
-                className="bg-clip-text text-transparent bg-gradient-to-r from-orange-500 to-orange-700"
+                className="bg-clip-text text-transparent bg-gradient-to-r from-slate-100 to-white"
                 animate={{ 
                   textShadow: [
-                    '0 0 10px rgba(249, 115, 22, 0.7)',
-                    '0 0 20px rgba(249, 115, 22, 0.9)',
-                    '0 0 10px rgba(249, 115, 22, 0.7)'
+                    '0 0 8px rgba(255, 255, 255, 0.6)',
+                    '0 0 16px rgba(255, 255, 255, 0.8)',
+                    '0 0 8px rgba(255, 255, 255, 0.6)'
                   ]
                 }}
-                transition={{ duration: 1, repeat: Infinity }}
+                transition={{ duration: 1.5, repeat: Infinity, ease: "easeInOut" }}
                 style={{
-                  textShadow: `0 0 ${15 + glowIntensity * 20}px rgba(249, 115, 22, ${0.5 + glowIntensity * 0.4})`
+                  textShadow: `0 0 ${12 + glowIntensity * 15}px rgba(255, 255, 255, ${0.4 + glowIntensity * 0.3})`
                 }}
               >and</motion.span>
             </motion.h1>
@@ -170,7 +177,7 @@ const LoadingAnimation = () => {
             id="wait-message"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
-            transition={{ duration: 0.4, delay: 1.2 }}
+            transition={{ duration: 0.5, delay: 1.2, ease: "easeOut" }}
             className="w-full text-center mt-12 relative z-10"
           >
             
