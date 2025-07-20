@@ -1,4 +1,5 @@
 import Hero from "@/components/main/Hero";
+import ImageTrailSection from "@/components/main/ImageTrailSection";
 import Projects from "@/components/main/Projects";
 import Services from "@/components/main/Services";
 import Portfolio from "@/components/main/Portfolio";
@@ -24,6 +25,7 @@ export default function Home() {
     <main className="h-full w-full">
       <div className="flex flex-col">
         <Hero />
+        <ImageTrailSection />
         <Services />
         <TestimonialSlider />
         <MacbookDemo />

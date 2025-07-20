@@ -759,3 +759,24 @@ html {
 .max-w-container {
   max-width: 1280px;
 }
+
+/* Custom easing for image cursor trail */
+.ease-out-expo {
+  transition-timing-function: cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* Smooth cursor trail animations */
+@keyframes imageTrailScale {
+  from {
+    transform: translate(-50%, -50%) scale(0);
+    opacity: 0;
+  }
+  to {
+    transform: translate(-50%, -50%) scale(1);
+    opacity: 1;
+  }
+}
+
+.image-trail-enter {
+  animation: imageTrailScale 0.5s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
