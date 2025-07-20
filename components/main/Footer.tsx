@@ -54,7 +54,7 @@ const Footer = () => {
       rotate: 12,
       filter: "drop-shadow(0 0 10px rgba(249, 115, 22, 0.8))",
       transition: {
-        type: "spring",
+        type: "spring" as const,
         stiffness: 400,
         damping: 8
       }
@@ -69,7 +69,7 @@ const Footer = () => {
       opacity: 1,
       color: "#f97316",
       transition: {
-        type: "spring",
+        type: "spring" as const,
         stiffness: 400,
         damping: 10
       }
@@ -83,7 +83,7 @@ const Footer = () => {
       scale: 1, 
       opacity: 1,
       transition: {
-        type: "spring",
+        type: "spring" as const,
         stiffness: 300,
         damping: 15
       }
@@ -100,7 +100,7 @@ const Footer = () => {
       y: -5,
       boxShadow: "0 0 20px rgba(249, 115, 22, 0.8)",
       transition: {
-        type: "spring",
+        type: "spring" as const,
         stiffness: 400,
         damping: 10
       }
@@ -114,7 +114,7 @@ const Footer = () => {
       opacity: 1, 
       y: 0,
       transition: {
-        type: "spring",
+        type: "spring" as const,
         stiffness: 100,
         damping: 15
       }

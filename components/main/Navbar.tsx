@@ -44,7 +44,7 @@ const Navbar = () => {
       opacity: 1,
       y: 0,
       transition: {
-        type: "spring",
+        type: "spring" as const,
         stiffness: 100,
         damping: 15
       }
@@ -59,7 +59,7 @@ const Navbar = () => {
       scale: 1.05,
       rotateX: 10,
       transition: {
-        type: "spring",
+        type: "spring" as const,
         stiffness: 400,
         damping: 10
       }
@@ -88,7 +88,7 @@ const Navbar = () => {
       scale: 0.98,
       transition: {
         duration: 0.15,
-        ease: "easeOut"
+        ease: "easeOut" as const
       }
     },
     open: {
@@ -97,7 +97,7 @@ const Navbar = () => {
       scale: 1,
       transition: {
         duration: 0.2,
-        ease: "easeOut",
+        ease: "easeOut" as const,
         staggerChildren: 0.05,
         delayChildren: 0.05
       }

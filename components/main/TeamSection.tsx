@@ -104,7 +104,7 @@ const TeamSection = () => {
       y: 0,
       opacity: 1,
       transition: {
-        type: "spring",
+        type: "spring" as const,
         stiffness: 100,
         damping: 15
       }
@@ -118,7 +118,7 @@ const TeamSection = () => {
       opacity: 1,
       y: 0,
       transition: {
-        type: "spring",
+        type: "spring" as const,
         stiffness: 200,
         damping: 20,
         duration: 0.5
@@ -136,7 +136,7 @@ const TeamSection = () => {
       y: -10,
       boxShadow: "0 20px 25px -5px rgba(0, 0, 0, 0.2), 0 10px 10px -5px rgba(0, 0, 0, 0.1)",
       transition: {
-        type: "spring",
+        type: "spring" as const,
         stiffness: 400,
         damping: 20
       }
@@ -149,7 +149,7 @@ const TeamSection = () => {
       scale: 1,
       opacity: 1,
       transition: {
-        type: "spring",
+        type: "spring" as const,
         stiffness: 100,
         damping: 20,
         delay: 0.1
@@ -165,14 +165,14 @@ const TeamSection = () => {
       transition: {
         delay: 0.3 + custom * 0.1,
         duration: 0.5,
-        ease: [0.43, 0.13, 0.23, 0.96]
+        ease: [0.43, 0.13, 0.23, 0.96] as const
       }
     }),
     hover: {
       y: -5,
       scale: 1.1,
       transition: {
-        type: "spring",
+        type: "spring" as const,
         stiffness: 400,
         damping: 10
       }

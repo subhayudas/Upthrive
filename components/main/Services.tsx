@@ -1,16 +1,62 @@
 "use client";
 
 import { useRef, useState } from "react";
-import { motion, useInView, useScroll, useTransform, AnimatePresence } from "framer-motion";
+import { motion, useInView, useScroll, useTransform } from "framer-motion";
 import { SparklesIcon } from "@heroicons/react/24/solid";
-import AnimatedHeading from "../ui/animated-heading";
-import { projects } from "./snippets/card-hover-effect-snippet";
+import { PiChartLineUp, PiImage, PiVideoCamera, PiMagnifyingGlass, PiCode, PiLightbulb } from "react-icons/pi";
 import Image from "next/image";
+import { ServiceDrawer } from "../ui/service-drawer";
+
+const services = [
+  {
+    icon: <PiCode className="w-6 h-6 text-amber-400" />,
+    title: "Website Design",
+    description: "Crafting visually stunning and highly functional websites tailored to your brand.",
+    imageUrl: "https://images.unsplash.com/photo-1467232004584-a241de8bcf5d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80",
+    size: "large", // Takes up 2 columns
+  },
+  {
+    icon: <PiChartLineUp className="w-6 h-6 text-amber-400" />,
+    title: "Social Media Marketing",
+    description: "Empower your brand's online presence with comprehensive social media strategies.",
+    imageUrl: "https://images.unsplash.com/photo-1611926653458-09294b3142bf?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80",
+    size: "medium",
+  },
+  {
+    icon: <PiImage className="w-6 h-6 text-amber-400" />,
+    title: "Graphics Design",
+    description: "Elevate your brand identity with captivating graphic designs.",
+    imageUrl: "https://images.unsplash.com/photo-1626785774573-4b799315345d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80",
+    size: "medium",
+  },
+  {
+    icon: <PiMagnifyingGlass className="w-6 h-6 text-amber-400" />,
+    title: "SEO",
+    description: "Enhance your online visibility and drive organic traffic with comprehensive SEO solutions.",
+    imageUrl: "https://images.unsplash.com/photo-1562577309-4932fdd64cd1?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80",
+    size: "small",
+  },
+  {
+    icon: <PiVideoCamera className="w-6 h-6 text-amber-400" />,
+    title: "Video Editing",
+    description: "Transform raw footage into captivating visual narratives.",
+    imageUrl: "https://images.unsplash.com/photo-1536240478700-b869070f9279?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80",
+    size: "large", // Takes up 2 columns
+  },
+  {
+    icon: <PiLightbulb className="w-6 h-6 text-amber-400" />,
+    title: "Content Writing",
+    description: "Fuel your brand's growth with compelling content writing.",
+    imageUrl: "https://images.unsplash.com/photo-1455390582262-044cdead277a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80",
+    size: "small",
+  },
+];
 
 const Services = () => {
   const containerRef = useRef(null);
   const [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
-  const [selectedService, setSelectedService] = useState<number | null>(null);
+  const [selectedService, setSelectedService] = useState<typeof services[0] | null>(null);
+  const [isDrawerOpen, setIsDrawerOpen] = useState(false);
 
   const isInView = useInView(containerRef, { once: false, margin: "-100px" });
   const { scrollYProgress } = useScroll({
@@ -21,345 +67,235 @@ const Services = () => {
   const opacity = useTransform(scrollYProgress, [0, 0.2, 0.9, 1], [0, 1, 1, 0]);
   const y = useTransform(scrollYProgress, [0, 0.2, 0.9, 1], [100, 0, 0, -100]);
 
-  // Text animation variants
-  const headingWords = "Elevate Your Business with Our Premium Services".split(" ");
-
-  const wordVariants = {
-    hidden: { opacity: 0, y: 20 },
-    visible: (i: number) => ({
-      opacity: 1,
-      y: 0,
-      transition: {
-        delay: 0.1 + (i * 0.1),
-        duration: 0.6,
-        ease: [0.215, 0.61, 0.355, 1]
-      }
-    })
-  };
-
-  // Card animation variants
-  const cardVariants = {
-    hidden: { opacity: 0, y: 50 },
-    visible: (i: number) => ({
-      opacity: 1,
-      y: 0,
-      transition: {
-        delay: 0.2 + (i * 0.1),
-        duration: 0.7,
-        ease: [0.215, 0.61, 0.355, 1]
-      }
-    }),
-    hover: {
-      y: -15,
-      scale: 1.03,
-      transition: {
-        type: "spring",
-        stiffness: 300,
-        damping: 20
-      }
-    }
-  };
-
-  // Icon animation variants
-  const iconVariants = {
-    initial: { scale: 1 },
-    hover: {
-      scale: 1.1,
-      rotate: [0, -5, 5, -5, 0],
-      transition: {
-        rotate: {
-          repeat: Infinity,
-          repeatType: "loop",
-          duration: 2,
-          ease: "easeInOut"
-        },
-        scale: {
-          duration: 0.3,
-          ease: "easeOut"
-        }
-      }
-    }
-  };
-
-  // Image animation variants
-  const imageVariants = {
-    hidden: { opacity: 0, scale: 0.9 },
+  const containerVariants = {
+    hidden: { opacity: 0 },
     visible: {
       opacity: 1,
-      scale: 1,
       transition: {
-        duration: 0.5,
-        ease: "easeOut"
-      }
+        staggerChildren: 0.1,
+        delayChildren: 0.2,
+      },
     },
-    hover: {
-      scale: 1.05,
+  };
+
+  const itemVariants = {
+    hidden: { opacity: 0, y: 60 },
+    visible: {
+      opacity: 1,
+      y: 0,
       transition: {
-        duration: 0.3,
-        ease: "easeOut"
-      }
+        duration: 0.8,
+        ease: [0.215, 0.61, 0.355, 1] as const,
+      },
+    },
+  };
+
+  const getGridClass = (size: string, index: number) => {
+    switch (size) {
+      case "large":
+        return "col-span-2 row-span-1";
+      case "tall":
+        return "col-span-1 row-span-2";
+      case "medium":
+        return "col-span-1 row-span-1";
+      case "small":
+        return "col-span-1 row-span-1";
+      default:
+        return "col-span-1 row-span-1";
     }
   };
 
-  // Floating animation for background elements
-  const floatingAnimation = {
-    y: [0, -10, 0],
-    transition: {
-      duration: 3,
-      repeat: Infinity,
-      repeatType: "reverse",
-      ease: "easeInOut"
-    }
+  const handleServiceClick = (service: typeof services[0]) => {
+    setSelectedService(service);
+    setIsDrawerOpen(true);
+  };
+
+  const handleCloseDrawer = () => {
+    setIsDrawerOpen(false);
+    setSelectedService(null);
   };
 
   return (
-    <motion.div
+    <motion.section
       id="Services"
-      className="relative py-16 sm:py-20 md:py-24 overflow-hidden px-4 sm:px-6"
+      className="relative py-20 lg:py-32 overflow-hidden"
       ref={containerRef}
       style={{ opacity, y }}
     >
-      {/* Background elements removed for performance */}
+      {/* Background gradient matching hero */}
+      <div className="absolute inset-0 bg-gradient-to-b from-black/30 via-black/20 to-black/40" />
+      <div className="absolute inset-0 bg-gradient-to-r from-purple-900/10 via-transparent to-pink-900/10" />
 
-      <div className="max-w-7xl mx-auto">
-        {/* Header with animated text */}
-        <div className="text-center mb-12 sm:mb-16 md:mb-20">
+      <div className="relative z-10 max-w-7xl mx-auto px-6 lg:px-8">
+        {/* Header Section */}
+        <motion.div
+          className="text-center mb-16 lg:mb-24"
+          initial={{ opacity: 0, y: 40 }}
+          animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 40 }}
+          transition={{ duration: 0.8, ease: [0.215, 0.61, 0.355, 1] }}
+        >
+          {/* Badge */}
           <motion.div
-            className="inline-flex items-center px-3 sm:px-4 py-1.5 sm:py-2 rounded-full border border-[#7042f88b] bg-black/30 backdrop-blur-md mb-4 sm:mb-6"
-            initial={{ opacity: 0, y: 20, scale: 0.9 }}
-            animate={isInView ? { opacity: 1, y: 0, scale: 1 } : { opacity: 0, y: 20, scale: 0.9 }}
-            transition={{ duration: 0.6, ease: [0.215, 0.61, 0.355, 1] }}
+            className="inline-flex items-center py-2 px-4 border border-white/20 bg-black/20 backdrop-blur-md rounded-full mb-6 shadow-lg"
+            initial={{ opacity: 0, scale: 0.9 }}
+            animate={isInView ? { opacity: 1, scale: 1 } : { opacity: 0, scale: 0.9 }}
+            transition={{ duration: 0.6, delay: 0.2 }}
           >
-            <SparklesIcon className="text-[#b49bff] h-4 w-4 sm:h-5 sm:w-5 mr-2 sm:mr-3 animate-pulse" />
-            <AnimatedHeading as="h3" className="text-sm sm:text-base font-medium bg-clip-text text-transparent bg-gradient-to-r from-purple-400 to-pink-400">
-              Innovative Solutions for Modern Businesses
-            </AnimatedHeading>
+            <SparklesIcon className="text-amber-400 mr-2 h-4 w-4" />
+            <span className="text-xs font-medium tracking-wider text-white/90 uppercase font-questrial">
+              Our Services
+            </span>
           </motion.div>
 
-          <div className="overflow-hidden">
-            <div className="flex flex-wrap justify-center gap-x-2 sm:gap-x-3 mb-4 sm:mb-6">
-              {headingWords.map((word, i) => (
-                <motion.span
-                  key={i}
-                  className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-white via-gray-200 to-gray-400 font-playfair"
-                  custom={i}
-                  initial="hidden"
-                  animate={isInView ? "visible" : "hidden"}
-                  variants={wordVariants}
-                >
-                  {word}
-                </motion.span>
-              ))}
-            </div>
-          </div>
-
-          <motion.p
-            className="text-base sm:text-lg md:text-xl text-neutral-300 max-w-3xl mx-auto px-2 leading-relaxed"
+          {/* Main Title */}
+          <motion.h2
+            className="text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-light leading-tight tracking-tight text-white mb-4 font-playfair"
+            style={{ letterSpacing: "-0.02em" }}
             initial={{ opacity: 0, y: 30 }}
             animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
-            transition={{ duration: 0.7, delay: 0.5, ease: [0.215, 0.61, 0.355, 1] }}
+            transition={{ duration: 0.8, delay: 0.3 }}
           >
-            Discover our comprehensive suite of professional services designed to transform
-            your digital presence and accelerate your business growth in today's competitive landscape.
-          </motion.p>
-        </div>
+            <span className="block mb-2 font-light">WHAT WE</span>
+            <span className="block">
+              <span className="font-medium italic text-amber-400">Create</span>
+              <span className="font-light"> FOR YOU</span>
+            </span>
+          </motion.h2>
 
-        {/* Services Grid with enhanced animations and images */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8 md:gap-10">
-          {projects.map((service, index) => (
+          {/* Subtitle */}
+          <motion.p
+            className="text-lg sm:text-xl text-white/70 max-w-3xl mx-auto font-questrial"
+            initial={{ opacity: 0, y: 20 }}
+            animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
+            transition={{ duration: 0.8, delay: 0.5 }}
+          >
+            Transform your digital presence with our comprehensive suite of professional services
+          </motion.p>
+        </motion.div>
+
+        {/* Bento Grid */}
+        <motion.div
+          className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-6 lg:gap-8 auto-rows-fr"
+          variants={containerVariants}
+          initial="hidden"
+          animate={isInView ? "visible" : "hidden"}
+        >
+          {services.map((service, index) => (
             <motion.div
               key={service.title}
-              className={`relative bg-black/40 backdrop-blur-md border border-white/10 rounded-2xl overflow-hidden group cursor-pointer ${hoveredIndex === index ? 'z-10' : 'z-0'}`}
-              custom={index}
-              initial="hidden"
-              animate={isInView ? "visible" : "hidden"}
-              whileHover="hover"
-              variants={cardVariants}
+              className={`group relative overflow-hidden rounded-2xl border border-white/10 bg-black/20 backdrop-blur-md transition-all duration-500 hover:border-white/20 hover:bg-black/30 cursor-pointer ${getGridClass(service.size, index)}`}
+              variants={itemVariants}
               onHoverStart={() => setHoveredIndex(index)}
               onHoverEnd={() => setHoveredIndex(null)}
-              onClick={() => setSelectedService(selectedService === index ? null : index)}
-              layoutId={`service-card-${index}`}
+              onClick={() => handleServiceClick(service)}
+              whileHover={{ 
+                scale: 1.02,
+                transition: { duration: 0.3, ease: "easeOut" }
+              }}
             >
-              {/* Service Image */}
-              <div className="relative w-full h-48 overflow-hidden">
-                <motion.div
-                  className="absolute inset-0"
-                  variants={imageVariants}
-                >
-                  <Image
-                    src={service.imageUrl}
-                    alt={service.title}
-                    fill
-                    className="object-cover transition-transform duration-500 group-hover:scale-110"
-                    sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent" />
-                </motion.div>
+              {/* Background Image */}
+              <div className="absolute inset-0 z-0">
+                <Image
+                  src={service.imageUrl}
+                  alt={service.title}
+                  fill
+                  className="object-cover transition-transform duration-700 group-hover:scale-110"
+                  sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 25vw"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/50 to-black/20 group-hover:from-black/95 group-hover:via-black/60 transition-all duration-500" />
               </div>
 
-              {/* Card inner content with enhanced animations */}
-              <div className="p-6 sm:p-8 relative z-10">
+              {/* Content */}
+              <div className="relative z-10 p-6 lg:p-8 h-full flex flex-col justify-end">
+                {/* Icon */}
                 <motion.div
-                  className="mb-5 sm:mb-6 relative -mt-12"
-                  variants={iconVariants}
+                  className="mb-4 p-3 rounded-full bg-black/40 backdrop-blur-sm border border-white/10 w-fit group-hover:bg-black/60 transition-all duration-300"
+                  whileHover={{ 
+                    scale: 1.1,
+                    rotate: [0, -5, 5, 0],
+                    transition: { duration: 0.5 }
+                  }}
                 >
-                  <motion.div
-                    className="absolute -inset-1 bg-gradient-to-r from-gray-500 to-purple-600 rounded-full opacity-0 group-hover:opacity-70 blur-md"
-                    initial={{ opacity: 0 }}
-                    whileHover={{ opacity: 0.7 }}
-                    transition={{ duration: 0.3 }}
-                  />
-                  <div className="relative bg-gradient-to-br from-gray-900 to-black p-4 rounded-full border border-white/10 group-hover:border-white/20 transition-all duration-300">
-                    {service.icon}
-                  </div>
+                  {service.icon}
                 </motion.div>
 
-                <motion.h3
-                  className="text-xl sm:text-2xl font-bold mb-3 sm:mb-4 bg-clip-text text-transparent bg-gradient-to-r from-white to-gray-300 group-hover:from-gray-300 group-hover:to-gray-100 transition-all duration-300"
-                  initial={{ opacity: 0.9 }}
-                  whileHover={{ scale: 1.02 }}
-                  transition={{ duration: 0.2 }}
-                >
+                {/* Title */}
+                <h3 className="text-xl lg:text-2xl font-medium text-white mb-3 font-playfair group-hover:text-amber-400 transition-colors duration-300">
                   {service.title}
-                </motion.h3>
+                </h3>
 
-                <motion.p
-                  className="text-sm sm:text-base text-neutral-300 group-hover:text-neutral-200 transition-colors duration-300"
-                  initial={{ opacity: 0.8 }}
-                  whileHover={{ opacity: 1 }}
-                  transition={{ duration: 0.2 }}
-                >
+                {/* Description */}
+                <p className="text-sm lg:text-base text-white/70 leading-relaxed font-questrial group-hover:text-white/90 transition-colors duration-300">
                   {service.description}
-                </motion.p>
+                </p>
 
+                {/* Hover Arrow */}
                 <motion.div
-                  className="mt-6 sm:mt-8"
-                  initial={{ opacity: 0, y: 10 }}
-                  whileHover={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.3 }}
+                  className="mt-4 flex items-center text-sm font-medium text-amber-400 opacity-0 group-hover:opacity-100 transition-all duration-300"
+                  initial={{ x: -10 }}
+                  whileHover={{ x: 0 }}
                 >
-                  <span className="inline-flex items-center text-sm font-medium text-gray-400 group-hover:text-gray-300">
-                    Learn more
-                    <svg className="ml-1 w-4 h-4 group-hover:translate-x-1 transition-transform duration-300" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-                    </svg>
-                  </span>
+                  <span className="font-questrial">Click to learn more</span>
+                  <svg 
+                    className="ml-2 w-4 h-4 transition-transform duration-300 group-hover:translate-x-1" 
+                    fill="none" 
+                    viewBox="0 0 24 24" 
+                    stroke="currentColor"
+                  >
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                  </svg>
                 </motion.div>
               </div>
 
-              {/* Animated gradient border on hover */}
+              {/* Animated border glow */}
               <motion.div
-                className="absolute inset-0 border-2 border-transparent rounded-2xl opacity-0 group-hover:opacity-100"
-                initial={{ opacity: 0 }}
-                whileHover={{
-                  opacity: 1,
-                  background: "linear-gradient(to right, rgba(249, 115, 22, 0.2), rgba(168, 85, 247, 0.2)) border-box",
-                  borderColor: "transparent"
+                className="absolute inset-0 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500"
+                style={{
+                  background: "linear-gradient(90deg, transparent, rgba(251, 191, 36, 0.1), transparent)",
+                  backgroundSize: "200% 100%",
                 }}
-                transition={{ duration: 0.3 }}
+                animate={{
+                  backgroundPosition: hoveredIndex === index ? ["0% 0%", "200% 0%"] : "0% 0%",
+                }}
+                transition={{
+                  duration: 2,
+                  repeat: hoveredIndex === index ? Infinity : 0,
+                  ease: "linear",
+                }}
               />
             </motion.div>
           ))}
-        </div>
+        </motion.div>
 
-        {/* Expanded service view when selected */}
-        <AnimatePresence>
-          {selectedService !== null && (
-            <motion.div
-              layoutId={`service-card-${selectedService}`}
-              className="fixed inset-0 z-50 flex items-center justify-center p-4 sm:p-6"
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              exit={{ opacity: 0 }}
-              transition={{ duration: 0.3 }}
-            >
-              <motion.div
-                className="absolute inset-0 bg-black/80 backdrop-blur-sm"
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
-                exit={{ opacity: 0 }}
-                onClick={() => setSelectedService(null)}
-              />
-
-              <motion.div
-                className="relative bg-gradient-to-br from-gray-900 to-black/95 border border-white/10 rounded-2xl overflow-hidden max-w-3xl w-full max-h-[80vh] overflow-y-auto"
-                initial={{ scale: 0.9, y: 20 }}
-                animate={{ scale: 1, y: 0 }}
-                exit={{ scale: 0.9, y: 20 }}
-                transition={{ type: "spring", stiffness: 300, damping: 25 }}
-              >
-                {/* Service Image in modal */}
-                <div className="relative w-full h-64 sm:h-80">
-                  <Image
-                    src={projects[selectedService].imageUrl}
-                    alt={projects[selectedService].title}
-                    fill
-                    className="object-cover"
-                    sizes="(max-width: 640px) 100vw, (max-width: 1024px) 80vw, 60vw"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-gray-900 via-gray-900/60 to-transparent" />
-
-                  <button
-                    className="absolute top-4 right-4 p-2 rounded-full bg-black/50 text-white hover:bg-black/70 transition-colors duration-200"
-                    onClick={(e) => {
-                      e.stopPropagation();
-                      setSelectedService(null);
-                    }}
-                  >
-                    <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
-                    </svg>
-                  </button>
-                </div>
-
-                <div className="p-6 sm:p-8">
-                  <div className="flex items-center mb-6">
-                    <div className="p-3 rounded-full bg-gradient-to-br from-gray-500/20 to-purple-500/20 border border-white/10 mr-4">
-                      {projects[selectedService].icon}
-                    </div>
-                    <h3 className="text-2xl sm:text-3xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-white to-gray-300 font-playfair">
-                      {projects[selectedService].title}
-                    </h3>
-                  </div>
-
-                  <p className="text-base sm:text-lg text-neutral-300 mb-6">
-                    {projects[selectedService].description}
-                  </p>
-
-                  <div className="space-y-4">
-                    <h4 className="text-lg sm:text-xl font-semibold text-white font-questrial">What we offer:</h4>
-                    <ul className="space-y-3 text-neutral-300">
-                      {[...Array(4)].map((_, i) => (
-                        <li key={i} className="flex items-start">
-                          <svg className="w-5 h-5 text-gray-400 mr-2 mt-0.5 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-                          </svg>
-                          <span>
-                            {i === 0 && "Custom tailored solutions designed specifically for your business needs"}
-                            {i === 1 && "Expert team with years of industry experience and proven results"}
-                            {i === 2 && "Ongoing support and maintenance to ensure lasting success"}
-                            {i === 3 && "Competitive pricing with flexible packages to fit your budget"}
-                          </span>
-                        </li>
-                      ))}
-                    </ul>
-                  </div>
-
-                  <div className="mt-8 flex justify-end">
-                    <a
-                      href="#BookingForm"
-                      className="px-6 py-3 rounded-full bg-gradient-to-r from-gray-500 to-gray-600 hover:from-gray-600 hover:to-gray-700 text-white font-medium transition-all duration-300 transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-gray-500 focus:ring-opacity-50 inline-block text-center"
-                    >
-                      Get Started
-                    </a>
-                  </div>
-                </div>
-              </motion.div>
-            </motion.div>
-          )}
-        </AnimatePresence>
+        {/* Call to Action */}
+        <motion.div
+          className="text-center mt-16 lg:mt-24"
+          initial={{ opacity: 0, y: 30 }}
+          animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
+          transition={{ duration: 0.8, delay: 0.8 }}
+        >
+          <motion.a
+            href="#BookingForm"
+            className="inline-flex items-center py-3 px-8 border border-white/20 bg-black/20 backdrop-blur-md rounded-full text-white font-medium tracking-wide hover:bg-black/30 hover:border-amber-400/50 transition-all duration-300 font-questrial"
+            whileHover={{ 
+              scale: 1.05,
+              boxShadow: "0 0 20px rgba(251, 191, 36, 0.2)"
+            }}
+            whileTap={{ scale: 0.95 }}
+          >
+            <SparklesIcon className="text-amber-400 mr-2 h-4 w-4" />
+            Get Started
+          </motion.a>
+        </motion.div>
       </div>
-    </motion.div>
+
+      {/* Service Drawer */}
+      <ServiceDrawer
+        isOpen={isDrawerOpen}
+        onClose={handleCloseDrawer}
+        service={selectedService}
+      />
+    </motion.section>
   );
 };
 
