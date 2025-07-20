@@ -40,7 +40,7 @@ const services = [
     icon: <PiVideoCamera className="w-6 h-6 text-amber-400" />,
     title: "Video Editing",
     description: "Transform raw footage into captivating visual narratives.",
-    imageUrl: "https://images.unsplash.com/photo-1536240478700-b869070f9279?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80",
+    imageUrl: "/videoediting.png",
     size: "large", // Takes up 2 columns
   },
   {

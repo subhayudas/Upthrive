@@ -37,7 +37,7 @@ export const projects = [
     icon: <div className="bg-blue-100 p-4 rounded-full">< PiVideoCamera className="w-8 h-8 text-orange-600" /></div>,
     title: "Video Editing",
     description: "Transform your raw footage into captivating visual narratives with our expert video editing services.",
-    imageUrl: "https://images.unsplash.com/photo-1536240478700-b869070f9279?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80",
+    imageUrl: "/videoediting.png",
   },
   {
     icon: <div className="bg-blue-100 p-4 rounded-full"><PiLightbulb className="w-8 h-8 text-orange-600" /></div>,
