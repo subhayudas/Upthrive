@@ -44,7 +44,7 @@ const ImageTrailSection = () => {
           >
             <SparklesIcon className="text-amber-400 mr-2 h-4 w-4" />
             <span className="text-xs font-medium tracking-wider text-white/90 uppercase">
-              Creative Showcase
+              Creative Showcase (MOVE YOUR CURSOR)
             </span>
           </motion.div>
 
