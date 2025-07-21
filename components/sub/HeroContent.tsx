@@ -42,7 +42,7 @@ const HeroContent = () => {
           className="mb-8"
         >
           <h1 
-            className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-light leading-tight tracking-tight text-white mb-4 font-playfair"
+            className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-light leading-tight tracking-tight text-white mb-4 font-montserrat"
             style={{ 
               letterSpacing: "-0.02em"
             }}

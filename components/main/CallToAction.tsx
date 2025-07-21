@@ -126,7 +126,7 @@ const CallToAction = () => {
           {/* Main Heading */}
           <motion.h2
             variants={scaleVariants}
-            className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-light leading-tight text-white mb-8 font-playfair tracking-tight"
+            className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-light leading-tight text-white mb-8 font-montserrat tracking-tight"
           >
             <span className="block font-light">LET'S BUILD</span>
             <span className="block">

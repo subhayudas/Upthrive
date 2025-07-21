@@ -274,7 +274,7 @@ body {
   align-items: center;
   font-size: 2.5em;
   font-weight: 500;
-  font-family: "Playfair", serif;
+  font-family: "Montserrat", sans-serif;
 }
 .head-p {
   color: white;
@@ -626,7 +626,7 @@ html {
 
 .heading-responsive {
   font-size: clamp(1.5rem, 4vw, 2.5rem);
-  font-family: "Playfair", serif;
+  font-family: "Montserrat", sans-serif;
 }
 
 .subheading-responsive {

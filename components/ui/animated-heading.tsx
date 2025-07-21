@@ -14,7 +14,7 @@ const AnimatedHeading: React.FC<AnimatedHeadingProps> = ({
   const HeadingTag = as;
   
   return (
-    <HeadingTag className={`animated-gradient-text font-playfair ${className}`}>
+    <HeadingTag className={`animated-gradient-text font-montserrat ${className}`}>
       {children}
     </HeadingTag>
   );

@@ -13,6 +13,8 @@ const config: Config = {
   			'playfair': ['Playfair', 'serif'],
   			'comfortaa': ['Comfortaa', 'sans-serif'],
   			'questrial': ['Questrial', 'sans-serif'],
+  			'montserrat': ['Montserrat', 'sans-serif'],
+  			'rubik': ['Rubik', 'sans-serif'],
   		},
   		colors: {
   			primary: {

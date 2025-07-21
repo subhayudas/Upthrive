@@ -110,10 +110,10 @@ const LoadingAnimation = () => {
               initial={{ y: 120, opacity: 0 }}
               animate={{ y: 0, opacity: 1 }}
               transition={{ duration: 0.7, delay: 0.3, ease: [0.25, 0.46, 0.45, 0.94] }}
-              className="text-5xl md:text-6xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-white to-slate-200 relative font-playfair"
+              className="text-5xl md:text-6xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-white to-slate-200 relative font-montserrat"
               style={{
                 textShadow: `0 0 ${8 + glowIntensity * 12}px rgba(203, 213, 225, ${0.3 + glowIntensity * 0.2})`,
-                fontFamily: 'Comfortaa, sans-serif',
+                fontFamily: 'Montserrat, sans-serif',
                 fontWeight: '600'
               }}
             >
@@ -126,10 +126,10 @@ const LoadingAnimation = () => {
               initial={{ y: 120, opacity: 0 }}
               animate={{ y: 0, opacity: 1 }}
               transition={{ duration: 0.7, delay: 0.5, ease: [0.25, 0.46, 0.45, 0.94] }}
-              className="text-5xl md:text-6xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-slate-100 to-slate-300 relative font-playfair"
+              className="text-5xl md:text-6xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-slate-100 to-slate-300 relative font-montserrat"
               style={{
                 textShadow: `0 0 ${8 + glowIntensity * 12}px rgba(203, 213, 225, ${0.3 + glowIntensity * 0.2})`,
-                fontFamily: 'Comfortaa, sans-serif',
+                fontFamily: 'Montserrat, sans-serif',
                 fontWeight: '600'
               }}
             >
@@ -142,8 +142,8 @@ const LoadingAnimation = () => {
               initial={{ y: 120, opacity: 0 }}
               animate={{ y: 0, opacity: 1 }}
               transition={{ duration: 0.7, delay: 0.7, ease: [0.25, 0.46, 0.45, 0.94] }}
-              className="text-5xl md:text-6xl font-bold relative font-playfair"
-              style={{ fontFamily: 'Comfortaa, sans-serif', fontWeight: '600' }}
+              className="text-5xl md:text-6xl font-bold relative font-montserrat"
+              style={{ fontFamily: 'Montserrat, sans-serif', fontWeight: '600' }}
             >
               <span className="bg-clip-text text-transparent bg-gradient-to-r from-slate-200 to-slate-400"
                 style={{
