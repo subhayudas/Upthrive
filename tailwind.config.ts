@@ -73,7 +73,9 @@ const config: Config = {
 			'line-shadow': 'line-shadow 15s linear infinite',
 			'spotlight': 'spotlight 2s ease .75s 1 forwards',
 			'shimmer-slide': 'shimmer-slide var(--speed) ease-in-out infinite alternate',
-			'spin-around': 'spin-around calc(var(--speed) * 2) infinite linear'
+			'spin-around': 'spin-around calc(var(--speed) * 2) infinite linear',
+			'marquee': 'marquee var(--duration) linear infinite',
+			'marquee-vertical': 'marquee-vertical var(--duration) linear infinite'
   		},
   		keyframes: {
   			'infinite-scroll': {
@@ -83,6 +85,14 @@ const config: Config = {
   				to: {
   					transform: 'translateX(-100%)'
   				}
+  			},
+  			'marquee': {
+  				from: { transform: 'translateX(0%)' },
+  				to: { transform: 'translateX(-100%)' }
+  			},
+  			'marquee-vertical': {
+  				from: { transform: 'translateY(0%)' },
+  				to: { transform: 'translateY(-100%)' }
   			},
 			'shiny-text': {
 				'0%': {
