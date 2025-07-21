@@ -157,7 +157,7 @@ const Services = () => {
           >
             <span className="block mb-2 font-light">WHAT WE</span>
             <span className="block">
-              <span className="font-medium italic text-amber-400">Create</span>
+              <span className="font-medium text-amber-400">Create</span>
               <span className="font-light"> FOR YOU</span>
             </span>
           </motion.h2>

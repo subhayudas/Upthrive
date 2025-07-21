@@ -49,7 +49,7 @@ const HeroContent = () => {
           >
             <span className="block mb-2 font-light">CREATING</span>
             <span className="block">
-              <span className="font-medium italic text-amber-400">Culture-Driven</span>
+              <span className="font-medium text-amber-400">Culture-Driven</span>
               <span className="font-light"> BRANDS</span>
             </span>
           </h1>
