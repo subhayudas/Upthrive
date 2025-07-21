@@ -3,11 +3,28 @@ import React, { useState, useEffect } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { motion, AnimatePresence } from "framer-motion";
-import { SparklesIcon } from "@heroicons/react/24/solid";
+import { SparklesIcon, ChevronDownIcon } from "@heroicons/react/24/solid";
 
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [isDropdownOpen, setIsDropdownOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+
+  // Navigation items
+  const navigationItems = [
+    { name: "Home", href: "#Hero" },
+    { name: "About", href: "#aboutus" },
+    { name: "Services", href: "#Services" },
+    { name: "Approach", href: "#Approach" },
+    { name: "Portfolio", href: "#Portfolio" },
+    { name: "Projects", href: "#projects" },
+    { name: "Testimonials", href: "#testimonial" },
+    { name: "Team", href: "#TeamSection" },
+    { name: "Process", href: "#ProcessTimeline" },
+    { name: "FAQ", href: "#FAQSection" },
+    { name: "Contact", href: "#ContactForm" },
+    { name: "Book a Call", href: "#BookingForm" },
+  ];
 
   // Handle scroll effect
   useEffect(() => {
@@ -30,11 +47,42 @@ const Navbar = () => {
     setIsMenuOpen(!isMenuOpen);
   };
 
+  const toggleDropdown = () => {
+    setIsDropdownOpen(!isDropdownOpen);
+  };
+
+  // Close dropdown when clicking outside
+  useEffect(() => {
+    const handleClickOutside = (event: MouseEvent) => {
+      const dropdown = document.getElementById('navigation-dropdown');
+      const button = document.getElementById('navigation-button');
+      if (dropdown && button && !dropdown.contains(event.target as Node) && !button.contains(event.target as Node)) {
+        setIsDropdownOpen(false);
+      }
+    };
+
+    document.addEventListener('mousedown', handleClickOutside);
+    return () => {
+      document.removeEventListener('mousedown', handleClickOutside);
+    };
+  }, []);
+
   // Close mobile menu when clicking on a link
   const handleLinkClick = () => {
     if (isMenuOpen) {
       setIsMenuOpen(false);
     }
+    setIsDropdownOpen(false);
+  };
+
+  // Smooth scroll function
+  const handleSmoothScroll = (href: string) => {
+    const targetId = href.replace('#', '');
+    const targetElement = document.getElementById(targetId);
+    if (targetElement) {
+      targetElement.scrollIntoView({ behavior: 'smooth' });
+    }
+    handleLinkClick();
   };
 
   // Navbar variants for animation
@@ -118,6 +166,43 @@ const Navbar = () => {
     }
   };
 
+  // Dropdown animation variants
+  const dropdownVariants = {
+    closed: {
+      opacity: 0,
+      y: -10,
+      scale: 0.95,
+      transition: {
+        duration: 0.15,
+        ease: "easeOut" as const
+      }
+    },
+    open: {
+      opacity: 1,
+      y: 0,
+      scale: 1,
+      transition: {
+        duration: 0.2,
+        ease: "easeOut" as const,
+        staggerChildren: 0.03,
+        delayChildren: 0.05
+      }
+    }
+  };
+
+  const dropdownItemVariants = {
+    closed: {
+      opacity: 0,
+      x: -10,
+      transition: { duration: 0.1 }
+    },
+    open: {
+      opacity: 1,
+      x: 0,
+      transition: { duration: 0.15 }
+    }
+  };
+
   return (
     <motion.nav
       initial="hidden"
@@ -147,7 +232,7 @@ const Navbar = () => {
               transition={{ type: "spring", stiffness: 400 }}
               className="cursor-pointer"
             >
-              <Link href="#Home">
+              <Link href="#Hero">
                 <Image
                   src="/logo-removebg-preview.png"
                   alt="UpThrive Logo"
@@ -200,10 +285,66 @@ const Navbar = () => {
             </button>
           </div>
 
-          {/* Desktop Navigation - Removed navlinks, kept socials */}
+          {/* Desktop Navigation with Dropdown */}
           <div className="hidden md:flex md:items-center md:space-x-6">
-            <div className="flex items-center space-x-5">
+            {/* Navigation Dropdown */}
+            <div className="relative">
+              <motion.button
+                id="navigation-button"
+                onClick={toggleDropdown}
+                className="flex items-center space-x-2 text-white hover:text-orange-400 transition-colors duration-300 px-4 py-2 rounded-lg hover:bg-white/10"
+                whileHover={{ y: -2 }}
+                whileTap={{ scale: 0.95 }}
+              >
+                <span className="font-medium">Navigate</span>
+                <motion.div
+                  animate={{ rotate: isDropdownOpen ? 180 : 0 }}
+                  transition={{ duration: 0.2 }}
+                >
+                  <ChevronDownIcon className="h-4 w-4" />
+                </motion.div>
+              </motion.button>
 
+              {/* Dropdown Menu */}
+              <AnimatePresence>
+                {isDropdownOpen && (
+                  <motion.div
+                    id="navigation-dropdown"
+                    initial="closed"
+                    animate="open"
+                    exit="closed"
+                    variants={dropdownVariants}
+                    className="absolute top-full left-0 mt-2 w-56 bg-gradient-to-r from-[#03001450] via-[#03001470] to-[#03001450] backdrop-blur-xl border border-[#ffffff20] rounded-xl shadow-xl overflow-hidden z-50"
+                  >
+                    <div className="py-2">
+                      {navigationItems.map((item, index) => (
+                        <motion.button
+                          key={item.name}
+                          variants={dropdownItemVariants}
+                          onClick={() => handleSmoothScroll(item.href)}
+                          className="w-full text-left px-4 py-2.5 text-white hover:text-orange-400 hover:bg-white/10 transition-all duration-200 flex items-center group"
+                          whileHover={{ x: 5 }}
+                        >
+                          <span className="font-medium">{item.name}</span>
+                          <motion.svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            className="h-3 w-3 ml-auto opacity-0 group-hover:opacity-100 transition-opacity"
+                            fill="none"
+                            viewBox="0 0 24 24"
+                            stroke="currentColor"
+                          >
+                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                          </motion.svg>
+                        </motion.button>
+                      ))}
+                    </div>
+                  </motion.div>
+                )}
+              </AnimatePresence>
+            </div>
+
+            {/* Social Links */}
+            <div className="flex items-center space-x-5">
               <motion.a
                 href="https://twitter.com"
                 target="_blank"
@@ -338,7 +479,7 @@ const Navbar = () => {
         </div>
       </div>
 
-      {/* Mobile Menu (Overlay) - Simplified to only show socials and contact */}
+      {/* Mobile Menu (Overlay) - Now includes navigation */}
       <AnimatePresence>
         {isMenuOpen && (
           <motion.div
@@ -349,11 +490,30 @@ const Navbar = () => {
             className="fixed top-[calc(4rem)] left-3 right-3 bg-gradient-to-r from-[#03001417] via-[#03001450] to-[#03001417] backdrop-blur-lg border border-[#ffffff20] rounded-xl shadow-xl p-4 z-50 max-h-[calc(100vh-5rem)] overflow-y-auto touch-manipulation"
           >
             <div className="flex flex-col space-y-5">
+              {/* Navigation Links for Mobile */}
+              <motion.div className="space-y-1" variants={menuItemVariants}>
+                <h3 className="text-white font-semibold text-sm uppercase tracking-wider px-3 py-2 text-center">
+                  Navigate
+                </h3>
+                <div className="grid grid-cols-2 gap-2">
+                  {navigationItems.map((item) => (
+                    <motion.button
+                      key={item.name}
+                      onClick={() => handleSmoothScroll(item.href)}
+                      className="text-white hover:text-orange-400 px-3 py-2 rounded-lg text-sm font-medium transition-colors duration-200 hover:bg-white/10 text-left"
+                      whileHover={{ scale: 1.02 }}
+                      whileTap={{ scale: 0.98 }}
+                    >
+                      {item.name}
+                    </motion.button>
+                  ))}
+                </div>
+              </motion.div>
+
               <motion.div
-                className="flex justify-center space-x-6 py-3"
+                className="flex justify-center space-x-6 py-3 border-t border-white/10"
                 variants={menuItemVariants}
               >
-
                 <motion.a
                   href="https://twitter.com"
                   target="_blank"
