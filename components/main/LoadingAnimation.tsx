@@ -46,11 +46,15 @@ const LoadingAnimation = () => {
         >
           <video
             ref={videoRef}
-            className="w-full h-full object-cover"
+            className="w-full h-full object-contain md:object-cover"
             autoPlay
             muted
             playsInline
             onEnded={() => setIsLoading(false)}
+            style={{
+              minHeight: '100vh',
+              minWidth: '100vw'
+            }}
           >
             <source src="/loadinganimation.mp4" type="video/mp4" />
             Your browser does not support the video tag.
