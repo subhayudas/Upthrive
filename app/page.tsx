@@ -1,4 +1,5 @@
 import Hero from "@/components/main/Hero";
+import BrandLogosMarquee from "@/components/main/BrandLogosMarquee";
 import ImageTrailSection from "@/components/main/ImageTrailSection";
 import Projects from "@/components/main/Projects";
 import Services from "@/components/main/Services";
@@ -25,6 +26,7 @@ export default function Home() {
     <main className="h-full w-full">
       <div className="flex flex-col">
         <Hero />
+        <BrandLogosMarquee />
         <ImageTrailSection />
         <Services />
         <TestimonialSlider />
