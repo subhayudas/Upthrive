@@ -48,7 +48,20 @@ export const Card = ({
         }}
         className={`flex flex-col relative -top-[25%] h-[450px] w-[70%] rounded-md p-10 origin-top border-2 border-white`}
       >
-        <h2 className='text-2xl text-center font-semibold text-white'>{title}</h2>
+        <h2 className='text-2xl text-center font-semibold text-white'>
+          {title.split(' ').map((word, index, array) => (
+            <span key={index}>
+              {index === array.length - 1 ? (
+                <span className="line-through">{word}</span>
+              ) : (
+                <>
+                  {word}
+                  {index < array.length - 1 && ' '}
+                </>
+              )}
+            </span>
+          ))}
+        </h2>
         <div className={`flex h-full mt-5 gap-10`}>
           <div className={`w-[40%] relative top-[10%]`}>
             <p className='text-sm text-white/90 leading-relaxed'>{description}</p>
