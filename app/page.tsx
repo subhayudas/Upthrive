@@ -29,62 +29,62 @@ export default function Home() {
         <Hero />
         
         {/* Brand Logos Marquee with top border */}
-        <div className="border-t border-white/20">
+        <div className="border-t border-white">
           <BrandLogosMarquee />
         </div>
         
         {/* Image Trail Section */}
-        <div className="border-t border-white/20">
+        <div className="border-t border-white">
           <ImageTrailSection />
         </div>
         
         {/* Services Section */}
-        <div className="border-t border-white/20">
+        <div className="border-t border-white">
           <Services />
         </div>
         
         {/* Testimonial Slider */}
-        <div className="border-t border-white/20">
+        <div className="border-t border-white">
           <TestimonialSlider />
         </div>
         
         {/* Macbook Demo */}
-        <div className="border-t border-white/20">
+        <div className="border-t border-white">
           <MacbookDemo />
         </div>
         
         {/* Approach Section */}
-        <div className="border-t border-white/20">
+        <div className="border-t border-white">
           <Approach />
         </div>
         
         {/* Terminal Demo */}
-        <div className="border-t border-white/20">
+        <div className="border-t border-white">
           <TerminalDemo />
         </div>
         
         {/* Statistics */}
-        <div className="border-t border-white/20">
+        <div className="border-t border-white">
           <Statistics />
         </div>
         
         {/* Process Timeline */}
-        <div className="border-t border-white/20">
+        <div className="border-t border-white">
           <ProcessTimeline />
         </div>
         
         {/* Team Section */}
-        <div className="border-t border-white/20">
+        <div className="border-t border-white">
           <TeamSection />
         </div>
         
         {/* Call to Action */}
-        <div className="border-t border-white/20">
+        <div className="border-t border-white">
           <CallToAction />
         </div>
         
         {/* Booking Form */}
-        <div className="border-t border-white/20">
+        <div className="border-t border-white">
           <BookingForm />
         </div>
       </div>
