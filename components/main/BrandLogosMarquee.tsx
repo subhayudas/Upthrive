@@ -62,10 +62,10 @@ export default function BrandLogosMarquee() {
   const logos = [BrandLogos.bombayShaving, BrandLogos.domina, BrandLogos.philips, BrandLogos.vka];
 
   return (
-    <section className="py-16 sm:py-20 lg:py-24 px-4 sm:px-6 lg:px-8 relative overflow-hidden" ref={containerRef}>
-      <div className="max-w-7xl mx-auto relative">
+    <section className="py-16 sm:py-20 lg:py-24 relative overflow-hidden bg-black" ref={containerRef}>
+      <div className="w-full relative">
         {/* Header Section */}
-        <div className="text-center mb-16">
+        <div className="text-center mb-16 px-4 sm:px-6 lg:px-8">
           <motion.div 
             initial={{ opacity: 0, y: -20 }}
             animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: -20 }}
@@ -86,12 +86,12 @@ export default function BrandLogosMarquee() {
           initial={{ opacity: 0, y: 30 }}
           animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
           transition={{ duration: 0.8, delay: 0.3 }}
-          className="relative"
+          className="relative w-full"
         >
           {/* Background gradient for marquee */}
-          <div className="absolute inset-0 bg-gradient-to-r from-transparent via-gray-900/20 to-transparent rounded-2xl"></div>
+          <div className="absolute inset-0 bg-gradient-to-r from-transparent via-gray-900/20 to-transparent"></div>
           
-          <Marquee className="py-8" pauseOnHover={true}>
+          <Marquee className="py-8 w-full" pauseOnHover={true}>
             {logos.map((Logo, index) => (
               <div
                 key={index}
