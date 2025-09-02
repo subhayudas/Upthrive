@@ -124,7 +124,7 @@ const TestimonialSlider = () => {
   const secondRow = testimonials.slice(Math.ceil(testimonials.length / 2));
 
   return (
-    <section id="testimonial" className="bg-transparent py-20">
+    <section id="testimonial" className="bg-black py-20">
       <div className="max-w-6xl mx-auto py-10 px-4">
         <div className="transition duration-500 ease-in-out transform scale-100 translate-x-0 translate-y-0 opacity-100">
           <div className="mb-12 md:mb-16 text-center">

@@ -17,6 +17,7 @@ import Statistics from "@/components/main/Statistics";
 import ProcessTimeline from "@/components/main/ProcessTimeline";
 import TeamSection from "@/components/main/TeamSection";
 import CallToAction from "@/components/main/CallToAction";
+import ContentMarketingCards from "@/components/main/ContentMarketingCards";
 
 // Import the BookingForm component at the top of your file
 import BookingForm from '@/components/main/BookingForm';
@@ -41,6 +42,11 @@ export default function Home() {
         {/* Services Section */}
         <div className="border-t border-white">
           <Services />
+        </div>
+        
+        {/* Content Marketing Cards Section */}
+        <div className="border-t border-white">
+          <ContentMarketingCards />
         </div>
         
         {/* Testimonial Slider */}

@@ -123,8 +123,7 @@ const Services = () => {
       style={{ opacity, y }}
     >
       {/* Background gradient matching hero */}
-      <div className="absolute inset-0 bg-gradient-to-b from-black/30 via-black/20 to-black/40" />
-      <div className="absolute inset-0 bg-gradient-to-r from-purple-900/10 via-transparent to-pink-900/10" />
+      <div className="absolute inset-0 bg-black" />
 
       <div className="relative z-10 max-w-7xl mx-auto px-6 lg:px-8">
         {/* Header Section */}

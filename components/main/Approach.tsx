@@ -8,7 +8,7 @@ import AnimatedHeading from "../ui/animated-heading";
 
 const Approach = () => {
   return (
-    <section id="Approach" className="max-w-6xl mx-auto mt-8 px-2">
+    <section id="Approach" className="max-w-6xl mx-auto mt-8 px-2 bg-black py-20">
      <div className="font-bold text-4xl pb-5 md:text-5xl text-center mt-20">
         <div className="Welcome-box py-[8px] px-[7px] sm:py-2 sm:px2 border border-[#7042f88b] opacity-[0.9] text-center mx-auto ">
           <SparklesIcon className="text-[#b49bff] mr-[10px] sm:mr-1 h-5 w-5" />

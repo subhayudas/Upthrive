@@ -7,7 +7,7 @@ import AnimatedHeading from "../ui/animated-heading";
 
 const ChooseUs = () => {
   return (
-    <div className="bg-transprent">
+    <div className="bg-black">
         <div className="max-w-5xl mx-auto">
          
           <CardHoverEffectDemo />

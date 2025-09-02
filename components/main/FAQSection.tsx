@@ -77,7 +77,7 @@ const FAQSection = () => {
   ];
 
   return (
-    <section id="FAQSection" className=" py-8">
+    <section id="FAQSection" className="bg-black py-8">
       <div className="mx-auto max-w-lg text-center">
         <AnimatedHeading as="h2" className="text-[40px] font-semibold py-10">
           Frequently Asked Questions
