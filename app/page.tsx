@@ -5,6 +5,7 @@ import Projects from "@/components/main/Projects";
 import Services from "@/components/main/Services";
 import Portfolio from "@/components/main/Portfolio";
 import TestimonialSlider from "@/components/main/TestimonialSlider";
+import { ZoomParallax } from "@/components/main/ZoomParallax";
 import FAQSection from "@/components/main/FAQSection";
 import ContactForm from "@/components/main/ContactForm";
 import AboutUs from "@/components/main/AboutUs";
@@ -52,6 +53,21 @@ export default function Home() {
         {/* Testimonial Slider */}
         <div className="border-t border-white">
           <TestimonialSlider />
+        </div>
+        
+        {/* Zoom Parallax Section */}
+        <div className="border-t border-white">
+          <ZoomParallax 
+            images={[
+              { src: "/imagezoom5.jpeg", alt: "Zoom Image 5" },
+              { src: "/imagezoom2.jpeg", alt: "Zoom Image 2" },
+              { src: "/imagezoom3.jpeg", alt: "Zoom Image 3" },
+              { src: "/imagezoom4.jpeg", alt: "Zoom Image 4" },
+              { src: "/imagezoom1.jpeg", alt: "Zoom Image 1" },
+              { src: "/imagezoom6.jpeg", alt: "Zoom Image 6" },
+              { src: "/imagezoom7.jpeg", alt: "Zoom Image 7" }
+            ]} 
+          />
         </div>
         
         {/* Macbook Demo */}
