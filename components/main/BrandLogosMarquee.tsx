@@ -11,46 +11,46 @@ import { Highlighter } from "../magicui/highlighter";
 
 const BrandLogos = {
   bombayShaving: () => (
-    <div className="relative h-20 w-48 flex items-center justify-center group">
+    <div className="relative h-32 w-56 flex items-center justify-center group">
       <Image
         src="/Bombay Shaving Company.png"
         alt="Bombay Shaving Company"
-        width={200}
-        height={80}
-        className="h-auto w-auto max-h-20 object-contain filter brightness-0 invert opacity-70 group-hover:opacity-100 transition-all duration-300"
+        width={224}
+        height={128}
+        className="h-auto w-auto max-h-32 object-contain filter brightness-0 invert opacity-70 group-hover:opacity-100 transition-all duration-300"
       />
     </div>
   ),
   domina: () => (
-    <div className="relative h-20 w-32 flex items-center justify-center group">
+    <div className="relative h-32 w-44 flex items-center justify-center group">
       <Image
         src="/DOMINA logo.png"
         alt="DOMINA"
-        width={128}
-        height={80}
-        className="h-auto w-auto max-h-20 object-contain filter brightness-0 invert opacity-70 group-hover:opacity-100 transition-all duration-300"
+        width={176}
+        height={128}
+        className="h-auto w-auto max-h-32 object-contain filter brightness-0 invert opacity-70 group-hover:opacity-100 transition-all duration-300"
       />
     </div>
   ),
   philips: () => (
-    <div className="relative h-20 w-32 flex items-center justify-center group">
+    <div className="relative h-32 w-44 flex items-center justify-center group">
       <Image
         src="/Philips.png"
         alt="Philips"
-        width={128}
-        height={80}
-        className="h-auto w-auto max-h-20 object-contain opacity-70 group-hover:opacity-100 transition-all duration-300"
+        width={176}
+        height={128}
+        className="h-auto w-auto max-h-32 object-contain opacity-70 group-hover:opacity-100 transition-all duration-300"
       />
     </div>
   ),
   vka: () => (
-    <div className="relative h-20 w-32 flex items-center justify-center group">
+    <div className="relative h-32 w-44 flex items-center justify-center group">
       <Image
         src="/VKA logo.png"
         alt="VKA"
-        width={128}
-        height={80}
-        className="h-auto w-auto max-h-20 object-contain opacity-70 group-hover:opacity-100 transition-all duration-300"
+        width={176}
+        height={128}
+        className="h-auto w-auto max-h-32 object-contain opacity-70 group-hover:opacity-100 transition-all duration-300"
       />
     </div>
   ),
@@ -91,7 +91,22 @@ export default function BrandLogosMarquee() {
           {/* Background gradient for marquee */}
           <div className="absolute inset-0 bg-gradient-to-r from-transparent via-gray-900/20 to-transparent"></div>
           
-          <Marquee className="py-8 w-full" pauseOnHover={true}>
+          <Marquee className="py-8 [--duration:20s]" pauseOnHover={true}>
+            {logos.map((Logo, index) => (
+              <div
+                key={index}
+                className="relative h-full w-fit mx-12 flex items-center justify-center"
+              >
+                <Logo />
+              </div>
+            ))}
+          </Marquee>
+          
+          {/* Separator Line */}
+          <div className="w-full h-px bg-white/20 my-4"></div>
+          
+          {/* Second Marquee - Moving in Opposite Direction */}
+          <Marquee className="py-8 [--duration:20s]" pauseOnHover={true} reverse={true}>
             {logos.map((Logo, index) => (
               <div
                 key={index}
