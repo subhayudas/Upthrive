@@ -85,7 +85,7 @@ const BookingForm = () => {
             className="Welcome-box py-[8px] px-[7px] border border-[#7042f88b] opacity-[0.9] text-center mx-auto inline-flex items-center"
           >
             <SparklesIcon className="text-[#b49bff] mr-[10px] h-5 w-5" />
-            <h1 className="Welcome-text text-[13px]">Book Your Consultation</h1>
+            <h1 className="Welcome-text text-[13px] font-helvetica-neue">Book Your Consultation</h1>
           </motion.div>
 
           <AnimatedHeading as="h2" className="mt-4 text-4xl md:text-5xl font-bold">

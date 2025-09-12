@@ -148,7 +148,7 @@ const Services = () => {
 
           {/* Main Title */}
           <motion.h2
-            className="text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-light leading-tight tracking-tight text-white mb-4 font-montserrat"
+            className="text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-light leading-tight tracking-tight text-white mb-4 font-helvetica-neue"
             style={{ letterSpacing: "-0.02em" }}
             initial={{ opacity: 0, y: 30 }}
             animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
@@ -219,7 +219,7 @@ const Services = () => {
                 </motion.div>
 
                 {/* Title */}
-                <h3 className="text-xl lg:text-2xl font-medium text-white mb-3 font-montserrat group-hover:text-amber-400 transition-colors duration-300">
+                <h3 className="text-xl lg:text-2xl font-medium text-white mb-3 font-helvetica-neue group-hover:text-amber-400 transition-colors duration-300">
                   {service.title}
                 </h3>
 

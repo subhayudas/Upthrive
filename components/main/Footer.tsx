@@ -237,7 +237,7 @@ const Footer = () => {
           >
             <div className="absolute inset-0 bg-gradient-to-r from-orange-500/5 to-purple-500/5 pointer-events-none"></div>
             <div className="relative z-10">
-              <h3 className="text-2xl font-bold text-white mb-4 flex items-center">
+              <h3 className="text-2xl font-bold text-white mb-4 flex items-center font-helvetica-neue">
                 <motion.span 
                   initial={{ rotate: 0 }}
                   animate={{ rotate: [0, 10, 0] }}
@@ -280,7 +280,7 @@ const Footer = () => {
             animate="visible"
             className="col-span-1"
           >
-            <h3 className="text-xl font-semibold text-white mb-6 relative inline-block">
+            <h3 className="text-xl font-semibold text-white mb-6 relative inline-block font-helvetica-neue">
               Navigation
               <motion.span 
                 className="absolute -bottom-1 left-0 h-0.5 bg-gradient-to-r from-orange-500 to-amber-500"
@@ -336,7 +336,7 @@ const Footer = () => {
             transition={{ delay: 0.1 }}
             className="col-span-1"
           >
-            <h3 className="text-xl font-semibold text-white mb-6 relative inline-block">
+            <h3 className="text-xl font-semibold text-white mb-6 relative inline-block font-helvetica-neue">
               Our Services
               <motion.span 
                 className="absolute -bottom-1 left-0 h-0.5 bg-gradient-to-r from-orange-500 to-amber-500"
@@ -394,7 +394,7 @@ const Footer = () => {
             transition={{ delay: 0.3 }}
             className="col-span-1"
           >
-            <h3 className="text-xl font-semibold text-white mb-6 relative inline-block">
+            <h3 className="text-xl font-semibold text-white mb-6 relative inline-block font-helvetica-neue">
               Contact Us
               <motion.span 
                 className="absolute -bottom-1 left-0 h-0.5 bg-gradient-to-r from-orange-500 to-amber-500"

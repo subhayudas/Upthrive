@@ -71,7 +71,7 @@ const TerminalDemo = () => {
 
   return (
     <div className="max-w-5xl mx-auto px-4 sm:px-6 py-10 sm:py-16 md:py-20">
-      <div className="font-bold text-2xl sm:text-3xl md:text-4xl lg:text-5xl pb-3 sm:pb-5 text-center bg-clip-text text-transparent bg-gradient-to-r from-gray-400 to-gray-300 bg-opacity-50 mb-5 sm:mb-10 font-montserrat">
+      <div className="font-bold text-2xl sm:text-3xl md:text-4xl lg:text-5xl pb-3 sm:pb-5 text-center bg-clip-text text-transparent bg-gradient-to-r from-gray-400 to-gray-300 bg-opacity-50 mb-5 sm:mb-10 font-helvetica-neue">
         <div className="Welcome-box py-[6px] px-[5px] sm:py-[8px] sm:px-[7px] border border-[#7042f88b] opacity-[0.9] text-center mx-auto inline-flex items-center">
           <SparklesIcon className="text-[#b49bff] mr-[6px] sm:mr-[10px] h-4 w-4 sm:h-5 sm:w-5" />
           <h1 className="Welcome-text text-[10px] xs:text-[11px] sm:text-xs">

@@ -211,7 +211,7 @@ export function ServiceDrawer({ isOpen, onClose, service }: ServiceDrawerProps) 
 
                 <div className="flex-1">
                   <motion.h2 
-                    className="text-2xl lg:text-3xl font-medium text-white mb-2 font-montserrat"
+                    className="text-2xl lg:text-3xl font-medium text-white mb-2 font-helvetica-neue"
                     variants={itemVariants}
                   >
                     {service.title}

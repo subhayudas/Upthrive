@@ -492,7 +492,7 @@ const Navbar = () => {
             <div className="flex flex-col space-y-5">
               {/* Navigation Links for Mobile */}
               <motion.div className="space-y-1" variants={menuItemVariants}>
-                <h3 className="text-white font-semibold text-sm uppercase tracking-wider px-3 py-2 text-center">
+                <h3 className="text-white font-semibold text-sm uppercase tracking-wider px-3 py-2 text-center font-helvetica-neue">
                   Navigate
                 </h3>
                 <div className="grid grid-cols-2 gap-2">

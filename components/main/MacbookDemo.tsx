@@ -45,7 +45,7 @@ export default function MacbookDemo() {
                 transition={{ delay: 0.5, duration: 0.5 }}
                 className="flex flex-col items-center gap-3"
               >
-                <span className="text-center text-3xl font-bold animated-gradient-text font-playfair">
+                <span className="text-center text-3xl font-bold animated-gradient-text font-helvetica-neue">
                   STUNNING WEBSITES THAT DRIVES RESULTS
                 </span>
                 <span className="text-center text-xl animated-gradient-text max-w-2xl font-comfortaa">

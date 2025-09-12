@@ -142,7 +142,7 @@ const Statistics = () => {
               
               <Counter end={stat.value} duration={2000} suffix={stat.suffix} />
               
-                              <h3 className="text-xl font-bold mt-4 mb-2 text-white font-questrial">{stat.label}</h3>
+                              <h3 className="text-xl font-bold mt-4 mb-2 text-white font-helvetica-neue">{stat.label}</h3>
               <p className="text-gray-400">{stat.description}</p>
               
               <div className={`h-1 w-16 bg-gradient-to-r ${stat.color} rounded-full mt-6`}></div>

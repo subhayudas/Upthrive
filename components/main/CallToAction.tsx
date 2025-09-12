@@ -126,7 +126,7 @@ const CallToAction = () => {
           {/* Main Heading */}
           <motion.h2
             variants={scaleVariants}
-            className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-light leading-tight text-white mb-8 font-montserrat tracking-tight"
+            className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-light leading-tight text-white mb-8 font-helvetica-neue tracking-tight"
           >
             <span className="block font-light">LET'S BUILD</span>
             <span className="block">
@@ -160,7 +160,7 @@ const CallToAction = () => {
                 variants={scaleVariants}
                 className="text-center p-4 bg-white/5 backdrop-blur-md border border-white/10 rounded-xl hover:border-amber-400/30 transition-all duration-300"
               >
-                <h3 className="text-2xl md:text-3xl font-bold text-amber-400 mb-1 font-playfair">
+                <h3 className="text-2xl md:text-3xl font-bold text-amber-400 mb-1 font-helvetica-neue">
                   {stat.number}
                 </h3>
                 <p className="text-white/70 text-sm font-questrial">

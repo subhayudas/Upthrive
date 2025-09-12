@@ -57,7 +57,7 @@ const ImageTrailSection = () => {
             className="mb-8"
           >
             <h2 
-              className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-light leading-tight tracking-tight text-white mb-4 font-montserrat"
+              className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-light leading-tight tracking-tight text-white mb-4 font-helvetica-neue"
               style={{ 
                 letterSpacing: "-0.02em"
               }}

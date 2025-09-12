@@ -15,6 +15,7 @@ const config: Config = {
   			'questrial': ['Questrial', 'sans-serif'],
   			'montserrat': ['Montserrat', 'sans-serif'],
   			'rubik': ['Rubik', 'sans-serif'],
+  			'helvetica-neue': ['Helvetica Neue', 'Helvetica', 'Arial', 'sans-serif'],
   		},
   		colors: {
   			primary: {

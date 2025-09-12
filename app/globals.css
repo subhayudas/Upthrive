@@ -699,6 +699,11 @@ html {
   body {
     @apply bg-background text-foreground;
   }
+  
+  /* Apply Helvetica Neue to all heading elements */
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Helvetica Neue', 'Helvetica', 'Arial', sans-serif;
+  }
 }
 
 /* Hero section animations */

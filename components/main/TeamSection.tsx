@@ -373,7 +373,7 @@ const TeamSection = () => {
                       />
 
                       <motion.h3
-                        className="text-3xl md:text-4xl font-bold mb-2 text-white font-montserrat"
+                        className="text-3xl md:text-4xl font-bold mb-2 text-white font-helvetica-neue"
                         initial={{ opacity: 0, y: 20 }}
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ delay: 0.2, duration: 0.5 }}
@@ -402,7 +402,7 @@ const TeamSection = () => {
                     </div>
 
                     <div className="mb-8">
-                      <h4 className="text-white text-lg font-medium mb-4 font-questrial">Expertise</h4>
+                      <h4 className="text-white text-lg font-medium mb-4 font-helvetica-neue">Expertise</h4>
                       <div className="flex flex-wrap gap-2">
                         {teamMembers[activeIndex].skills.map((skill, i) => (
                           <motion.span
@@ -434,16 +434,7 @@ const TeamSection = () => {
                         <ArrowRightIcon className="h-4 w-4" />
                       </motion.button>
 
-                      <motion.button
-                        className="px-5 py-2.5 rounded-lg font-medium text-white bg-white/10 backdrop-blur-md border border-white/10 hover:bg-white/20 transition-all duration-300"
-                        whileHover={{ y: -3 }}
-                        whileTap={{ scale: 0.97 }}
-                        initial={{ opacity: 0, y: 20 }}
-                        animate={{ opacity: 1, y: 0 }}
-                        transition={{ delay: 0.6, duration: 0.5 }}
-                      >
-                        View Profile
-                      </motion.button>
+                      
                     </div>
                   </motion.div>
                 </div>

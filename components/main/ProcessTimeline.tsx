@@ -19,14 +19,14 @@ const ProcessTimeline = () => {
               <div className="text-3xl bg-gradient-to-br from-blue-500 to-indigo-600 inline-block rounded-lg p-2 mb-3">
                 🔍
               </div>
-              <h4 className="text-lg font-semibold text-white mb-2 font-questrial">Research & Analysis</h4>
+              <h4 className="text-lg font-semibold text-white mb-2 font-helvetica-neue">Research & Analysis</h4>
               <p className="text-gray-300 text-sm">Comprehensive analysis of your market position and digital footprint</p>
             </div>
             <div className="p-4 sm:p-6 rounded-xl bg-gradient-to-br from-gray-900/80 to-gray-800/80 backdrop-blur-sm border border-gray-800 hover:border-gray-700 transition-all duration-300">
               <div className="text-3xl bg-gradient-to-br from-blue-500 to-indigo-600 inline-block rounded-lg p-2 mb-3">
                 👥
               </div>
-              <h4 className="text-lg font-semibold text-white mb-2 font-questrial">Audience Mapping</h4>
+              <h4 className="text-lg font-semibold text-white mb-2 font-helvetica-neue">Audience Mapping</h4>
               <p className="text-gray-300 text-sm">Identifying your ideal customers and their digital behaviors</p>
             </div>
           </div>
@@ -45,14 +45,14 @@ const ProcessTimeline = () => {
               <div className="text-3xl bg-gradient-to-br from-purple-500 to-violet-600 inline-block rounded-lg p-2 mb-3">
                 📝
               </div>
-              <h4 className="text-lg font-semibold text-white mb-2 font-questrial">Strategic Planning</h4>
+              <h4 className="text-lg font-semibold text-white mb-2 font-helvetica-neue">Strategic Planning</h4>
               <p className="text-gray-300 text-sm">Developing actionable roadmaps for digital transformation</p>
             </div>
             <div className="p-4 sm:p-6 rounded-xl bg-gradient-to-br from-gray-900/80 to-gray-800/80 backdrop-blur-sm border border-gray-800 hover:border-gray-700 transition-all duration-300">
               <div className="text-3xl bg-gradient-to-br from-purple-500 to-violet-600 inline-block rounded-lg p-2 mb-3">
                 🎯
               </div>
-              <h4 className="text-lg font-semibold text-white mb-2 font-questrial">Goal Setting</h4>
+              <h4 className="text-lg font-semibold text-white mb-2 font-helvetica-neue">Goal Setting</h4>
               <p className="text-gray-300 text-sm">Establishing measurable objectives and KPIs for your digital presence</p>
             </div>
           </div>
@@ -71,14 +71,14 @@ const ProcessTimeline = () => {
               <div className="text-3xl bg-gradient-to-br from-pink-500 to-rose-600 inline-block rounded-lg p-2 mb-3">
                 🎨
               </div>
-              <h4 className="text-lg font-semibold text-white mb-2 font-questrial">Visual Design</h4>
+              <h4 className="text-lg font-semibold text-white mb-2 font-helvetica-neue">Visual Design</h4>
               <p className="text-gray-300 text-sm">Creating compelling visuals that align with your brand identity</p>
             </div>
             <div className="p-4 sm:p-6 rounded-xl bg-gradient-to-br from-gray-900/80 to-gray-800/80 backdrop-blur-sm border border-gray-800 hover:border-gray-700 transition-all duration-300">
               <div className="text-3xl bg-gradient-to-br from-pink-500 to-rose-600 inline-block rounded-lg p-2 mb-3">
                 📱
               </div>
-              <h4 className="text-lg font-semibold text-white mb-2 font-questrial">UX/UI Design</h4>
+              <h4 className="text-lg font-semibold text-white mb-2 font-helvetica-neue">UX/UI Design</h4>
               <p className="text-gray-300 text-sm">Designing intuitive user interfaces for optimal user experience</p>
             </div>
           </div>
@@ -97,14 +97,14 @@ const ProcessTimeline = () => {
               <div className="text-3xl bg-gradient-to-br from-green-500 to-emerald-600 inline-block rounded-lg p-2 mb-3">
                 💻
               </div>
-              <h4 className="text-lg font-semibold text-white mb-2 font-questrial">Frontend Development</h4>
+              <h4 className="text-lg font-semibold text-white mb-2 font-helvetica-neue">Frontend Development</h4>
               <p className="text-gray-300 text-sm">Building responsive, interactive user interfaces with modern technologies</p>
             </div>
             <div className="p-4 sm:p-6 rounded-xl bg-gradient-to-br from-gray-900/80 to-gray-800/80 backdrop-blur-sm border border-gray-800 hover:border-gray-700 transition-all duration-300">
               <div className="text-3xl bg-gradient-to-br from-green-500 to-emerald-600 inline-block rounded-lg p-2 mb-3">
                 ⚙️
               </div>
-              <h4 className="text-lg font-semibold text-white mb-2 font-questrial">Backend Development</h4>
+              <h4 className="text-lg font-semibold text-white mb-2 font-helvetica-neue">Backend Development</h4>
               <p className="text-gray-300 text-sm">Creating robust server-side solutions for seamless functionality</p>
             </div>
           </div>
@@ -123,14 +123,14 @@ const ProcessTimeline = () => {
               <div className="text-3xl bg-gradient-to-br from-gray-500 to-gray-400 inline-block rounded-lg p-2 mb-3">
                 🧪
               </div>
-              <h4 className="text-lg font-semibold text-white mb-2 font-questrial">Testing & QA</h4>
+              <h4 className="text-lg font-semibold text-white mb-2 font-helvetica-neue">Testing & QA</h4>
               <p className="text-gray-300 text-sm">Comprehensive testing across devices and platforms to ensure flawless performance</p>
             </div>
             <div className="p-4 sm:p-6 rounded-xl bg-gradient-to-br from-gray-900/80 to-gray-800/80 backdrop-blur-sm border border-gray-800 hover:border-gray-700 transition-all duration-300">
               <div className="text-3xl bg-gradient-to-br from-gray-500 to-gray-400 inline-block rounded-lg p-2 mb-3">
                 🚀
               </div>
-              <h4 className="text-lg font-semibold text-white mb-2 font-questrial">Deployment</h4>
+              <h4 className="text-lg font-semibold text-white mb-2 font-helvetica-neue">Deployment</h4>
               <p className="text-gray-300 text-sm">Smooth deployment with minimal downtime and maximum impact</p>
             </div>
           </div>
@@ -149,14 +149,14 @@ const ProcessTimeline = () => {
               <div className="text-3xl bg-gradient-to-br from-cyan-500 to-blue-600 inline-block rounded-lg p-2 mb-3">
                 📈
               </div>
-              <h4 className="text-lg font-semibold text-white mb-2 font-questrial">Analytics & Optimization</h4>
+              <h4 className="text-lg font-semibold text-white mb-2 font-helvetica-neue">Analytics & Optimization</h4>
               <p className="text-gray-300 text-sm">Data-driven improvements based on user behavior and performance metrics</p>
             </div>
             <div className="p-4 sm:p-6 rounded-xl bg-gradient-to-br from-gray-900/80 to-gray-800/80 backdrop-blur-sm border border-gray-800 hover:border-gray-700 transition-all duration-300">
               <div className="text-3xl bg-gradient-to-br from-cyan-500 to-blue-600 inline-block rounded-lg p-2 mb-3">
                 🔄
               </div>
-              <h4 className="text-lg font-semibold text-white mb-2 font-questrial">Continuous Improvement</h4>
+              <h4 className="text-lg font-semibold text-white mb-2 font-helvetica-neue">Continuous Improvement</h4>
               <p className="text-gray-300 text-sm">Ongoing updates and enhancements to keep your digital presence ahead of the curve</p>
             </div>
           </div>
