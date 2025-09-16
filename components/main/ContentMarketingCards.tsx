@@ -38,7 +38,7 @@ export const Card = ({
   return (
     <div
       ref={container}
-      className='h-screen flex items-center justify-center sticky top-0'
+      className='h-screen flex items-center justify-center sticky top-0 px-4 sm:px-6 lg:px-8'
     >
       <motion.div
         style={{
@@ -46,9 +46,23 @@ export const Card = ({
           scale,
           top: `calc(-5vh + ${i * 25}px)`,
         }}
-        className={`flex flex-col relative -top-[25%] h-[450px] w-[70%] rounded-md p-10 origin-top border-2 border-white`}
+        className={cn(
+          "flex flex-col relative -top-[25%] rounded-md origin-top border-2 border-white content-marketing-card",
+          // Mobile responsive dimensions
+          "w-[95%] h-[500px] p-4 sm:p-6 md:p-8 lg:p-10",
+          // Height adjustments for different screens
+          "sm:h-[450px] md:h-[400px] lg:h-[450px]",
+          // Width adjustments for different screens
+          "sm:w-[85%] md:w-[80%] lg:w-[70%]"
+        )}
       >
-        <h2 className='text-2xl text-center font-semibold text-white font-helvetica-neue'>
+        <h2 className={cn(
+          "text-center font-semibold text-white font-helvetica-neue",
+          // Responsive text sizing
+          "text-lg sm:text-xl md:text-2xl lg:text-2xl",
+          // Mobile spacing
+          "mb-3 sm:mb-4 md:mb-5"
+        )}>
           {title.split(' ').map((word, index, array) => (
             <span key={index}>
               {index === array.length - 1 ? (
@@ -62,16 +76,42 @@ export const Card = ({
             </span>
           ))}
         </h2>
-        <div className={`flex h-full mt-5 gap-10`}>
-          <div className={`w-[40%] relative top-[10%]`}>
-            <p className='text-sm text-white/90 leading-relaxed'>{description}</p>
+        <div className={cn(
+          "flex h-full",
+          // Mobile: stack vertically, Desktop: side by side
+          "flex-col gap-4 sm:flex-col md:flex-row lg:flex-row",
+          // Responsive gaps
+          "sm:gap-6 md:gap-8 lg:gap-10",
+          // Mobile margin top
+          "mt-2 sm:mt-3 md:mt-4 lg:mt-5"
+        )}>
+          <div className={cn(
+            "relative",
+            // Mobile: full width, Desktop: 40% width
+            "w-full sm:w-full md:w-[40%] lg:w-[40%]",
+            // Mobile: no top offset, Desktop: 10% top offset
+            "sm:top-0 md:top-[10%] lg:top-[10%]"
+          )}>
+            <p className={cn(
+              "text-white/90 leading-relaxed",
+              // Responsive text sizing
+              "text-xs sm:text-sm md:text-sm lg:text-sm"
+            )}>
+              {description}
+            </p>
           </div>
 
           <div
-            className={`relative w-[60%] h-full rounded-lg overflow-hidden border-2 border-white`}
+            className={cn(
+              "relative rounded-lg overflow-hidden border-2 border-white",
+              // Mobile: full width, Desktop: 60% width
+              "w-full sm:w-full md:w-[60%] lg:w-[60%]",
+              // Mobile: fixed height, Desktop: full height
+              "h-[200px] sm:h-[250px] md:h-full lg:h-full"
+            )}
           >
             <motion.div
-              className={`w-full h-full`}
+              className="w-full h-full"
               style={{ scale: imageScale }}
             >
               <img 

@@ -785,3 +785,65 @@ html {
 .image-trail-enter {
   animation: imageTrailScale 0.5s cubic-bezier(0.16, 1, 0.3, 1) forwards;
 }
+
+/* Content Marketing Cards Mobile Optimizations */
+@media (max-width: 640px) {
+  /* Ensure cards don't overflow on very small screens */
+  .content-marketing-card {
+    max-width: 95vw;
+    margin: 0 auto;
+  }
+  
+  /* Optimize text rendering on mobile */
+  .content-marketing-card h2 {
+    word-break: break-word;
+    hyphens: auto;
+    -webkit-hyphens: auto;
+  }
+  
+  /* Improve touch targets */
+  .content-marketing-card {
+    touch-action: manipulation;
+  }
+  
+  /* Optimize image loading on mobile */
+  .content-marketing-card img {
+    will-change: transform;
+    transform: translateZ(0);
+  }
+}
+
+@media (max-width: 480px) {
+  /* Extra small screens optimizations */
+  .content-marketing-card {
+    width: 98% !important;
+    padding: 0.75rem !important;
+  }
+  
+  .content-marketing-card h2 {
+    font-size: 1rem !important;
+    line-height: 1.4 !important;
+  }
+  
+  .content-marketing-card p {
+    font-size: 0.75rem !important;
+    line-height: 1.5 !important;
+  }
+}
+
+/* Landscape mobile optimizations */
+@media (max-width: 768px) and (orientation: landscape) {
+  .content-marketing-card {
+    height: 80vh !important;
+    max-height: 400px !important;
+  }
+  
+  .content-marketing-card .flex {
+    flex-direction: row !important;
+    gap: 1rem !important;
+  }
+  
+  .content-marketing-card .w-full {
+    width: 50% !important;
+  }
+}
