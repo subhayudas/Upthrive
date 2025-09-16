@@ -54,12 +54,77 @@ const BrandLogos = {
       />
     </div>
   ),
+  hiddenHungr: () => (
+    <div className="relative h-32 w-44 flex items-center justify-center group">
+      <Image
+        src="/HH_white.png"
+        alt="Hidden Hungr"
+        width={176}
+        height={128}
+        className="h-auto w-auto max-h-32 object-contain filter brightness-0 invert opacity-70 group-hover:opacity-100 transition-all duration-300"
+      />
+    </div>
+  ),
+  matrixMedia: () => (
+    <div className="relative h-32 w-44 flex items-center justify-center group">
+      <Image
+        src="/matrix media.png"
+        alt="Matrix Media"
+        width={176}
+        height={128}
+        className="h-auto w-auto max-h-32 object-contain opacity-70 group-hover:opacity-100 transition-all duration-300"
+      />
+    </div>
+  ),
+  peeSafe: () => (
+    <div className="relative h-32 w-44 flex items-center justify-center group">
+      <Image
+        src="/peesafe_white.png"
+        alt="Pee Safe"
+        width={176}
+        height={128}
+        className="h-auto w-auto max-h-32 object-contain filter brightness-0 invert opacity-70 group-hover:opacity-100 transition-all duration-300"
+      />
+    </div>
+  ),
+  qutab: () => (
+    <div className="relative h-32 w-44 flex items-center justify-center group">
+      <Image
+        src="/qutab.png"
+        alt="Qutab"
+        width={176}
+        height={128}
+        className="h-auto w-auto max-h-32 object-contain opacity-70 group-hover:opacity-100 transition-all duration-300"
+      />
+    </div>
+  ),
+  volt: () => (
+    <div className="relative h-32 w-44 flex items-center justify-center group">
+      <Image
+        src="/volt.png"
+        alt="Volt"
+        width={176}
+        height={128}
+        className="h-auto w-auto max-h-32 object-contain opacity-70 group-hover:opacity-100 transition-all duration-300"
+      />
+    </div>
+  ),
 };
 
 export default function BrandLogosMarquee() {
   const containerRef = useRef(null);
   const isInView = useInView(containerRef, { once: false, amount: 0.2 });
-  const logos = [BrandLogos.bombayShaving, BrandLogos.domina, BrandLogos.philips, BrandLogos.vka];
+  const logos = [
+    BrandLogos.bombayShaving, 
+    BrandLogos.domina, 
+    BrandLogos.philips, 
+    BrandLogos.vka,
+    BrandLogos.hiddenHungr,
+    BrandLogos.matrixMedia,
+    BrandLogos.peeSafe,
+    BrandLogos.qutab,
+    BrandLogos.volt
+  ];
 
   return (
     <section className="py-16 sm:py-20 lg:py-24 relative overflow-hidden bg-black" ref={containerRef}>
