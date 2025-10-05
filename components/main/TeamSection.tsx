@@ -72,7 +72,7 @@ const TeamSection = () => {
     },
     {
       name: "Rohan Bhambri",
-      role: "COO",
+      role: "Co-Founder",
       bio: "Operations expert focused on delivering exceptional client experiences. Ensures seamless execution of projects and maintains our high standards of quality.",
       image: "/team/Rohan.jpg",
       social: {
