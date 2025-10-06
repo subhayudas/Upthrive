@@ -1,27 +1,75 @@
 "use client";
-import React from "react";
+import React, { useEffect, useRef } from "react";
 import HeroContent from "../sub/HeroContent";
 
 const Hero = () => {
+  const videoRef = useRef<HTMLVideoElement>(null);
+
+  useEffect(() => {
+    const video = videoRef.current;
+    if (!video) return;
+
+    const handleCanPlay = () => {
+      // Force play on all devices
+      video.play().catch((error) => {
+        console.log('Autoplay prevented:', error);
+        // Fallback: try to play after user interaction
+        const playOnInteraction = () => {
+          video.play().catch(() => {});
+          document.removeEventListener('touchstart', playOnInteraction);
+          document.removeEventListener('click', playOnInteraction);
+        };
+        document.addEventListener('touchstart', playOnInteraction, { once: true });
+        document.addEventListener('click', playOnInteraction, { once: true });
+      });
+    };
+
+    const handleLoadedData = () => {
+      video.play().catch((error) => {
+        console.log('Autoplay prevented on load:', error);
+      });
+    };
+
+    video.addEventListener('canplay', handleCanPlay);
+    video.addEventListener('loadeddata', handleLoadedData);
+
+    // Ensure video plays when it becomes visible
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          video.play().catch(() => {});
+        }
+      });
+    });
+
+    observer.observe(video);
+
+    return () => {
+      video.removeEventListener('canplay', handleCanPlay);
+      video.removeEventListener('loadeddata', handleLoadedData);
+      observer.disconnect();
+    };
+  }, []);
+
   return (
     <div className="relative w-full h-screen overflow-hidden" id="Hero">
       {/* Full-width background video */}
       <video
+        ref={videoRef}
         className="absolute top-0 left-0 w-full h-full object-cover z-0"
         autoPlay
         muted
         loop
         playsInline
-        preload="auto"
+        preload="metadata"
         style={{
           filter: 'brightness(0.8) contrast(1.1)',
         }}
-        onLoadedData={(e) => {
-          // Ensure video plays immediately when loaded
-          e.currentTarget.play();
-        }}
       >
-        <source src="/herobackgroundvideo.mp4" type="video/mp4" />
+        <source 
+          src="/herobackgroundvideo.mp4" 
+          type="video/mp4" 
+        />
         Your browser does not support the video tag.
       </video>
       
