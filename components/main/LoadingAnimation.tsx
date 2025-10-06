@@ -1,15 +1,22 @@
 "use client";
 import React, { useEffect, useState, useRef } from "react";
 import { motion, AnimatePresence } from "framer-motion";
+import useMediaQuery from "@/hooks/useMediaQuery";
 
 const LoadingAnimation = () => {
   const [isLoading, setIsLoading] = useState(true);
   const videoRef = useRef<HTMLVideoElement>(null);
+  const isMobile = useMediaQuery('(max-width: 767px)'); // md breakpoint is 768px
 
   useEffect(() => {
     // Start the video when component mounts
     if (videoRef.current) {
-      videoRef.current.play().catch(console.error);
+      // Set video source based on device type
+      const video = videoRef.current;
+      video.src = isMobile ? "/Mobile_ratio_video.mp4" : "/loadinganimation.mp4";
+      video.load(); // Reload the video with new source
+      
+      video.play().catch(console.error);
     }
 
     // Set a timeout to hide the loading animation after video duration
@@ -21,7 +28,7 @@ const LoadingAnimation = () => {
     return () => {
       clearTimeout(timer);
     };
-  }, []);
+  }, [isMobile]); // Re-run when mobile state changes
 
   return (
     <AnimatePresence mode="wait">
@@ -46,17 +53,20 @@ const LoadingAnimation = () => {
         >
           <video
             ref={videoRef}
-            className="w-full h-full object-contain md:object-cover"
+            className={`w-full h-full ${isMobile ? 'object-contain' : 'object-contain md:object-cover'}`}
             autoPlay
             muted
             playsInline
             onEnded={() => setIsLoading(false)}
             style={{
               minHeight: '100vh',
-              minWidth: '100vw'
+              minWidth: '100vw',
+              ...(isMobile && {
+                objectFit: 'contain',
+                objectPosition: 'center'
+              })
             }}
           >
-            <source src="/loadinganimation.mp4" type="video/mp4" />
             Your browser does not support the video tag.
           </video>
         </motion.div>
