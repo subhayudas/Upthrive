@@ -43,79 +43,31 @@ const TestimonialCard = ({ name, role, content, image }: TestimonialProps) => {
 };
 
 const TestimonialSlider = () => {
-  // Testimonial data extracted from the previous implementation
+  // Testimonial data
   const testimonials = [
     {
-      name: "Dr. Rajesh Sharma",
-      role: "Medical Director",
-      content: "Upthrive has transformed our clinic's online presence with their exceptional Content Marketing services. Our brand now speaks volumes, thanks to their strategic approach and creative content!",
-      image: "https://pbs.twimg.com/profile_images/1608505649662681088/Zj3txNWo_400x400.jpg"
+      name: "Aryaansh",
+      role: "CEO, Matrix",
+      content: "The UpThrive team has been an unfair advantage for us - they helped us turn our marketing from guesswork into a genuine growth engine for the business. Yuvraj, Shaurya and Rohan have really helped us move the needle and it's great to finally have found a team that 'gets it.'",
+      image: "https://ui-avatars.com/api/?name=Aryaansh&background=7042f8&color=fff&size=200"
     },
     {
-      name: "Vikram Mehta",
-      role: "CEO of TechVista Solutions",
-      content: "Web Development excellence at its best! Upthrive delivered a website that not only looks stunning but also functions flawlessly. Their expertise in creating user-friendly interfaces is truly commendable.",
-      image: "https://pbs.twimg.com/profile_images/1721809225423454208/A8u6cEtT_400x400.jpg"
+      name: "Poonam Sharma",
+      role: "Asian Development Bank Associate",
+      content: "Great work ethic .. these guys are hassle free to work with!",
+      image: "https://ui-avatars.com/api/?name=Poonam+Sharma&background=7042f8&color=fff&size=200"
     },
     {
-      name: "Priya Patel",
-      role: "Founder of Spice Delight",
-      content: "Upthrive's Graphic Design team turned our ideas into visually stunning realities. The creativity and professionalism they brought to our marketing collateral were beyond our expectations.",
-      image: "https://pbs.twimg.com/profile_images/1754745467387232256/MsY_M5wL_400x400.jpg"
+      name: "VKA Team",
+      role: "Client",
+      content: "I would also like to place on record our appreciation for the UpThrive team. They are young, energetic and best of the brains. Some of the reels like on Independence and world malaria day have left a long lasting impression on our stakeholders. We would continue to work with the team and have more structured approach to strive better in future.",
+      image: "https://ui-avatars.com/api/?name=VKA&background=7042f8&color=fff&size=200"
     },
     {
-      name: "Arjun Reddy",
-      role: "CEO of Zenith Innovations",
-      content: "Upthrive's Web Development expertise is unparalleled. They not only built a website that reflects our brand identity but also ensured it is responsive and user-friendly. A top-notch service!",
-      image: "https://pbs.twimg.com/profile_images/1670905743619268609/pYItlWat_400x400.jpg"
-    },
-    {
-      name: "Ravi Agrawal",
-      role: "Owner of Spice Junction",
-      content: "Choosing Upthrive for Content Marketing was a game-changer for our restaurant. Their strategic approach and engaging content helped us build a strong online presence and connect with our target audience effectively.",
-      image: "https://pbs.twimg.com/profile_images/1669663135417110528/p8fRLHNR_400x400.jpg"
-    },
-    {
-      name: "Anand Verma",
-      role: "Director of Bharat Textiles",
-      content: "Upthrive's Graphic Design team has the Midas touch! Our marketing materials now have a modern and polished look, thanks to their creativity and attention to detail. Highly recommended!",
-      image: "https://pbs.twimg.com/profile_images/1733406256105177088/VboDuWfl_400x400.jpg"
-    },
-    {
-      name: "Neha Kapoor",
-      role: "Owner of Fashion Bazaar",
-      content: "Upthrive's Video Editing added dynamism to our campaigns, creating compelling stories that resonated with our audience. Our sales have increased significantly since working with them.",
-      image: "https://pbs.twimg.com/profile_images/1375285353146327052/y6jeByyD_400x400.jpg"
-    },
-    {
-      name: "Suresh Malhotra",
-      role: "Director at Skyline Properties",
-      content: "Upthrive's Web Development team built us a top-notch website - modern, responsive, and user-friendly. Our property listings have never looked better!",
-      image: "https://pbs.twimg.com/profile_images/1724687865471455232/-rc2ShfE_400x400.jpg"
-    },
-    {
-      name: "Amit Joshi",
-      role: "Founder of Fintech Solutions",
-      content: "Upthrive delivered awesome work for our financial services platform. Their attention to detail and technical expertise is unmatched in the industry.",
-      image: "https://pbs.twimg.com/profile_images/1689012008472195072/lSKb0P7X_400x400.jpg"
-    },
-    {
-      name: "Deepak Gupta",
-      role: "CEO of DigiMarket Agency",
-      content: "Upthrive's Graphic Design team turned our ideas into visually stunning realities. The creativity and professionalism they brought to our marketing collateral were beyond our expectations.",
-      image: "https://pbs.twimg.com/profile_images/516916920482672641/3jCeLgFb_400x400.jpeg"
-    },
-    {
-      name: "Meera Singhania",
-      role: "Director of Lotus Innovations",
-      content: "Upthrive's Content Marketing services are strategic, engaging, and effective. Our online presence has never been stronger, and we're seeing real business results.",
-      image: "https://pbs.twimg.com/profile_images/1250275834444701704/9L7QwQCq_400x400.jpg"
-    },
-    {
-      name: "Rahul Khanna",
-      role: "CTO of Bharat Digital",
-      content: "Super work by the Upthrive team! I'm thoroughly satisfied with their attention to detail and commitment to excellence. Would recommend to anyone looking for digital services.",
-      image: "https://pbs.twimg.com/profile_images/1259558245/vala_300dpi_400x400.jpg"
+      name: "FURR by Peesafe",
+      role: "Client",
+      content: "I have been associated with UpThrive for 3 months now and I love the quality of work. Apart from that what really amazes me is the enthusiasm of the team to make the project work.",
+      image: "https://ui-avatars.com/api/?name=FURR&background=7042f8&color=fff&size=200"
     }
   ];
 
