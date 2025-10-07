@@ -422,7 +422,7 @@ const Footer = () => {
                 <div className="mt-1 text-orange-500 group-hover:text-orange-400 transition-colors">
                   <FaPhoneAlt className="h-4 w-4" />
                 </div>
-                <p className="text-gray-300 group-hover:text-white transition-colors">+91 9876543210</p>
+                <p className="text-gray-300 group-hover:text-white transition-colors">+91 9810724697</p>
               </motion.div>
               <motion.div 
                 className="flex items-start space-x-3 group"
