@@ -2,11 +2,10 @@
 
 import React, { useState, useRef } from "react";
 import Image from "next/image";
-import { motion, AnimatePresence, useInView } from "framer-motion";
+import { motion, AnimatePresence, useInView, useMotionValue, useSpring } from "framer-motion";
 import AnimatedHeading from "../ui/animated-heading";
 import { FaLinkedinIn, FaTwitter, FaInstagram } from "react-icons/fa";
 import { SparklesIcon } from "@heroicons/react/24/solid";
-import { useMotionValue, useSpring } from "framer-motion";
 
 const TeamSection = () => {
   // State for active team member
