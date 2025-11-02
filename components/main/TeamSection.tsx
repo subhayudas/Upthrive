@@ -2,11 +2,10 @@
 
 import React, { useState, useRef } from "react";
 import Image from "next/image";
-import Link from "next/link";
-import { motion, useScroll, useTransform, AnimatePresence, useInView } from "framer-motion";
+import { motion, AnimatePresence, useInView } from "framer-motion";
 import AnimatedHeading from "../ui/animated-heading";
 import { FaLinkedinIn, FaTwitter, FaInstagram } from "react-icons/fa";
-import { SparklesIcon, ArrowRightIcon } from "@heroicons/react/24/solid";
+import { SparklesIcon } from "@heroicons/react/24/solid";
 import { useMotionValue, useSpring } from "framer-motion";
 
 const TeamSection = () => {
@@ -417,25 +416,6 @@ const TeamSection = () => {
                       </div>
                     </div>
 
-                    <div className="flex space-x-3">
-                      <motion.button
-                        className="flex items-center gap-2 px-5 py-2.5 rounded-lg font-medium text-white transition-all duration-300"
-                        style={{
-                          background: `linear-gradient(to right, ${teamMembers[activeIndex].accent}, ${teamMembers[activeIndex].accent}80)`,
-                          boxShadow: `0 8px 20px -8px ${teamMembers[activeIndex].accent}80`
-                        }}
-                        whileHover={{ y: -3, boxShadow: `0 12px 20px -6px ${teamMembers[activeIndex].accent}80` }}
-                        whileTap={{ scale: 0.97 }}
-                        initial={{ opacity: 0, y: 20 }}
-                        animate={{ opacity: 1, y: 0 }}
-                        transition={{ delay: 0.5, duration: 0.5 }}
-                      >
-                        Connect
-                        <ArrowRightIcon className="h-4 w-4" />
-                      </motion.button>
-
-                      
-                    </div>
                   </motion.div>
                 </div>
               </motion.div>
