@@ -65,14 +65,8 @@ export const Card = ({
         )}>
           {title.split(' ').map((word, index, array) => (
             <span key={index}>
-              {index === array.length - 1 ? (
-                <span className="line-through">{word}</span>
-              ) : (
-                <>
-                  {word}
-                  {index < array.length - 1 && ' '}
-                </>
-              )}
+              {word}
+              {index < array.length - 1 && ' '}
             </span>
           ))}
         </h2>

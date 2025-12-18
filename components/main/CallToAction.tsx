@@ -76,7 +76,6 @@ const CallToAction = () => {
       </video>
       
       {/* Enhanced Gradient Overlays */}
-      <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-b from-black/60 via-black/40 to-black/70 z-10"></div>
       <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-r from-purple-900/20 via-transparent to-amber-900/20 z-15"></div>
       
       {/* Animated Background Elements */}
@@ -144,32 +143,6 @@ const CallToAction = () => {
             who have transformed their growth trajectory with our innovative solutions.
           </motion.p>
 
-          {/* Stats Row */}
-          <motion.div
-            variants={containerVariants}
-            className="grid grid-cols-2 md:grid-cols-4 gap-8 mb-16 max-w-4xl mx-auto"
-          >
-            {[
-              { number: "200%", label: "Average ROI" },
-              { number: "50+", label: "Projects Delivered" },
-              { number: "24/7", label: "Support Available" },
-              { number: "100%", label: "Client Satisfaction" },
-            ].map((stat, index) => (
-              <motion.div
-                key={index}
-                variants={scaleVariants}
-                className="text-center p-4 bg-white/5 backdrop-blur-md border border-white/10 rounded-xl hover:border-amber-400/30 transition-all duration-300"
-              >
-                <h3 className="text-2xl md:text-3xl font-bold text-amber-400 mb-1 font-helvetica-neue">
-                  {stat.number}
-                </h3>
-                <p className="text-white/70 text-sm font-questrial">
-                  {stat.label}
-                </p>
-              </motion.div>
-            ))}
-          </motion.div>
-
           {/* Action Buttons */}
           <motion.div
             variants={itemVariants}
@@ -209,31 +182,7 @@ const CallToAction = () => {
             </motion.button>
           </motion.div>
 
-          {/* Trust Indicators */}
-          <motion.div
-            variants={itemVariants}
-            className="mt-16 pt-8 border-t border-white/10"
-          >
-            <p className="text-white/60 text-sm mb-4 font-questrial">
-              Trusted by startups and enterprises worldwide
-            </p>
-            
-            <div className="flex flex-wrap justify-center items-center gap-8 opacity-60">
-              {/* Company logos or indicators */}
-              <div className="flex items-center space-x-2">
-                <div className="w-8 h-8 bg-gradient-to-br from-amber-400 to-orange-600 rounded-full"></div>
-                <span className="text-white/80 text-sm font-questrial">Enterprise Grade</span>
-              </div>
-              <div className="flex items-center space-x-2">
-                <div className="w-8 h-8 bg-gradient-to-br from-green-400 to-emerald-600 rounded-full"></div>
-                <span className="text-white/80 text-sm font-questrial">24/7 Support</span>
-              </div>
-              <div className="flex items-center space-x-2">
-                <div className="w-8 h-8 bg-gradient-to-br from-blue-400 to-purple-600 rounded-full"></div>
-                <span className="text-white/80 text-sm font-questrial">Proven Results</span>
-              </div>
-            </div>
-          </motion.div>
+          {/* Trust Indicators removed as per design request */}
         </motion.div>
       </div>
     </section>
