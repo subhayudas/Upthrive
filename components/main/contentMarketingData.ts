@@ -33,7 +33,7 @@ export const contentMarketingData: ContentMarketingData[] = [
   {
     title: "SEO-Optimized Content",
     description: "Create content that not only engages your audience but also ranks well in search engines. Our SEO expertise ensures your content is discoverable and drives organic traffic to your website.",
-    image: "/imagetrail4.jpeg",
+    image: "/imagetrail5.jpeg",
     color: "linear-gradient(135deg, #fa709a 0%, #fee140 100%)"
   }
 ];
