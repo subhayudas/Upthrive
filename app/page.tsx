@@ -11,7 +11,6 @@ import ContactForm from "@/components/main/ContactForm";
 import AboutUs from "@/components/main/AboutUs";
 import Approach from "@/components/main/Approach";
 import ChooseUs from "@/components/main/ChooseUs";
-import TerminalDemo from "@/components/main/TerminalDemo";
 import MacbookDemo from "@/components/main/MacbookDemo";
 import FeatureShowcase from "@/components/main/FeatureShowcase";
 import Statistics from "@/components/main/Statistics";
@@ -78,11 +77,6 @@ export default function Home() {
         {/* Approach Section */}
         <div className="border-t border-white">
           <Approach />
-        </div>
-        
-        {/* Terminal Demo */}
-        <div className="border-t border-white">
-          <TerminalDemo />
         </div>
         
         {/* Statistics */}
