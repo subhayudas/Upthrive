@@ -93,9 +93,9 @@ const Services = () => {
   const getGridClass = (size: string, index: number) => {
     switch (size) {
       case "large":
-        return "col-span-2 row-span-1";
+        return "col-span-1 md:col-span-2 row-span-1";
       case "tall":
-        return "col-span-1 row-span-2";
+        return "col-span-1 row-span-1 md:row-span-2";
       case "medium":
         return "col-span-1 row-span-1";
       case "small":
@@ -118,29 +118,29 @@ const Services = () => {
   return (
     <motion.section
       id="Services"
-      className="relative py-20 lg:py-32 overflow-hidden"
+      className="relative py-12 sm:py-16 md:py-20 lg:py-32 overflow-hidden"
       ref={containerRef}
       style={{ opacity, y }}
     >
       {/* Background gradient matching hero */}
       <div className="absolute inset-0 bg-black" />
 
-      <div className="relative z-10 max-w-7xl mx-auto px-6 lg:px-8">
+      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header Section */}
         <motion.div
-          className="text-center mb-16 lg:mb-24"
+          className="text-center mb-10 sm:mb-12 md:mb-16 lg:mb-24"
           initial={{ opacity: 0, y: 40 }}
           animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 40 }}
           transition={{ duration: 0.8, ease: [0.215, 0.61, 0.355, 1] }}
         >
           {/* Badge */}
           <motion.div
-            className="inline-flex items-center py-2 px-4 border border-white/20 bg-black/20 backdrop-blur-md rounded-full mb-6 shadow-lg"
+            className="inline-flex items-center py-1.5 px-3 sm:py-2 sm:px-4 border border-white/20 bg-black/20 backdrop-blur-md rounded-full mb-4 sm:mb-6 shadow-lg"
             initial={{ opacity: 0, scale: 0.9 }}
             animate={isInView ? { opacity: 1, scale: 1 } : { opacity: 0, scale: 0.9 }}
             transition={{ duration: 0.6, delay: 0.2 }}
           >
-            <SparklesIcon className="text-amber-400 mr-2 h-4 w-4" />
+            <SparklesIcon className="text-amber-400 mr-2 h-3 w-3 sm:h-4 sm:w-4" />
             <span className="text-xs font-medium tracking-wider text-white/90 uppercase font-questrial">
               Our Services
             </span>
@@ -148,13 +148,13 @@ const Services = () => {
 
           {/* Main Title */}
           <motion.h2
-            className="text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-light leading-tight tracking-tight text-white mb-4 font-helvetica-neue"
+            className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-light leading-tight tracking-tight text-white mb-3 sm:mb-4 font-helvetica-neue"
             style={{ letterSpacing: "-0.02em" }}
             initial={{ opacity: 0, y: 30 }}
             animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
             transition={{ duration: 0.8, delay: 0.3 }}
           >
-            <span className="block mb-2 font-light">WHAT WE</span>
+            <span className="block mb-1 sm:mb-2 font-light">WHAT WE</span>
             <span className="block">
               <span className="font-medium text-amber-400">Create</span>
               <span className="font-light"> FOR YOU</span>
@@ -163,7 +163,7 @@ const Services = () => {
 
           {/* Subtitle */}
           <motion.p
-            className="text-lg sm:text-xl text-white/70 max-w-3xl mx-auto font-questrial"
+            className="text-base sm:text-lg md:text-xl text-white/70 max-w-3xl mx-auto px-2 sm:px-0 font-questrial"
             initial={{ opacity: 0, y: 20 }}
             animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
             transition={{ duration: 0.8, delay: 0.5 }}
@@ -174,7 +174,7 @@ const Services = () => {
 
         {/* Bento Grid */}
         <motion.div
-          className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-6 lg:gap-8 auto-rows-fr"
+          className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 sm:gap-5 md:gap-6 lg:gap-8 auto-rows-fr"
           variants={containerVariants}
           initial="hidden"
           animate={isInView ? "visible" : "hidden"}
@@ -182,7 +182,7 @@ const Services = () => {
           {services.map((service, index) => (
             <motion.div
               key={service.title}
-              className={`group relative overflow-hidden rounded-2xl border border-white/10 bg-black/20 backdrop-blur-md transition-all duration-500 hover:border-white/20 hover:bg-black/30 cursor-pointer ${getGridClass(service.size, index)}`}
+              className={`group relative overflow-hidden rounded-2xl border border-white/10 bg-black/20 backdrop-blur-md transition-all duration-500 hover:border-white/20 hover:bg-black/30 cursor-pointer min-h-[280px] sm:min-h-[320px] md:min-h-0 ${getGridClass(service.size, index)}`}
               variants={itemVariants}
               onHoverStart={() => setHoveredIndex(index)}
               onHoverEnd={() => setHoveredIndex(null)}
@@ -205,10 +205,10 @@ const Services = () => {
               </div>
 
               {/* Content */}
-              <div className="relative z-10 p-6 lg:p-8 h-full flex flex-col justify-end">
+              <div className="relative z-10 p-4 sm:p-5 md:p-6 lg:p-8 h-full flex flex-col justify-end">
                 {/* Icon */}
                 <motion.div
-                  className="mb-4 p-3 rounded-full bg-black/40 backdrop-blur-sm border border-white/10 w-fit group-hover:bg-black/60 transition-all duration-300"
+                  className="mb-3 sm:mb-4 p-2 sm:p-3 rounded-full bg-black/40 backdrop-blur-sm border border-white/10 w-fit group-hover:bg-black/60 transition-all duration-300"
                   whileHover={{ 
                     scale: 1.1,
                     rotate: [0, -5, 5, 0],
@@ -219,12 +219,12 @@ const Services = () => {
                 </motion.div>
 
                 {/* Title */}
-                <h3 className="text-xl lg:text-2xl font-medium text-white mb-3 font-helvetica-neue group-hover:text-amber-400 transition-colors duration-300">
+                <h3 className="text-lg sm:text-xl md:text-xl lg:text-2xl font-medium text-white mb-2 sm:mb-3 font-helvetica-neue group-hover:text-amber-400 transition-colors duration-300">
                   {service.title}
                 </h3>
 
                 {/* Description */}
-                <p className="text-sm lg:text-base text-white/70 leading-relaxed font-questrial group-hover:text-white/90 transition-colors duration-300">
+                <p className="text-xs sm:text-sm md:text-sm lg:text-base text-white/70 leading-relaxed font-questrial group-hover:text-white/90 transition-colors duration-300">
                   {service.description}
                 </p>
 
@@ -268,21 +268,21 @@ const Services = () => {
 
         {/* Call to Action */}
         <motion.div
-          className="text-center mt-16 lg:mt-24"
+          className="text-center mt-10 sm:mt-12 md:mt-16 lg:mt-24"
           initial={{ opacity: 0, y: 30 }}
           animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
           transition={{ duration: 0.8, delay: 0.8 }}
         >
           <motion.a
             href="#BookingForm"
-            className="inline-flex items-center py-3 px-8 border border-white/20 bg-black/20 backdrop-blur-md rounded-full text-white font-medium tracking-wide hover:bg-black/30 hover:border-amber-400/50 transition-all duration-300 font-questrial"
+            className="inline-flex items-center py-2.5 px-6 sm:py-3 sm:px-8 border border-white/20 bg-black/20 backdrop-blur-md rounded-full text-sm sm:text-base text-white font-medium tracking-wide hover:bg-black/30 hover:border-amber-400/50 transition-all duration-300 font-questrial"
             whileHover={{ 
               scale: 1.05,
               boxShadow: "0 0 20px rgba(251, 191, 36, 0.2)"
             }}
             whileTap={{ scale: 0.95 }}
           >
-            <SparklesIcon className="text-amber-400 mr-2 h-4 w-4" />
+            <SparklesIcon className="text-amber-400 mr-2 h-3 w-3 sm:h-4 sm:w-4" />
             Get Started
           </motion.a>
         </motion.div>
