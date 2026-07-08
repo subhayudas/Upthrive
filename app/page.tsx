@@ -18,6 +18,7 @@ import ProcessTimeline from "@/components/main/ProcessTimeline";
 import TeamSection from "@/components/main/TeamSection";
 import CallToAction from "@/components/main/CallToAction";
 import ContentMarketingCards from "@/components/main/ContentMarketingCards";
+import FeaturedIn from "@/components/main/FeaturedIn";
 
 // Import the BookingForm component at the top of your file
 import BookingForm from '@/components/main/BookingForm';
@@ -53,7 +54,12 @@ export default function Home() {
         <div className="border-t border-white">
           <TestimonialSlider />
         </div>
-        
+
+        {/* Featured In / Press Section */}
+        <div className="border-t border-white">
+          <FeaturedIn />
+        </div>
+
         {/* Zoom Parallax Section */}
         <div className="border-t border-white">
           <ZoomParallax 
