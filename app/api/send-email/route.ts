@@ -26,7 +26,7 @@ export async function POST(request: Request) {
     // Email content
     const mailOptions = {
       from: process.env.EMAIL_USER,
-      to: process.env.RECIPIENT_EMAIL || process.env.EMAIL_USER, // Where to send the form submissions
+      to: 'clients@upthrive.in', // Where to send the form submissions
       subject: `New Booking Request: ${service}`,
       html: `
         <h1>New Booking Request</h1>
