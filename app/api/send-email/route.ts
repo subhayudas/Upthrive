@@ -14,6 +14,17 @@ export async function POST(request: Request) {
       );
     }
 
+    // Ensure email credentials are configured
+    if (!process.env.EMAIL_USER || !process.env.EMAIL_PASSWORD) {
+      console.error(
+        'Email is not configured: EMAIL_USER and/or EMAIL_PASSWORD are missing.'
+      );
+      return NextResponse.json(
+        { error: 'Email service is not configured on the server.' },
+        { status: 500 }
+      );
+    }
+
     // Configure nodemailer transporter
     const transporter = nodemailer.createTransport({
       service: 'gmail', // Change this to your email service
@@ -48,8 +59,9 @@ export async function POST(request: Request) {
     );
   } catch (error) {
     console.error('Error sending email:', error);
+    const detail = error instanceof Error ? error.message : String(error);
     return NextResponse.json(
-      { error: 'Failed to send email' },
+      { error: 'Failed to send email', detail },
       { status: 500 }
     );
   }
